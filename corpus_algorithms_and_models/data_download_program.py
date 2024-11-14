@@ -3,7 +3,6 @@ import pandas as pd
 import os
 
 def download_corpora(main_corpus_name, subreddit_names):
-
     main_corpus = Corpus(filename=download(main_corpus_name))
     corpus_collection = [main_corpus]
     text_cleaner = TextCleaner()
@@ -29,7 +28,6 @@ def create_excel_files(corpus_collection, corpus_names, output_dir="./input_data
             "Speaker ID": [],
             "Reply to": [],
             "Text": [],
-            "Timestamp": []
         }
 
         for conversation in corpus.iter_conversations():
@@ -38,11 +36,13 @@ def create_excel_files(corpus_collection, corpus_names, output_dir="./input_data
                 data["Utterance ID"].append(utterance.id)
                 data["Speaker ID"].append(utterance.speaker.id)
                 data["Reply to"].append(utterance.reply_to or "N/A")
-                data["Text"].append(utterance.text)
-                data["Timestamp"].append(utterance.timestamp)
+                
+                clean_text = ''.join(char for char in utterance.text if char.isprintable())
+                data["Text"].append(clean_text)
 
         df = pd.DataFrame(data)
         excel_path = os.path.join(output_dir, f"{corpus_names[i]}.xlsx")
+        
         df.to_excel(excel_path, index=False, engine='openpyxl')
         print(f"Excel file created for {corpus_names[i]}: {excel_path}")
 
