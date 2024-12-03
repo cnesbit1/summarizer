@@ -1,4 +1,5 @@
 from convokit import TextCleaner, Corpus, download
+from data_collection import requests, RequestGuard, urllib, save_zip_links
 import pandas as pd
 import os
 
@@ -18,7 +19,7 @@ def download_corpora(main_corpus_name, subreddit_names):
     corpus_collection = [main_corpus]
     # text_cleaner = TextCleaner()
     
-    for name in subreddit_names:
+    for name in subreddit_names[1:]:
         print(f"Downloading subreddit corpus: {name}")
         corpus = Corpus(filename=download(name))
         print(f"Subreddit corpus '{name}' downloaded with {len(corpus.get_conversation_ids())} conversations.")
@@ -38,11 +39,6 @@ def create_excel_files(corpus_collection, corpus_names, output_dir="./input_data
     print(f"Creating output directory at {output_dir}...")
     os.makedirs(output_dir, exist_ok=True)
     print("Output directory is ready.")
-    
-    def sanitize_text(text):
-        if text is None:
-            return ""
-        return ''.join(char for char in text if char.isprintable() and ord(char) not in range(0x00, 0x20))
 
     for i, corpus in enumerate(corpus_collection):
         print(f"Processing corpus: {corpus_names[i]}")
@@ -87,12 +83,14 @@ def create_excel_files(corpus_collection, corpus_names, output_dir="./input_data
             print(f"Error writing to Excel for {corpus_names[i]}: {e}")
 
 
-# Main program
+
 main_corpus_name = "subreddit-corpus"
-subreddit_names = ["subreddit-Cornell", "subreddit-NATOsubreddit", "subreddit-NBAOdds", "subreddit-NBC_TV"]
+url = "https://zissou.infosci.cornell.edu/convokit/datasets/subreddit-corpus/corpus-zipped/"
+subreddit_list = []
+save_zip_links(url, subreddit_list)
 
 print("Starting the corpus downloading process...")
-corpus_collection, all_corpus_names = download_corpora(main_corpus_name, subreddit_names)
+corpus_collection, all_corpus_names = download_corpora(main_corpus_name, subreddit_list)
 print("Corpus downloading completed.")
 
 if __name__ == "__main__":
