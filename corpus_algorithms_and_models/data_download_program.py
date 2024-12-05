@@ -2,8 +2,12 @@ from convokit import TextCleaner, Corpus, download
 from data_collection import requests, RequestGuard, urllib, save_zip_links
 import pandas as pd
 import os
+import re
 
 from openpyxl.utils.exceptions import IllegalCharacterError
+
+def has_invalid_characters(name):
+    return bool(re.search(r'[<>:"/\\|?*]', name))
 
 def sanitize_text(text):
     if text is None:
@@ -19,7 +23,7 @@ def download_corpora(main_corpus_name, subreddit_names):
     corpus_collection = [main_corpus]
     # text_cleaner = TextCleaner()
     
-    for name in subreddit_names[1:]:
+    for name in subreddit_names:
         print(f"Downloading subreddit corpus: {name}")
         corpus = Corpus(filename=download(name))
         print(f"Subreddit corpus '{name}' downloaded with {len(corpus.get_conversation_ids())} conversations.")
@@ -90,7 +94,8 @@ subreddit_list = []
 save_zip_links(url, subreddit_list)
 
 print("Starting the corpus downloading process...")
-corpus_collection, all_corpus_names = download_corpora(main_corpus_name, subreddit_list)
+cleaned_subreddit_list = [subreddit for subreddit in subreddit_list if not has_invalid_characters(subreddit)]
+corpus_collection, all_corpus_names = download_corpora(main_corpus_name, cleaned_subreddit_list)
 print("Corpus downloading completed.")
 
 if __name__ == "__main__":
