@@ -21,7 +21,6 @@ def save_zip_links(url, subreddit_list):
                 href = url.rstrip('/') + href
             href = urllib.parse.unquote(href)
             print(f"Visiting link: {href}...")
-            print(f"HREF: {href}")
             try:
                 sub_response = guard.make_get_request(f"{url}{href}")
                 if sub_response is None:
@@ -38,8 +37,6 @@ def save_zip_links(url, subreddit_list):
                         proper_name = decoded_zip_href[len(href):decoded_zip_href.rfind('.corpus.zip')]
                         zip_links.append(f"subreddit-{proper_name}")
 
-                        print(f"Decoded_zip_href: {decoded_zip_href}")
-                        print(f"Full HREF: {full_zip_href}")
                         print(f"Found .zip link: {proper_name}")
 
             except requests.RequestException as sub_e:
