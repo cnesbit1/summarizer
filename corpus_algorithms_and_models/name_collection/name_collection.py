@@ -1,6 +1,7 @@
 from requestguard import RequestGuard, requests, urllib
 from bs4 import BeautifulSoup
 
+
 def save_list_to_file(subreddit_list, filename="subreddits.txt"):
     """Save the subreddit list to a file."""
     print(f"Saving subreddit list to {filename}...")
