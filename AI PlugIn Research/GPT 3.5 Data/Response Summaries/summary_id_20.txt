@@ -1,0 +1,53 @@
+Original Response: 
+To distinguish between crossing over events that do not change linked genes and those that do, you need to analyze the resulting genetic combinations in the offspring.
+Here’s how you can determine the difference:
+
+
+1.
+**Parental (Non-Recombinant) Chromosomes**: Chromosomes that retain the original combination of alleles from the parents.
+2.
+**Recombinant Chromosomes**: Chromosomes that have undergone crossing over and have new combinations of alleles.
+1.
+**Examine the Phenotypes of Offspring**:
+   - **Non-Recombinant Offspring**: These offspring show phenotypes that match the parental types.
+This indicates that no crossing over or crossing over that did not affect the linked genes occurred.
+- **Recombinant Offspring**: These offspring show new phenotypes that are different from the parental types.
+This indicates that crossing over occurred and affected the linked genes.
+2.
+**Calculate Recombination Frequency**:
+   - **Recombination Frequency**: This is the percentage of recombinant offspring out of the total offspring.
+It gives an indication of how often crossing over occurs between linked genes.
+- **Formula**: \[ \text{Recombination Frequency} = \left( \frac{\text{Number of Recombinant Offspring}}{\text{Total Number of Offspring}} \right) \times 100 \]
+   - A low recombination frequency suggests that the genes are closely linked and crossing over between them is rare.
+- A high recombination frequency suggests that crossing over between the genes is more common, which means they are farther apart on the chromosome.
+3.
+**Use Genetic Markers**:
+   - **Genetic Markers**: These are specific sequences of DNA that can be used to track the presence of particular alleles.
+By analyzing the presence or absence of these markers, you can determine whether crossing over has occurred.
+- **Parental Markers**: Identify the genetic markers associated with the parental alleles.
+- **Recombinant Markers**: Identify the genetic markers that indicate new combinations of alleles resulting from crossing over.
+- Parent 1: AB/ab (linked genes on the same chromosome)
+- Parent 2: ab/ab (homozygous recessive)
+
+- **Parental Types**: AB/ab (non-recombinant), ab/ab (non-recombinant)
+- **Recombinant Types**: Ab/ab (recombinant), aB/ab (recombinant)
+
+1.
+**Count the Offspring**:
+   - If you observe a higher number of offspring with AB/ab and ab/ab phenotypes, this suggests that crossing over did not change the linked genes.
+- If you observe a significant number of offspring with Ab/ab and aB/ab phenotypes, this indicates that crossing over has occurred and affected the linked genes.
+2.
+**Determine the Frequency**:
+   - Suppose you have 100 offspring: 80 are parental types (40 AB/ab, 40 ab/ab) and 20 are recombinant types (10 Ab/ab, 10 aB/ab).
+- Recombination frequency = (20/100) × 100 = 20%
+
+
+- **No Change in Linked Genes**: If most offspring are of the parental type and recombination frequency is low, crossing over did not significantly affect the linked genes.
+- **Change in Linked Genes**: If a substantial proportion of offspring are recombinant and recombination frequency is moderate to high, crossing over did affect the linked genes.
+By analyzing the phenotypes and genotypes of the offspring and calculating the recombination frequency, you can determine whether crossing over has changed the linked genes.
+
+Summary: 
+This indicates that crossing over occurred and affected the linked genes.
+This indicates that no crossing over or crossing over that did not affect the linked genes occurred.
+**Recombinant Chromosomes**: Chromosomes that have undergone crossing over and have new combinations of alleles.
+It gives an indication of how often crossing over occurs between linked genes.

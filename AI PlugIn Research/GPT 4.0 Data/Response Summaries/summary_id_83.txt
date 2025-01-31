@@ -1,0 +1,37 @@
+Original Response: 
+If you want to select a specific database to work with, you can use the `USE` statement followed by the name of the database you want to select.
+Here's how you can do it:
+
+
+
+Replace `database_name` with the name of the database you want to select.
+After executing this command, all subsequent SQL queries you run will be executed in the context of the selected database.
+Here's the step-by-step process:
+
+1.
+Start the MySQL shell by running the `mysql` command with your username and password.
+2.
+Enter your MySQL password when prompted.
+3.
+Once authenticated, you'll be in the MySQL shell.
+Now, execute the `USE` statement to select the specific database:
+
+   
+
+   Replace `database_name` with the name of the database you want to select.
+4.
+After selecting the database, you can execute SQL queries specific to that database.
+For example:
+
+   
+
+   This command will display a list of tables in the selected database.
+Remember to replace `database_name` with the actual name of the database you want to work with.
+
+Summary: 
+Enter your MySQL password when prompted.
+Here's how you can do it:
+
+
+
+Replace `database_name` with the name of the database you want to select.

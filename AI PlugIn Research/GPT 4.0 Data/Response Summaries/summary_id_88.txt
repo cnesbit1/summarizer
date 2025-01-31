@@ -1,0 +1,13 @@
+Original Response: 
+You can add a method named `checkEmpty` to the `ChessBoard` class to iterate through every element in the board and check if they are all null.
+Here's how you can implement it:
+
+
+
+In this method:
+
+- We iterate through every element in the `squares` array.
+- If we find a non-null piece at any position, we return `false` immediately, indicating that the board is not empty.
+- If we iterate through the entire board without finding any non-null piece, we return `true`, indicating that the board is empty.
+
+Summary: 

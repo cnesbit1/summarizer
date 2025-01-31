@@ -1,0 +1,43 @@
+Original Response: 
+If your WebSocket handler class is not being activated, there might be several reasons for this issue.
+Here are some common troubleshooting steps you can take:
+
+1.
+**Ensure WebSocket Endpoint Annotation**: Make sure that your WebSocket handler class is annotated with `@ServerEndpoint` instead of `@WebSocket`.
+The correct annotation for WebSocket endpoint classes in Java EE is `@ServerEndpoint`.
+2.
+**Check WebSocket Endpoint Path**: Verify that the path specified in the `@ServerEndpoint` annotation matches the WebSocket endpoint path you are trying to connect to from the client-side.
+For example:
+
+    
+
+3.
+**Deployment Descriptor (web.xml)**: If you're using a web.xml deployment descriptor to configure your web application, ensure that you have properly defined the servlet mapping for the WebSocket endpoint.
+Here's an example of how it can be done:
+
+    
+
+4.
+**Check WebSocket Container Initialization**: Verify that your WebSocket container is properly initialized and configured in your application startup process.
+This typically involves configuring the WebSocket container in a ServletContextListener or initializing it as part of your application's initialization logic.
+5.
+**Server Configuration**: Ensure that your server environment supports WebSocket connections and that WebSocket functionality is enabled/configured correctly.
+Some servers may require additional configuration to support WebSocket connections.
+6.
+**Logging and Debugging**: Add logging statements to your WebSocket handler class to check if the handler methods are being invoked when WebSocket messages are received.
+This can help you trace the flow of execution and identify any issues with message processing.
+7.
+**Client-Side WebSocket Connection**: Double-check the client-side WebSocket connection code to ensure that it's correctly connecting to the WebSocket endpoint URL.
+Verify that there are no errors or exceptions occurring on the client-side that prevent the WebSocket connection from being established.
+By following these troubleshooting steps and examining your WebSocket configuration and code, you should be able to identify and resolve the issue preventing your WebSocket handler class from being activated.
+
+Summary: 
+Here's an example of how it can be done:
+
+    
+
+4.
+Here are some common troubleshooting steps you can take:
+
+1.
+**Ensure WebSocket Endpoint Annotation**: Make sure that your WebSocket handler class is annotated with `@ServerEndpoint` instead of `@WebSocket`.

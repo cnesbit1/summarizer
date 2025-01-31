@@ -1,0 +1,31 @@
+Original Response: 
+The language {a^ib^i | 0 <= i <= 50} consists of strings of the form "a^i b^i" where the number of 'a's is equal to the number of 'b's and 'i' can vary from 0 to 50.
+To design a Turing Machine to accept this language, we need to check that for every 'a' encountered, there is a corresponding 'b' later in the input.
+This process can be completed in linear time by scanning the input string once.
+Here's a rough description of the Turing Machine:
+
+1.
+Start in the initial state q0.
+2.
+Read the input symbol by symbol.
+3.
+If the symbol is 'a', move to state q1.
+4.
+If the symbol is 'b' and the machine is in state q1, move to state q2.
+5.
+If the symbol is 'b' and the machine is in state q2, stay in state q2.
+6.
+If the symbol is blank (indicating the end of the input) and the machine is in state q1 or q2, accept the string.
+7.
+If the symbol is neither 'a' nor 'b' and the machine is in state q0, reject the string.
+8.
+If the symbol is neither 'a' nor 'b' and the machine is in state q1 or q2, reject the string.
+The time complexity of this Turing Machine is O(n), where n is the length of the input string.
+This is because the machine scans the input tape once and performs a constant number of operations for each input symbol, resulting in linear time complexity.
+Since the maximum length of the input string is bounded by 50 (i.e., "a" appears at most 50 times), the time complexity is O(50) which simplifies to O(1).
+Therefore, the time complexity of the Turing Machine is effectively O(1).
+
+Summary: 
+If the symbol is 'a', move to state q1.
+Read the input symbol by symbol.
+Start in the initial state q0.

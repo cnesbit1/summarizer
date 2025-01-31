@@ -1,0 +1,28 @@
+Original Response: 
+To see the list of tables in your MySQL database, you can use the following SQL query after connecting to your database:
+
+
+
+Here's how you can execute this query in the MySQL shell:
+
+1.
+Start the MySQL shell by running the `mysql` command with your username and password.
+2.
+Enter your MySQL password when prompted.
+3.
+Once authenticated, you'll be in the MySQL shell.
+Now, execute the `SHOW TABLES;` command to see the list of tables in your database:
+
+   
+
+This command will display a list of tables in your currently selected database.
+If you haven't selected a specific database yet, you can do so using the `USE` statement before running `SHOW TABLES;`.
+For example:
+
+
+
+Replace `your_database_name` with the name of your MySQL database.
+After executing the `SHOW TABLES;` command, you'll see a list of tables present in your database.
+
+Summary: 
+Enter your MySQL password when prompted.

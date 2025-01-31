@@ -1,0 +1,22 @@
+Original Response: 
+To see the list of databases in your MySQL server, you can use the following SQL command:
+
+
+
+Here's how you can execute this command in the MySQL shell:
+
+1.
+Start the MySQL shell by running the `mysql` command with your username and password.
+2.
+Enter your MySQL password when prompted.
+3.
+Once authenticated, you'll be in the MySQL shell.
+Now, execute the `SHOW DATABASES;` command:
+
+   
+
+This command will display a list of databases available on your MySQL server.
+After executing the `SHOW DATABASES;` command, you'll see a list of databases present in your MySQL server.
+
+Summary: 
+Enter your MySQL password when prompted.

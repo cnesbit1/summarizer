@@ -1,0 +1,17 @@
+Original Response: 
+To loop through all the connections stored in the `connections` hashmap in your `ConnectionManager` class, you can use the `values()` method of the `ConcurrentHashMap` class.
+This method returns a collection view of the connections, which you can then iterate over using a loop.
+Here's how you can do it:
+
+
+
+In this code snippet:
+
+- `connections.get(gameID)` retrieves the collection of connections associated with the specified `gameID`.
+- The loop iterates over each `Connection` object in the collection.
+- For each connection, it checks if the session is open and if the authentication token is not equal to the `excludeAuthToken`.
+If both conditions are true, it sends the notification to that connection.
+Make sure to handle cases where the `gameID` does not exist in the `connections` hashmap to avoid null pointer exceptions.
+
+Summary: 
+- The loop iterates over each `Connection` object in the collection.

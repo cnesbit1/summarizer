@@ -1,0 +1,11 @@
+Original Response: 
+To implement the `join_player` connection with the server using WebSocket, you need to define a message structure for the join request and send it to the server.
+Below is an example of how you can modify your `connectionWebSocket` class to send a join request message to the server:
+
+
+
+In this modified class, I've added a `joinPlayer` method that constructs a join request message using the `authToken` and `gameID`.
+It then sends this message to the server using the `sendMessage` method.
+You can call this `joinPlayer` method from your `serverFacade` class to initiate the join player process.
+
+Summary: 

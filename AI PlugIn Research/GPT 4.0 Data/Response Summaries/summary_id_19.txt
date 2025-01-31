@@ -1,0 +1,29 @@
+Original Response: 
+Yes, you are correct.
+In BMP files, padding is indeed added at the end of each row, not distributed among the pixels.
+Each row of the image data (including pixel bytes) must end up with a length that's a multiple of 4 bytes.
+The padding is used to achieve this alignment when the row's total number of bytes (from the pixel data alone) isn't already a multiple of 4.
+Here's a breakdown of how padding works in a BMP file:
+
+- **Pixel Data**: Each pixel in a 24-bit BMP file consumes 3 bytes (for the red, green, and blue components).
+- **Row Width in Bytes**: For an image width of `W` pixels, the row width in bytes is `W * 3`.
+- **Padding Calculation**: The padding for each row can be calculated as:
+  \[
+  \text{Padding} = (4 - (W \times 3) \mod 4) \mod 4
+  \]
+  This formula ensures that the padding added makes the total number of bytes in the row a multiple of 4.
+- **End of Row**: After writing all pixel data for a row, the calculated padding bytes are added.
+These are typically set to zero (`0x00`).
+Here's a snippet that processes each row, applies a filter to each pixel, and then writes the padding at the end of each row:
+
+
+In the main part of your program, where you process the entire image, you would call this function for each row of pixels.
+Here's a simplified loop to demonstrate this:
+
+
+
+This approach ensures that all pixels are processed, and padding is added correctly at the end of each row, adhering to the BMP file format specification.
+The padding bytes are typically `0x00` and are only used to align the data in memory; they do not affect the visual content of the image.
+
+Summary: 
+- **End of Row**: After writing all pixel data for a row, the calculated padding bytes are added.

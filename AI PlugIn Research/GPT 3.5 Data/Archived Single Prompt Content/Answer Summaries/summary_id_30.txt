@@ -1,0 +1,8 @@
+Original Response: 
+Scientists use radiometric dating methods to determine the age of ancient artifacts or geological formations by measuring the abundance of certain radioactive isotopes and their decay products.
+The most common method is radiocarbon dating, which measures the decay of carbon-14 in organic materials.
+Other methods include potassium-argon dating, uranium-lead dating, and rubidium-strontium dating, each suitable for different time scales and materials.
+By comparing the ratio of parent isotopes to daughter isotopes, scientists can calculate the age of the sample.
+
+Summary: 
+By comparing the ratio of parent isotopes to daughter isotopes, scientists can calculate the age of the sample.

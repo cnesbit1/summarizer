@@ -1,6 +1,6 @@
 from concurrent.futures import ProcessPoolExecutor, ThreadPoolExecutor, as_completed, wait, TimeoutError
 from convokit import Corpus, download
-
+from multiprocessing import Lock
 import os
 import re
 import pickle
@@ -8,11 +8,13 @@ import multiprocessing
 import logging
 
 logging.basicConfig(
-        filename="./corpus_algorithms_and_models/corpus_downloader.log",
+        filename="./corpus_algorithms_and_models/corpus_downloader_2.log",
         level=logging.INFO,
         format="%(asctime)s - %(levelname)s - %(message)s",
         datefmt="%Y-%m-%d %H:%M:%S"
     )
+
+file_lock = Lock()
 
 def load_list_from_file(filename):
     """Load and sanitize the subreddit list from a file."""
@@ -101,12 +103,12 @@ def main():
     logging.info("Starting downloader")
 
     main_corpus_name = "subreddit-corpus"
-    subreddit_list = load_list_from_file("./corpus_algorithms_and_models/subreddits.txt")
+    subreddit_list = load_list_from_file("./corpus_algorithms_and_models/subreddits_2.txt")
     if not subreddit_list:
         logging.error("No subreddits loaded. Exiting.")
         return 1
     batch_size = 10000
-    max_concurrent_batches = min(4, multiprocessing.cpu_count() // 2)
+    max_concurrent_batches = 1 # min(4, multiprocessing.cpu_count() // 2)
 
     logging.info(f"Total subreddits: {len(subreddit_list)}, Batch size: {batch_size}, Concurrent batches: {max_concurrent_batches}")
 
@@ -120,7 +122,7 @@ def main():
                 process_batch,
                 batch,
                 main_corpus_name,
-                24,
+                1,
                 10,
                 1000,
                 600

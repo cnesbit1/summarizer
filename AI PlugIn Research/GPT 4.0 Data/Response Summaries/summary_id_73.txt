@@ -1,0 +1,16 @@
+Original Response: 
+In your `Server` class, you have annotated the class with `@WebSocket`, which indicates that this class is intended to handle WebSocket connections.
+However, you have not implemented any WebSocket-specific methods within this class.
+Instead, you seem to have defined WebSocket endpoint handling in a separate class, possibly named `webSocketHandler`.
+To fix this issue, you need to implement the WebSocket methods (`onWebSocketConnect`, `onWebSocketText`, `onWebSocketBinary`, etc.)
+within your `Server` class.
+These methods are invoked when certain WebSocket events occur, such as a new connection being established, receiving text or binary messages, or when a connection is closed.
+Here's an example of how you can implement these methods within your `Server` class:
+
+
+
+Make sure to replace the method bodies with your actual logic for handling WebSocket events such as connecting, closing, and receiving messages.
+Also, ensure that you remove the WebSocket endpoint registration from the `registerEndpoints` method and handle WebSocket connections directly within the `Server` class.
+
+Summary: 
+However, you have not implemented any WebSocket-specific methods within this class.

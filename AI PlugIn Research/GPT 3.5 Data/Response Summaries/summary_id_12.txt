@@ -1,0 +1,13 @@
+Original Response: 
+Yes, that definition is correct.
+An organism is considered homozygous for a gene if it has two identical alleles for that gene.
+This means that both alleles at a specific locus on homologous chromosomes are the same.
+To elaborate:
+
+- **Homozygous dominant**: An individual has two copies of the dominant allele (e.g., AA).
+- **Homozygous recessive**: An individual has two copies of the recessive allele (e.g., aa).
+Being homozygous means there is no variation in the alleles for that particular gene, which often leads to the expression of the trait associated with those alleles.
+If you have further questions or need more clarification, feel free to ask!
+
+Summary: 
+Yes, that definition is correct.

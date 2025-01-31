@@ -1,0 +1,10 @@
+Original Response: 
+If you need more than one line for each case in your switch statement, you should enclose the block of statements within curly braces `{}`.
+Here's how you can modify your switch statement to accommodate multiple lines for each case:
+
+
+
+By enclosing each case block within curly braces, you can include multiple statements for each case.
+Additionally, don't forget to include a `break;` statement at the end of each case to exit the switch block after executing the corresponding case block.
+
+Summary: 

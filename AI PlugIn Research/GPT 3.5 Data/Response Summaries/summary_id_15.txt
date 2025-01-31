@@ -1,0 +1,27 @@
+Original Response: 
+These terms describe different modes of inheritance for genetic traits or disorders, based on whether the gene involved is located on an autosome (a non-sex chromosome) or a sex chromosome, and whether the trait is dominant or recessive.
+An X-linked recessive trait or disorder is caused by a recessive allele located on the X chromosome.
+Since males have only one X chromosome (XY), a single recessive allele on that X chromosome will cause the trait or disorder to be expressed.
+Females, having two X chromosomes (XX), must have two copies of the recessive allele (one on each X chromosome) for the trait or disorder to be expressed.
+- **Males (XY)**: Only one copy of the recessive allele is needed for the trait to be expressed (e.g., X^aY).
+- **Females (XX)**: Two copies of the recessive allele are needed for the trait to be expressed (e.g., X^aX^a).
+**Examples**: Hemophilia, Duchenne muscular dystrophy, red-green color blindness.
+An autosomal dominant trait or disorder is caused by a dominant allele located on one of the autosomes (chromosomes 1-22).
+Only one copy of the dominant allele is necessary for the trait or disorder to be expressed, regardless of whether the individual is homozygous (AA) or heterozygous (Aa) for the dominant allele.
+- **Homozygous Dominant (AA)**: The trait is expressed.
+- **Heterozygous (Aa)**: The trait is expressed.
+**Examples**: Huntington's disease, Marfan syndrome, Achondroplasia.
+An autosomal recessive trait or disorder is caused by a recessive allele located on one of the autosomes (chromosomes 1-22).
+Two copies of the recessive allele (one from each parent) are necessary for the trait or disorder to be expressed.
+Individuals who have only one copy of the recessive allele (heterozygous, Aa) are carriers but do not express the trait.
+- **Homozygous Recessive (aa)**: The trait is expressed.
+- **Heterozygous (Aa)**: The trait is not expressed, but the individual is a carrier.
+**Examples**: Cystic fibrosis, sickle cell anemia, Tay-Sachs disease.
+- **X-Linked Recessive**: Trait expressed in males with one recessive allele and in females with two recessive alleles.
+- **Autosomal Dominant**: Trait expressed with one or two copies of the dominant allele.
+- **Autosomal Recessive**: Trait expressed only with two copies of the recessive allele; carriers have one copy without expressing the trait.
+
+Summary: 
+- **Heterozygous (Aa)**: The trait is expressed.
+- **Homozygous Recessive (aa)**: The trait is expressed.
+- **Homozygous Dominant (AA)**: The trait is expressed.

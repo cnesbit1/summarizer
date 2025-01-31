@@ -1,0 +1,31 @@
+Original Response: 
+If you're using web sockets to play a game, the server-side code (like the `MySQLDatabase` class you provided) primarily deals with managing the game state and data storage/retrieval.
+It doesn't directly handle the movement of pieces on the game board or any real-time interactions between players.
+Here's how you can approach implementing game logic with web sockets:
+
+1.
+**Client-Server Communication**: Use web sockets to establish a persistent connection between the client (e.g., a web browser) and the server.
+This allows real-time bidirectional communication.
+2.
+**Game Logic**: Implement the game logic on the server side.
+This includes managing the game state, validating moves, updating the game board, and determining game outcomes (win, lose, draw).
+3.
+**WebSocket Messages**: Define a protocol for exchanging messages between the client and server over the web socket connection.
+These messages could include commands to move pieces, request game state updates, or handle other game-related actions.
+4.
+**Handling WebSocket Events**: In your server-side code, handle incoming messages from clients using WebSocket event handlers (e.g., `@OnWebSocketMessage`).
+Parse the incoming messages to extract the relevant information and update the game state accordingly.
+5.
+**Sending Updates to Clients**: After processing a move or updating the game state, send updates to all connected clients using the web socket connection.
+This allows all players to see the current game state in real-time.
+6.
+**Client-Side Rendering**: On the client side, implement logic to render the game board based on the updates received from the server.
+This includes updating the positions of pieces, displaying game messages, and handling user interactions.
+In summary, while the `MySQLDatabase` class handles data storage and retrieval, you'll need additional logic to handle real-time game interactions using web sockets.
+This includes managing game state, validating moves, and updating clients with the latest game state.
+The `MySQLDatabase` class may still be used to store and retrieve game data, but it's not directly involved in real-time game play.
+
+Summary: 
+**Game Logic**: Implement the game logic on the server side.
+This allows real-time bidirectional communication.
+This allows all players to see the current game state in real-time.

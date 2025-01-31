@@ -1,0 +1,672 @@
+>> USER: What is the difference between extends and implement with Java?
+
+>> ASSISTANT: In Java, both `extends` and `implements` are used in class declarations to establish relationships between classes, but they serve different purposes:
+
+1. **`extends`**: 
+   - `extends` is used to create a subclass (child class) that inherits properties and behaviors from another class, known as the superclass (parent class).
+   - It enables the subclass to inherit fields and methods from the superclass, allowing for code reuse and promoting a hierarchical relationship between classes.
+   - A subclass can only `extends` one superclass, as Java does not support multiple inheritance for classes (i.e., a class cannot directly inherit from multiple classes).
+
+Example:
+```java
+class Animal {
+    void sound() {
+        System.out.println("Animal makes a sound");
+    }
+}
+
+class Dog extends Animal {
+    void sound() {
+        System.out.println("Dog barks");
+    }
+}
+```
+
+2. **`implements`**: 
+   - `implements` is used to indicate that a class implements an interface.
+   - An interface in Java is like a contract that defines a set of methods that a class implementing that interface must implement.
+   - A class can `implements` multiple interfaces, allowing for multiple inheritance of method signatures only (not implementation).
+
+Example:
+```java
+interface Vehicle {
+    void move();
+}
+
+class Car implements Vehicle {
+    public void move() {
+        System.out.println("Car moves");
+    }
+}
+
+class Bicycle implements Vehicle {
+    public void move() {
+        System.out.println("Bicycle moves");
+    }
+}
+```
+
+In summary, `extends` establishes an inheritance relationship between classes, whereas `implements` indicates that a class adheres to a contract defined by an interface.
+
+>> USER: Show init?
+
+>> ASSISTANT: Sure, I'll provide an example of how you can initialize instances of the classes defined in the previous examples:
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        // Creating an instance of the Dog class
+        Dog dog = new Dog();
+        // Calling the sound() method of the Dog class
+        dog.sound(); // Output: Dog barks
+        
+        // Creating an instance of the Car class
+        Car car = new Car();
+        // Calling the move() method of the Car class
+        car.move(); // Output: Car moves
+        
+        // Creating an instance of the Bicycle class
+        Bicycle bicycle = new Bicycle();
+        // Calling the move() method of the Bicycle class
+        bicycle.move(); // Output: Bicycle moves
+    }
+}
+```
+
+In this example:
+
+- We create instances of the `Dog`, `Car`, and `Bicycle` classes using the `new` keyword followed by the class constructor.
+- We then call methods (`sound()` for `Dog`, and `move()` for `Car` and `Bicycle`) on these instances to execute their respective behaviors.
+
+This demonstrates how to initialize and use instances of classes in Java.
+
+>> USER: Make a constructor
+
+>> ASSISTANT: Sure, I'll add constructors to the classes in the previous examples:
+
+1. Adding a constructor to the `Dog` class:
+
+```java
+class Dog extends Animal {
+    // Constructor for the Dog class
+    Dog() {
+        System.out.println("A dog is created");
+    }
+
+    void sound() {
+        System.out.println("Dog barks");
+    }
+}
+```
+
+2. Adding a constructor to the `Car` class:
+
+```java
+class Car implements Vehicle {
+    // Constructor for the Car class
+    Car() {
+        System.out.println("A car is created");
+    }
+
+    public void move() {
+        System.out.println("Car moves");
+    }
+}
+```
+
+3. Adding a constructor to the `Bicycle` class:
+
+```java
+class Bicycle implements Vehicle {
+    // Constructor for the Bicycle class
+    Bicycle() {
+        System.out.println("A bicycle is created");
+    }
+
+    public void move() {
+        System.out.println("Bicycle moves");
+    }
+}
+```
+
+Now, when you create instances of these classes, the respective constructors will be invoked, printing the messages indicating that the objects are created:
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        // Creating an instance of the Dog class
+        Dog dog = new Dog(); // Output: A dog is created
+        // Calling the sound() method of the Dog class
+        dog.sound(); // Output: Dog barks
+        
+        // Creating an instance of the Car class
+        Car car = new Car(); // Output: A car is created
+        // Calling the move() method of the Car class
+        car.move(); // Output: Car moves
+        
+        // Creating an instance of the Bicycle class
+        Bicycle bicycle = new Bicycle(); // Output: A bicycle is created
+        // Calling the move() method of the Bicycle class
+        bicycle.move(); // Output: Bicycle moves
+    }
+}
+```
+
+This example demonstrates how constructors can be used to initialize objects of classes in Java.
+
+>> USER: using super
+
+>> ASSISTANT: Sure, I'll demonstrate how to use the `super` keyword to call the constructor of the superclass in the subclasses:
+
+1. Modifying the `Dog` class to call the constructor of the `Animal` superclass using `super()`:
+
+```java
+class Dog extends Animal {
+    // Constructor for the Dog class
+    Dog() {
+        super(); // Calling the constructor of the superclass (Animal)
+        System.out.println("A dog is created");
+    }
+
+    void sound() {
+        System.out.println("Dog barks");
+    }
+}
+```
+
+2. Since the `Car` and `Bicycle` classes don't extend any class, there's no need to explicitly call `super()`. But just to show how `super()` would look:
+
+```java
+class Car implements Vehicle {
+    // Constructor for the Car class
+    Car() {
+        super(); // No need to call super(), but just to show the syntax
+        System.out.println("A car is created");
+    }
+
+    public void move() {
+        System.out.println("Car moves");
+    }
+}
+
+class Bicycle implements Vehicle {
+    // Constructor for the Bicycle class
+    Bicycle() {
+        super(); // No need to call super(), but just to show the syntax
+        System.out.println("A bicycle is created");
+    }
+
+    public void move() {
+        System.out.println("Bicycle moves");
+    }
+}
+```
+
+Now, when you create instances of these classes, the constructors of the superclass (if applicable) will be invoked first before the constructors of the subclasses:
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        // Creating an instance of the Dog class
+        Dog dog = new Dog(); // Output: Animal is created, A dog is created
+        // Calling the sound() method of the Dog class
+        dog.sound(); // Output: Dog barks
+        
+        // Creating an instance of the Car class
+        Car car = new Car(); // Output: A car is created
+        // Calling the move() method of the Car class
+        car.move(); // Output: Car moves
+        
+        // Creating an instance of the Bicycle class
+        Bicycle bicycle = new Bicycle(); // Output: A bicycle is created
+        // Calling the move() method of the Bicycle class
+        bicycle.move(); // Output: Bicycle moves
+    }
+}
+```
+
+This example demonstrates how to use `super()` to call the constructor of the superclass from the subclass constructors in Java.
+
+>> USER: package server;
+
+import dataAccess.DataAccessException;
+import dataAccess.GameDAO;
+import dataAccess.UserDAO;
+import dataAccess.AuthDAO;
+
+import dataAccess.MySQLDatabase;
+import exceptions.NoAuthException;
+import exceptions.ResponseException;
+import handler.LogoutHandler;
+import handler.LoginHandler;
+import handler.ListGamesHandler;
+import handler.CreateGameHandler;
+import handler.JoinGameHandler;
+import handler.RegisterHandler;
+import handler.ClearHandler;
+
+import service.ClearService;
+import service.UserService;
+import service.GameService;
+
+import spark.*;
+
+public class Server {
+
+    private UserDAO userDAO;
+    private GameDAO gameDAO;
+    private AuthDAO authDAO;
+
+    private MySQLDatabase mySQLDatabase;
+
+    public int run(int desiredPort) {
+        Spark.port(desiredPort);
+
+        Spark.staticFiles.location("web");
+        try {
+            this.mySQLDatabase = new MySQLDatabase();
+        }
+        catch (DataAccessException e) {
+            stop();
+            return 0;
+        }
+        this.userDAO = new UserDAO(this.mySQLDatabase);
+        this.authDAO = new AuthDAO(this.mySQLDatabase);
+        this.gameDAO = new GameDAO(this.mySQLDatabase);
+//        try {
+//            this.userDAO.clear();
+//            this.authDAO.clear();
+//            this.gameDAO.clear();
+//        } catch (Exception e) {}
+
+
+        // Register your endpoints and handle exceptions here.
+        registerEndpoints();
+
+        Spark.awaitInitialization();
+        return Spark.port();
+    }
+
+    private void registerEndpoints() {
+        // Define your endpoints here
+        Spark.delete("/db", this::clearApplication);
+        Spark.post("/user", this::registerUser);
+        Spark.post("/session", this::login);
+        Spark.delete("/session", this::logout);
+        Spark.get("/game", this::listGames);
+        Spark.post("/game", this::createGame);
+        Spark.put("/game", this::joinGame);
+    }
+
+    public void stop() {
+        Spark.stop();
+        Spark.awaitStop();
+    }
+
+    private Object clearApplication(Request req, Response res) throws ResponseException, DataAccessException {
+        return ClearHandler.handle(req, res, new ClearService(this.authDAO, this.userDAO, this.gameDAO));
+    }
+
+    private Object registerUser(Request req, Response res) throws ResponseException, DataAccessException {
+        return RegisterHandler.handle(req, res, new UserService(this.userDAO, this.authDAO));
+    }
+
+    private Object login(Request req, Response res) throws ResponseException, DataAccessException {
+        return LoginHandler.handle(req, res, new UserService(this.userDAO, this.authDAO));
+    }
+
+    private Object logout(Request req, Response res) throws ResponseException, DataAccessException, NoAuthException {
+        return LogoutHandler.handle(req, res, new UserService(this.userDAO, this.authDAO));
+    }
+
+    private Object listGames(Request req, Response res) throws ResponseException, DataAccessException {
+        return ListGamesHandler.handle(req, res, new GameService(this.gameDAO, this.authDAO));
+    }
+
+    private Object createGame(Request req, Response res) throws ResponseException, DataAccessException {
+        return CreateGameHandler.handle(req, res, new GameService(this.gameDAO, this.authDAO));
+    }
+
+    private Object joinGame(Request req, Response res) throws ResponseException, DataAccessException {
+        return JoinGameHandler.handle(req, res, new GameService(this.gameDAO, this.authDAO));
+    }
+}
+
+
+I want to use websocket connections and add it to my sever
+
+>> ASSISTANT: To add WebSocket connections to your Spark server, you can use the `WebSocket` class provided by the Spark library. Here's how you can modify your `Server` class to include WebSocket functionality:
+
+```java
+import spark.*;
+import com.google.gson.Gson;
+
+public class Server {
+    private UserDAO userDAO;
+    private GameDAO gameDAO;
+    private AuthDAO authDAO;
+
+    private MySQLDatabase mySQLDatabase;
+
+    public int run(int desiredPort) {
+        Spark.port(desiredPort);
+
+        Spark.staticFiles.location("web");
+        try {
+            this.mySQLDatabase = new MySQLDatabase();
+        } catch (DataAccessException e) {
+            stop();
+            return 0;
+        }
+        this.userDAO = new UserDAO(this.mySQLDatabase);
+        this.authDAO = new AuthDAO(this.mySQLDatabase);
+        this.gameDAO = new GameDAO(this.mySQLDatabase);
+
+        // Register your endpoints and handle exceptions here.
+        registerEndpoints();
+        registerWebSocketHandlers();
+
+        Spark.awaitInitialization();
+        return Spark.port();
+    }
+
+    private void registerEndpoints() {
+        Spark.delete("/db", this::clearApplication);
+        Spark.post("/user", this::registerUser);
+        Spark.post("/session", this::login);
+        Spark.delete("/session", this::logout);
+        Spark.get("/game", this::listGames);
+        Spark.post("/game", this::createGame);
+        Spark.put("/game", this::joinGame);
+    }
+
+    private void registerWebSocketHandlers() {
+        // Define WebSocket endpoint
+        Spark.webSocket("/websocket", MyWebSocketHandler.class);
+    }
+
+    public void stop() {
+        Spark.stop();
+        Spark.awaitStop();
+    }
+
+    private Object clearApplication(Request req, Response res) throws ResponseException, DataAccessException {
+        return ClearHandler.handle(req, res, new ClearService(this.authDAO, this.userDAO, this.gameDAO));
+    }
+
+    private Object registerUser(Request req, Response res) throws ResponseException, DataAccessException {
+        return RegisterHandler.handle(req, res, new UserService(this.userDAO, this.authDAO));
+    }
+
+    private Object login(Request req, Response res) throws ResponseException, DataAccessException {
+        return LoginHandler.handle(req, res, new UserService(this.userDAO, this.authDAO));
+    }
+
+    private Object logout(Request req, Response res) throws ResponseException, DataAccessException, NoAuthException {
+        return LogoutHandler.handle(req, res, new UserService(this.userDAO, this.authDAO));
+    }
+
+    private Object listGames(Request req, Response res) throws ResponseException, DataAccessException {
+        return ListGamesHandler.handle(req, res, new GameService(this.gameDAO, this.authDAO));
+    }
+
+    private Object createGame(Request req, Response res) throws ResponseException, DataAccessException {
+        return CreateGameHandler.handle(req, res, new GameService(this.gameDAO, this.authDAO));
+    }
+
+    private Object joinGame(Request req, Response res) throws ResponseException, DataAccessException {
+        return JoinGameHandler.handle(req, res, new GameService(this.gameDAO, this.authDAO));
+    }
+
+    // Define a WebSocket handler class
+    public static class MyWebSocketHandler implements WebSocketHandler {
+        @Override
+        public void handle(WebSocketSession session) throws Exception {
+            // Handle WebSocket events here
+            session.onMessage(message -> {
+                // Handle incoming messages
+                // For example, echo the message back to the client
+                session.sendString(message);
+            });
+            session.onClose(() -> {
+                // Handle WebSocket connection closing
+            });
+        }
+    }
+}
+```
+
+In this code:
+
+- We've added `registerWebSocketHandlers()` method to register WebSocket handlers.
+- We've defined a WebSocket endpoint using `Spark.webSocket("/websocket", MyWebSocketHandler.class)`. This maps the `/websocket` URL to the `MyWebSocketHandler` class.
+- We've created a nested class `MyWebSocketHandler` that implements the `WebSocketHandler` interface. This class defines how to handle WebSocket events such as receiving messages and closing connections.
+
+You can customize the behavior inside the `MyWebSocketHandler` class to handle WebSocket events according to your application requirements.
+
+>> USER: package server;
+
+import dataAccess.DataAccessException;
+import dataAccess.GameDAO;
+import dataAccess.UserDAO;
+import dataAccess.AuthDAO;
+
+import dataAccess.MySQLDatabase;
+import exceptions.NoAuthException;
+import exceptions.ResponseException;
+import handler.LogoutHandler;
+import handler.LoginHandler;
+import handler.ListGamesHandler;
+import handler.CreateGameHandler;
+import handler.JoinGameHandler;
+import handler.RegisterHandler;
+import handler.ClearHandler;
+
+import service.ClearService;
+import service.UserService;
+import service.GameService;
+
+import spark.*;
+
+public class Server {
+
+    private UserDAO userDAO;
+    private GameDAO gameDAO;
+    private AuthDAO authDAO;
+
+    private MySQLDatabase mySQLDatabase;
+
+    public int run(int desiredPort) {
+        Spark.port(desiredPort);
+
+        Spark.staticFiles.location("web");
+        try {
+            this.mySQLDatabase = new MySQLDatabase();
+        }
+        catch (DataAccessException e) {
+            stop();
+            return 0;
+        }
+        this.userDAO = new UserDAO(this.mySQLDatabase);
+        this.authDAO = new AuthDAO(this.mySQLDatabase);
+        this.gameDAO = new GameDAO(this.mySQLDatabase);
+//        try {
+//            this.userDAO.clear();
+//            this.authDAO.clear();
+//            this.gameDAO.clear();
+//        } catch (Exception e) {}
+
+
+        // Register your endpoints and handle exceptions here.
+        registerEndpoints();
+
+        Spark.awaitInitialization();
+        return Spark.port();
+    }
+
+    private void registerEndpoints() {
+        // Define your endpoints here
+        Spark.webSocket("/connect", this::clearApplication);
+        Spark.delete("/db", this::clearApplication);
+        Spark.post("/user", this::registerUser);
+        Spark.post("/session", this::login);
+        Spark.delete("/session", this::logout);
+        Spark.get("/game", this::listGames);
+        Spark.post("/game", this::createGame);
+        Spark.put("/game", this::joinGame);
+    }
+
+    public void stop() {
+        Spark.stop();
+        Spark.awaitStop();
+    }
+    
+    private Object 
+
+    private Object clearApplication(Request req, Response res) throws ResponseException, DataAccessException {
+        return ClearHandler.handle(req, res, new ClearService(this.authDAO, this.userDAO, this.gameDAO));
+    }
+
+    private Object registerUser(Request req, Response res) throws ResponseException, DataAccessException {
+        return RegisterHandler.handle(req, res, new UserService(this.userDAO, this.authDAO));
+    }
+
+    private Object login(Request req, Response res) throws ResponseException, DataAccessException {
+        return LoginHandler.handle(req, res, new UserService(this.userDAO, this.authDAO));
+    }
+
+    private Object logout(Request req, Response res) throws ResponseException, DataAccessException, NoAuthException {
+        return LogoutHandler.handle(req, res, new UserService(this.userDAO, this.authDAO));
+    }
+
+    private Object listGames(Request req, Response res) throws ResponseException, DataAccessException {
+        return ListGamesHandler.handle(req, res, new GameService(this.gameDAO, this.authDAO));
+    }
+
+    private Object createGame(Request req, Response res) throws ResponseException, DataAccessException {
+        return CreateGameHandler.handle(req, res, new GameService(this.gameDAO, this.authDAO));
+    }
+
+    private Object joinGame(Request req, Response res) throws ResponseException, DataAccessException {
+        return JoinGameHandler.handle(req, res, new GameService(this.gameDAO, this.authDAO));
+    }
+}
+
+
+>> ASSISTANT: To integrate WebSocket connections into your Spark server, you can follow these steps:
+
+1. Define a WebSocket handler class that implements the `WebSocketHandler` interface. This class will handle WebSocket events such as receiving messages and closing connections.
+2. Register a WebSocket endpoint in your `Server` class to map WebSocket connections to the WebSocket handler.
+3. Implement the logic inside the WebSocket handler to handle incoming messages and manage WebSocket sessions.
+
+Here's how you can modify your `Server` class to include WebSocket functionality:
+
+```java
+import spark.*;
+
+public class Server {
+
+    private UserDAO userDAO;
+    private GameDAO gameDAO;
+    private AuthDAO authDAO;
+
+    private MySQLDatabase mySQLDatabase;
+
+    public int run(int desiredPort) {
+        Spark.port(desiredPort);
+
+        Spark.staticFiles.location("web");
+        try {
+            this.mySQLDatabase = new MySQLDatabase();
+        } catch (DataAccessException e) {
+            stop();
+            return 0;
+        }
+        this.userDAO = new UserDAO(this.mySQLDatabase);
+        this.authDAO = new AuthDAO(this.mySQLDatabase);
+        this.gameDAO = new GameDAO(this.mySQLDatabase);
+
+        // Register your endpoints and handle exceptions here.
+        registerEndpoints();
+        registerWebSocketHandlers();
+
+        Spark.awaitInitialization();
+        return Spark.port();
+    }
+
+    private void registerEndpoints() {
+        // Define your HTTP endpoints here
+        Spark.delete("/db", this::clearApplication);
+        Spark.post("/user", this::registerUser);
+        Spark.post("/session", this::login);
+        Spark.delete("/session", this::logout);
+        Spark.get("/game", this::listGames);
+        Spark.post("/game", this::createGame);
+        Spark.put("/game", this::joinGame);
+    }
+
+    private void registerWebSocketHandlers() {
+        // Define WebSocket endpoint
+        Spark.webSocket("/connect", MyWebSocketHandler.class);
+    }
+
+    public void stop() {
+        Spark.stop();
+        Spark.awaitStop();
+    }
+
+    private Object clearApplication(Request req, Response res) throws ResponseException, DataAccessException {
+        return ClearHandler.handle(req, res, new ClearService(this.authDAO, this.userDAO, this.gameDAO));
+    }
+
+    private Object registerUser(Request req, Response res) throws ResponseException, DataAccessException {
+        return RegisterHandler.handle(req, res, new UserService(this.userDAO, this.authDAO));
+    }
+
+    private Object login(Request req, Response res) throws ResponseException, DataAccessException {
+        return LoginHandler.handle(req, res, new UserService(this.userDAO, this.authDAO));
+    }
+
+    private Object logout(Request req, Response res) throws ResponseException, DataAccessException, NoAuthException {
+        return LogoutHandler.handle(req, res, new UserService(this.userDAO, this.authDAO));
+    }
+
+    private Object listGames(Request req, Response res) throws ResponseException, DataAccessException {
+        return ListGamesHandler.handle(req, res, new GameService(this.gameDAO, this.authDAO));
+    }
+
+    private Object createGame(Request req, Response res) throws ResponseException, DataAccessException {
+        return CreateGameHandler.handle(req, res, new GameService(this.gameDAO, this.authDAO));
+    }
+
+    private Object joinGame(Request req, Response res) throws ResponseException, DataAccessException {
+        return JoinGameHandler.handle(req, res, new GameService(this.gameDAO, this.authDAO));
+    }
+
+    // Define a WebSocket handler class
+    public static class MyWebSocketHandler implements WebSocketHandler {
+        @Override
+        public void handle(WebSocketSession session) throws Exception {
+            // Handle WebSocket events here
+            session.onMessage(message -> {
+                // Handle incoming messages
+                System.out.println("Received message: " + message);
+                // For example, echo the message back to the client
+                session.sendString("Echo: " + message);
+            });
+            session.onClose(() -> {
+                // Handle WebSocket connection closing
+                System.out.println("WebSocket connection closed");
+            });
+        }
+    }
+}
+```
+
+In this code:
+
+- We've added `registerWebSocketHandlers()` method to register WebSocket handlers.
+- We've defined a WebSocket endpoint using `Spark.webSocket("/connect", MyWebSocketHandler.class)`. This maps the `/connect` URL to the `MyWebSocketHandler` class.
+- We've created a nested class `MyWebSocketHandler` that implements the `WebSocketHandler` interface. This class defines how to handle WebSocket events such as receiving messages and closing connections.
+
+You can customize the behavior inside the `MyWebSocketHandler` class to handle WebSocket events according to your application requirements.

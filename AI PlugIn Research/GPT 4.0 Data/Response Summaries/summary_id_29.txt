@@ -1,0 +1,179 @@
+Original Response: 
+Certainly!
+Here's the full version of your `ChessGame` class with the unchanged methods and the methods revised to address the stack overflow issue:
+
+```java
+package chess;
+
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashSet;
+
+public class ChessGame {
+    private TeamColor turn;
+    private ChessBoard gameBoard;
+    private boolean gameComplete;
+
+    public ChessGame() {
+        this.turn = TeamColor.WHITE;
+        this.gameBoard = new ChessBoard();
+        this.gameComplete = false;
+    }
+
+    public ChessGame(TeamColor turn, ChessBoard gameBoard) {
+        this.turn = turn;
+        this.gameBoard = gameBoard;
+    }
+
+    public void endGame() {
+        this.gameComplete = true;
+    }
+
+    public boolean isGameComplete() {
+        return this.gameComplete;
+    }
+
+    public TeamColor getTeamTurn() {
+        return turn;
+    }
+
+    public void setTeamTurn(TeamColor team) {
+        turn = team;
+    }
+
+    public void setBoard(ChessBoard board) {
+        this.gameBoard = board;
+    }
+
+    public ChessBoard getBoard() {
+        return this.gameBoard;
+    }
+
+    public enum TeamColor {
+        WHITE,
+        BLACK
+    }
+
+    public Collection<ChessMove> validMoves(ChessPosition startPosition) {
+        ChessPiece piece = gameBoard.getPiece(startPosition);
+        if (piece == null) {
+            return Collections.emptyList();
+        }
+        this.turn = piece.getTeamColor();
+
+        Collection<ChessMove> possibleMoves = piece.pieceMoves(gameBoard, startPosition);
+        Collection<ChessMove> filteredMoves = new HashSet<>();
+        filterMoves(possibleMoves, filteredMoves);
+        return filteredMoves;
+    }
+
+    private void filterMoves(Collection<ChessMove> possibleMoves, Collection<ChessMove> filteredMoves) {
+        ChessGame tempGame;
+        for (ChessMove move : possibleMoves) {
+            ChessBoard tempBoard = gameBoard.copy();
+            try {
+                tempGame = new ChessGame(turn, tempBoard);
+                tempGame.makeMove(move);
+                if (!tempGame.isInCheck(turn)) {
+                    filteredMoves.add(move);
+                }
+            } catch (InvalidMoveException ignored) {
+            }
+        }
+    }
+
+    public void makeMove(ChessMove move) throws InvalidMoveException {
+        ChessPosition start = move.getStartPosition();
+        ChessPosition end = move.getEndPosition();
+        ChessPiece piece = gameBoard.getPiece(start);
+
+        if (piece == null || piece.getTeamColor() != turn) {
+            throw new InvalidMoveException("Invalid move for the piece.
+");
+        }
+
+        if (!isValidMove(start, end, piece, move)) {
+            throw new InvalidMoveException("Invalid move for the piece.
+");
+        }
+
+        simulateBoardWithMove(start, end, piece, move);
+        updateBoardWithMove(start, end, piece, move);
+        switchTurn();
+        checkForEndGame();
+    }
+
+    private void checkForEndGame() {
+        if (isInCheckmate(turn) || isInStalemate(turn)) {
+            endGame();
+        }
+    }
+
+    private void simulateBoardWithMove(ChessPosition start, ChessPosition end, ChessPiece piece, ChessMove move) throws InvalidMoveException {
+        ChessBoard tempBoard = gameBoard.copy();
+        tempBoard.movePiece(start, end);
+        ChessGame tempGame = new ChessGame(turn, tempBoard);
+        if (tempGame.isInCheck(turn)) {
+            throw new InvalidMoveException("My king is left in check");
+        }
+    }
+
+    private void updateBoardWithMove(ChessPosition start, ChessPosition end, ChessPiece piece, ChessMove move) {
+        gameBoard.movePiece(start, end);
+        if (piece.getPieceType() == ChessPiece.PieceType.PAWN && (end.getRow() == 8 || end.getRow() == 1)) {
+            gameBoard.addPiece(end, new ChessPiece(piece.getTeamColor(), move.getPromotionPiece()));
+        }
+    }
+
+    private boolean isValidMove(ChessPosition start, ChessPosition end, ChessPiece piece, ChessMove move) {
+        Collection<ChessMove> possibleMoves = piece.pieceMoves(gameBoard, start);
+        return possibleMoves != null && possibleMoves.contains(move);
+    }
+
+    private void switchTurn() {
+        turn = (turn == TeamColor.WHITE) ?
+TeamColor.BLACK : TeamColor.WHITE;
+    }
+
+    public boolean isInCheck(TeamColor teamColor) {
+        ChessPosition king_pos = null;
+        ChessPiece check_king = new ChessPiece(teamColor, ChessPiece.PieceType.KING);
+        Collection<ChessMove> allMoves = new ArrayList<>();
+
+        for (int x = 1; x <= 8; x++) {
+            for (int y = 1; y <= 8; y++) {
+                ChessPiece curr_piece = gameBoard.getPiece(new ChessPosition(x, y));
+                ChessPosition curr_pos = new ChessPosition(x, y);
+
+                if (curr_piece != null && curr_piece.equals(check_king)) {
+                    king_pos = curr_pos;
+                }
+                if (curr_piece != null && curr_piece.getTeamColor() != teamColor) {
+                    Collection<ChessMove> pieceMoves = curr_piece.pieceMoves(gameBoard, curr_pos);
+                    allMoves.addAll(pieceMoves);
+                }
+            }
+        }
+
+        for (ChessMove move : allMoves) {
+            if (move.getEndPosition().equals(king_pos)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean isInCheckmate(TeamColor teamColor) {
+        if (!isInCheck(teamColor)) {
+            return false;
+        }
+        return isInMate(teamColor);
+    }
+
+    public boolean isInStalemate(TeamColor teamColor) {
+        if (isInCheck(teamColor)) {
+            return false;
+        }
+        return isInMate(teamColor);
+
+Summary: 

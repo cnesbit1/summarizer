@@ -1,0 +1,25 @@
+Original Response: 
+To integrate WebSocket connections into your Spark server, you can follow these steps:
+
+1.
+Define a WebSocket handler class that implements the `WebSocketHandler` interface.
+This class will handle WebSocket events such as receiving messages and closing connections.
+2.
+Register a WebSocket endpoint in your `Server` class to map WebSocket connections to the WebSocket handler.
+3.
+Implement the logic inside the WebSocket handler to handle incoming messages and manage WebSocket sessions.
+Here's how you can modify your `Server` class to include WebSocket functionality:
+
+
+
+In this code:
+
+- We've added `registerWebSocketHandlers()` method to register WebSocket handlers.
+- We've defined a WebSocket endpoint using `Spark.webSocket("/connect", MyWebSocketHandler.class)`.
+This maps the `/connect` URL to the `MyWebSocketHandler` class.
+- We've created a nested class `MyWebSocketHandler` that implements the `WebSocketHandler` interface.
+This class defines how to handle WebSocket events such as receiving messages and closing connections.
+You can customize the behavior inside the `MyWebSocketHandler` class to handle WebSocket events according to your application requirements.
+
+Summary: 
+This maps the `/connect` URL to the `MyWebSocketHandler` class.

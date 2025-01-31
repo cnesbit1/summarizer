@@ -1,0 +1,15 @@
+Original Response: 
+Sure, let's revise your code to address the stack overflow issue by separating the logic for checkmate and stalemate from the logic for making moves:
+
+
+
+In this revision:
+
+- The `makeMove` method now checks for the end of the game (`checkForEndGame`) after each move.
+- `checkForEndGame` method checks for both checkmate and stalemate conditions.
+- The logic for simulating the move on a temporary board and checking for leaving the king in check is encapsulated in the `simulateBoardWithMove` method.
+- The logic for updating the actual board with the move is encapsulated in the `updateBoardWithMove` method.
+- The `switchTurn` method switches the turn after each move.
+- Other methods and fields remain unchanged, ensuring the integrity of the existing functionality.
+
+Summary: 

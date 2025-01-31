@@ -1,4 +1,4 @@
-from requestguard import RequestGuard, requests, urllib
+from corpus_algorithms_and_models.name_collection.requestguard import RequestGuard, requests, urllib
 from bs4 import BeautifulSoup
 
 

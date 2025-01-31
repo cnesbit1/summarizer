@@ -1,0 +1,9 @@
+Original Response: 
+You're correct; let's revisit the space complexity analysis.
+In the provided solution, the space complexity is mainly determined by the recursion stack space used by the backtracking algorithm.
+Each recursive call adds a new frame to the call stack, which holds information about the current combination being explored.
+Since the depth of the recursion tree corresponds to the depth of the binary tree representing all possible combinations, the maximum depth of the recursion tree would be equal to the number of elements in the candidates array.
+Therefore, the space complexity is O(n), where n is the number of elements in the candidates array.
+Thank you for pointing out the need for clarification!
+
+Summary: 

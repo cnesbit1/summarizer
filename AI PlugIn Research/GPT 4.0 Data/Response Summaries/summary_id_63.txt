@@ -1,0 +1,23 @@
+Original Response: 
+It seems like your `switchUILoop` class might be running its operations in a way that doesn't allow the program to terminate.
+Ensure that after the `programLoop.run()` method is finished, you have some mechanism to exit the program.
+Here are a few suggestions to troubleshoot and potentially fix the issue:
+
+1.
+**Check the `switchUILoop` class**: Ensure that the `run()` method in the `switchUILoop` class doesn't contain any infinite loops or threads that are still running after the main operations are completed.
+If there are any background tasks or threads, make sure they are properly terminated.
+2.
+**Verify exit conditions**: Inside the `switchUILoop` class, check if there are any conditions that prevent the program from exiting.
+For example, if there's a loop waiting for user input, ensure that it breaks out of the loop when the program should terminate.
+3.
+**Explicitly exit the program**: After the `programLoop.run()` method, you can explicitly call `System.exit(0)` to terminate the Java Virtual Machine (JVM) and exit the program.
+However, this should be used as a last resort if you cannot identify the root cause of the issue.
+4.
+**Check for daemon threads**: If your program creates any daemon threads (threads that don't prevent the JVM from exiting when they are the only threads running), ensure that they are properly stopped or marked as daemon threads using the `setDaemon(true)` method.
+5.
+**Logging and debugging**: Add logging statements or use a debugger to trace the flow of your program and identify where it hangs or continues running unexpectedly.
+By systematically checking these areas, you should be able to identify and resolve the issue that prevents your program from terminating after the `programLoop.run()` method is completed.
+
+Summary: 
+Ensure that after the `programLoop.run()` method is finished, you have some mechanism to exit the program.
+If there are any background tasks or threads, make sure they are properly terminated.

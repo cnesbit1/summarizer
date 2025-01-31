@@ -1,0 +1,10 @@
+Original Response: 
+Certainly!
+Here's the full version of your `ChessGame` class with all the methods that were not changed:
+
+
+
+This version includes all the original methods and fields of the `ChessGame` class, along with the revisions made to address the stack overflow issue.
+Let me know if you need further assistance!
+
+Summary: 

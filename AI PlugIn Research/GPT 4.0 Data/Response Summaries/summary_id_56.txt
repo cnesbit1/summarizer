@@ -1,0 +1,16 @@
+Original Response: 
+It seems that the methods `getConnection`, `join`, `observe`, `move`, `leave`, `resign`, and `sendError` are not defined within the `webSocketHandler` class.
+You need to define these methods or import them from other classes where they are implemented.
+Here's what you need to do:
+
+1.
+Define or import the `getConnection`, `join`, `observe`, `move`, `leave`, `resign`, and `sendError` methods in your `webSocketHandler` class.
+2.
+Ensure that these methods are accessible and properly implemented to handle the WebSocket communication logic.
+If these methods are supposed to be part of your application's logic, you'll need to implement them within the `webSocketHandler` class or import them from other classes where they are defined.
+If they are part of a separate class or service, make sure to import them into your `webSocketHandler` class.
+
+Summary: 
+Here's what you need to do:
+
+1.

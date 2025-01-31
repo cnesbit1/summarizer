@@ -1,0 +1,38 @@
+Original Response: 
+[python]
+
+If you run the download code multiple times, the file will be downloaded each time you run it.
+To avoid this and ensure that you download the file only if it doesn't already exist, you can add a check to see if the file is already present in the local directory before attempting to download it.
+Here's how you can modify the script to include this check:
+
+
+1.
+**Mount Google Drive**:
+   
+
+2.
+**Install Required Libraries**:
+   
+
+3.
+**Check if the File Exists Before Downloading**:
+
+
+Here’s the full code with the file existence check:
+
+
+1.
+**Mount Google Drive**: Ensure Google Drive is mounted.
+2.
+**Install gdown**: Install the `gdown` library to handle the file download.
+3.
+**Check for File Existence**: Use `os.path.exists()` to check if the file already exists locally.
+If it does not exist, download the file using `gdown.download()`.
+If it does exist, skip the download step.
+4.
+**Read the File**: Load the CSV file into a pandas DataFrame and display the first few rows to verify successful loading.
+By incorporating the existence check, you avoid redundant downloads, making the process more efficient.
+
+Summary: 
+If it does exist, skip the download step.
+If it does not exist, download the file using `gdown.download()`.

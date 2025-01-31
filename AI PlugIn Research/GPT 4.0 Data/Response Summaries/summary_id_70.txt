@@ -1,0 +1,22 @@
+Original Response: 
+Your `connectionWebSocket` class is a WebSocket client implementation in Java.
+It establishes a WebSocket connection to a server using the specified host and port, sends and receives messages, and handles connection events such as opening and closing the connection.
+Here's a breakdown of the code:
+
+
+
+Here's a breakdown of the key parts:
+
+- The class is annotated with `@ClientEndpoint`, indicating that it's a WebSocket client.
+- It has fields to store the session, base URL, and authentication token.
+- The constructor initializes the WebSocket connection by creating a WebSocket container and connecting to the server using the specified host and port.
+- An `@OnOpen` method is invoked when the connection is established, and it sets the session.
+- An `@OnClose` method is invoked when the connection is closed, and it prints a message indicating the reason for closure.
+- An `@OnMessage` method is invoked when a message is received from the server, and it prints the received message.
+- The `sendMessage` method sends a message to the server if the session is open.
+- The `close` method closes the WebSocket connection.
+This class provides a complete WebSocket client implementation that can be used to communicate with a WebSocket server.
+If you have any specific questions or need further assistance, feel free to ask!
+
+Summary: 
+- The `close` method closes the WebSocket connection.

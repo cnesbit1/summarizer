@@ -1,0 +1,17 @@
+Original Response: 
+To check if a move is valid, you can iterate through the collection of valid moves and compare each move with the provided move.
+If the provided move matches any move in the collection, then the move is valid.
+Otherwise, it's invalid.
+Here's how you can implement this logic:
+
+
+
+In this code snippet:
+
+- `game.validMoves(move.getStartPosition())` returns a collection of valid moves for the piece at the specified start position.
+- `moves.contains(move)` checks if the provided move is present in the collection of valid moves.
+- If the move is not in the collection, it's considered invalid, and you can handle it accordingly.
+Otherwise, you can proceed with the move.
+
+Summary: 
+Otherwise, you can proceed with the move.

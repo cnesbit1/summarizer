@@ -1,0 +1,15 @@
+Original Response: 
+If you've removed the `@WebSocket` annotation from your `Server` class and want to handle WebSocket connections using a separate handler class (`webSocketHandler`), you need to make sure that the `webSocketHandler` class is properly implemented to handle WebSocket events.
+Here's an example of how you can structure your `webSocketHandler` class to handle WebSocket events:
+
+
+
+In your `Server` class, you would then register this `WebSocketHandler` to handle WebSocket connections.
+You can do this by modifying the `registerEndpoints` method as follows:
+
+
+
+With this setup, when a WebSocket connection is made to `/connect`, the `WebSocketHandler` class will handle the connection events defined in its methods (`onConnect`, `onClose`, `onMessage`, etc.).
+Make sure to replace the println statements with your actual logic for handling WebSocket events.
+
+Summary: 

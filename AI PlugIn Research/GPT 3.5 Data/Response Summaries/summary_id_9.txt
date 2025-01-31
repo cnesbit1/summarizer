@@ -1,0 +1,7 @@
+Original Response: 
+In genetics, the terms "dominant" and "recessive" describe how certain traits or characteristics are expressed in an organism's phenotype, which is the observable physical or biochemical characteristics of an organism, as determined by both genetic makeup and environmental influences.
+A dominant allele is one that expresses its trait even when only one copy is present.
+In other words, if an individual has one dominant allele and one recessive allele for a particular gene, the dominant allele will mask the effect of the recessive allele, and the trait associated with the dominant allele will be observed in the organism.
+- **
+
+Summary: 

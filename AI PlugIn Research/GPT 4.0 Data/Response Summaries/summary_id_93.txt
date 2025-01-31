@@ -1,0 +1,24 @@
+Original Response: 
+In Java, both `extends` and `implements` are used in class declarations to establish relationships between classes, but they serve different purposes:
+
+1.
+**`extends`**: 
+   - `extends` is used to create a subclass (child class) that inherits properties and behaviors from another class, known as the superclass (parent class).
+- It enables the subclass to inherit fields and methods from the superclass, allowing for code reuse and promoting a hierarchical relationship between classes.
+- A subclass can only `extends` one superclass, as Java does not support multiple inheritance for classes (i.e., a class cannot directly inherit from multiple classes).
+Example:
+
+
+2.
+**`implements`**: 
+   - `implements` is used to indicate that a class implements an interface.
+- An interface in Java is like a contract that defines a set of methods that a class implementing that interface must implement.
+- A class can `implements` multiple interfaces, allowing for multiple inheritance of method signatures only (not implementation).
+Example:
+
+
+In summary, `extends` establishes an inheritance relationship between classes, whereas `implements` indicates that a class adheres to a contract defined by an interface.
+
+Summary: 
+**`implements`**: 
+   - `implements` is used to indicate that a class implements an interface.

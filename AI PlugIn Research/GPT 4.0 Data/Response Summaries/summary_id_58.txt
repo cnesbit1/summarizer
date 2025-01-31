@@ -1,0 +1,16 @@
+Original Response: 
+To properly implement the `webSocketHandler` class along with the `Connection` class and its associated methods, you can follow this approach:
+
+
+
+
+
+
+
+In this setup:
+- `WebSocketHandler` handles WebSocket messages and delegates the corresponding actions to `Connection` objects managed by `ConnectionManager`.
+- `Connection` class encapsulates the logic for handling game-related actions.
+- `ConnectionManager` manages the connections based on the authentication string.
+If a connection with the same authentication string exists, it returns the existing connection; otherwise, it creates a new one.
+
+Summary: 

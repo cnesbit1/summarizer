@@ -1,0 +1,18 @@
+Original Response: 
+To establish a WebSocket connection to the server and communicate with it using WebSocket messages, you can use the Java WebSocket API.
+Here's an example of how you can create a WebSocket client to connect to the server and send messages:
+
+
+
+In this code:
+
+- We define a `WebSocketClient` class annotated with `@ClientEndpoint`, which marks it as a WebSocket client endpoint.
+- In the constructor, we initialize a WebSocket container and connect to the server using the `connectToServer` method.
+- We define methods annotated with `@OnOpen`, `@OnClose`, and `@OnMessage` to handle the WebSocket events.
+- The `sendMessage` method sends a message to the server.
+- The `close` method closes the WebSocket connection.
+You can use this `WebSocketClient` class to establish a WebSocket connection with the server and send and receive messages according to the WebSocket protocol.
+You'll need to adapt this code to fit your specific requirements and integrate it with your existing client-server communication logic.
+
+Summary: 
+- The `sendMessage` method sends a message to the server.

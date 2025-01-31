@@ -1,0 +1,33 @@
+Original Response: 
+Apologies for the oversight.
+Let's correct that.
+If we want the Turing Machine to reject strings with a length greater than or equal to 100, we need to add a check for this condition.
+Here's the updated description of the Turing Machine:
+
+1.
+Start in the initial state q0.
+2.
+Read the input symbol by symbol.
+3.
+If the symbol is 'a', move to state q1.
+4.
+If the symbol is 'b' and the machine is in state q1, move to state q2.
+5.
+If the symbol is 'b' and the machine is in state q2, stay in state q2.
+6.
+If the symbol is blank (indicating the end of the input) and the machine is in state q1 or q2:
+    a.
+If the length of the input is greater than or equal to 100, reject the string.
+b.
+If the length of the input is less than 100, accept the string.
+7.
+If the symbol is neither 'a' nor 'b' and the machine is in state q0, reject the string.
+8.
+If the symbol is neither 'a' nor 'b' and the machine is in state q1 or q2, reject the string.
+This modification ensures that the Turing Machine rejects any string with a length greater than or equal to 100.
+The time complexity remains O(n), where n is the length of the input string, as the machine still scans the input tape once and performs a constant number of operations for each input symbol.
+
+Summary: 
+If the symbol is 'a', move to state q1.
+Read the input symbol by symbol.
+Start in the initial state q0.

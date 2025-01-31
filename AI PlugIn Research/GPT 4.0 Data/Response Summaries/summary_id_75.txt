@@ -1,0 +1,32 @@
+Original Response: 
+Your `webSocketHandler` class seems to be designed to handle WebSocket messages and manage connections between clients and the server.
+However, there are a few areas that need to be addressed or clarified:
+
+1.
+**ConnectionManager Dependency**: Your `webSocketHandler` class relies on a `ConnectionManager` instance, which is responsible for managing connections.
+Ensure that this dependency is properly initialized and accessible within your WebSocket handler.
+2.
+**Message Handling**: In the `onMessage` method, you're parsing the incoming JSON message into a `UserGameCommand` object using Gson.
+Depending on the command type, you're then attempting to handle various types of user commands.
+Make sure that each command type is properly handled and that the necessary logic is implemented for each case.
+3.
+**Joining a Game**: The `joinGame` method is responsible for handling the `JOIN_PLAYER` command.
+It retrieves the necessary information from the `JoinPlayer` object and performs actions such as sending the game state to the client and broadcasting a notification to other players.
+Ensure that these actions are correctly executed and that error handling is in place if any exceptions occur.
+4.
+**Observer Mode**: Currently, the logic for handling the `JOIN_OBSERVER` command is commented out.
+You need to implement the logic for allowing a player to join the game as an observer.
+5.
+**Make Move, Leave, Resign**: Similarly, methods for handling other user commands (`MAKE_MOVE`, `LEAVE`, `RESIGN`) are placeholders and need to be implemented with the appropriate logic.
+6.
+**Error Handling**: Ensure that appropriate error handling is in place for scenarios such as invalid user authentication, missing or malformed JSON messages, and any database access errors.
+7.
+**Broadcasting Notifications**: The `connectionManager.broadcast` method is used to broadcast notifications to all clients connected to a particular game.
+Make sure that this method is correctly implemented and that notifications are sent to the appropriate clients.
+By addressing these points and implementing the necessary logic, you should have a functional WebSocket handler that can manage client-server communication for your chess application.
+Test thoroughly to ensure that it behaves as expected in different scenarios.
+
+Summary: 
+Make sure that this method is correctly implemented and that notifications are sent to the appropriate clients.
+**Joining a Game**: The `joinGame` method is responsible for handling the `JOIN_PLAYER` command.
+Make sure that each command type is properly handled and that the necessary logic is implemented for each case.

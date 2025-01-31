@@ -1,0 +1,18 @@
+Original Response: 
+Completeness and soundness are indeed the formal names for the conditions described in step 4 of proving a reduction from language L to language Q.
+These terms are commonly used in the context of reductions in computational complexity theory and formal language theory.
+Here's a bit more detail on each:
+
+1.
+**Completeness**: Completeness ensures that the reduction function covers all instances of the source language L and correctly maps them to instances of the target language Q.
+In other words, if an input x is in L, then the output f(x) must be in Q.
+This guarantees that the reduction function doesn't miss any valid instances from L.
+
+2.
+**Soundness**: Soundness ensures that the reduction function doesn't introduce any invalid instances from outside of L into Q.
+If the output of the reduction function, f(x), is in Q, then the input x must have been in L. This prevents the reduction function from incorrectly mapping inputs outside of L to Q, which could potentially introduce false positives.
+Together, completeness and soundness ensure that the reduction function provides a valid and reliable mapping from instances of L to instances of Q, forming a valid reduction from L to Q.
+These concepts are fundamental in the analysis of reductions and their applications in computational complexity theory.
+
+Summary: 
+In other words, if an input x is in L, then the output f(x) must be in Q.

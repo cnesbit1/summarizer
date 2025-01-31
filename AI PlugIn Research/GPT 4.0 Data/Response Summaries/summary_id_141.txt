@@ -1,0 +1,66 @@
+Original Response: 
+Here's a list of the air monitoring stations from the Utah Air Monitoring Network, organized by county along with their details:
+
+- **Station Name**: Smithfield - SM
+- **Monitoring Parameters**: PM2.5 1-hour & 24-hour, O3, NO2, WS, WD, TEMP, SR, Speciation PM2.5
+- **Station Address**: 675 West 220 North, Smithfield
+- **UTM Coord.
+Northing**: 4632671
+- **UTM Coord.
+Easting**: 00429270
+- **Elevation (meters)**: 1379
+
+- **Station Name**: Brigham City - BG
+- **Monitoring Parameters**: PM2.5, O3, NO2, WS, WD, TEMP, SR
+- **Station Address**: W 1175 S, Brigham City
+- **UTM Coord.
+Northing**: 4593090
+- **UTM Coord.
+Easting**: 00414712
+- **Elevation (meters)**: 1313
+
+- **Station Name**: Harrisville - HV
+- **Monitoring Parameters**: PM2.5 1-hour & 24-hour, PM10 1-hour & 24-hour, O3, CO, NO2, WS, WD, TEMP, SR
+- **Station Address**: 425 West 2550 North, Harrisville
+- **UTM Coord.
+Northing**: 4572825
+- **UTM Coord.
+Easting**: 00417414
+- **Elevation (meters)**: 1331
+
+- **Station Name**: Bountiful #2 - BV
+- **Monitoring Parameters**: PM2.5 1-hour & 24-hour, PM10 24-hour, O3, NO2, WS, WD, TEMP, SR, Speciation PM2.5, Metals PM10
+- **Station Address**: 171 West 1370 North, Bountiful
+- **UTM Coord.
+Northing**: 4528360
+- **UTM Coord.
+Easting**: 00425503
+- **Elevation (meters)**: 1309
+
+- **Station Name**: Antelope Island - AI
+- **Monitoring Parameters**: WS, WD, TEMP
+- **Station Address**: Great Salt Lake
+- **UTM Coord.
+Northing**: 4543850
+- **UTM Coord.
+Easting**: 00396506
+- **Elevation (meters)**: 1349
+
+- **Station Name**: Moab - M7
+- **Monitoring Parameters**: PM2.5 1-hour, O3, NO2, WS, WD, TEMP, SR
+- **Station Address**: 685 South Millcreek Dr., Moab
+- **UTM Coord.
+Northing**: 4269639
+- **UTM Coord.
+Easting**: 00627443
+- **Elevation (meters)**: 1227
+
+- **Station Name**: Hawthorne - HW
+-
+
+Summary: 
+Easting**: 00627443
+- **Elevation (meters)**: 1227
+
+- **Station Name**: Hawthorne - HW
+-

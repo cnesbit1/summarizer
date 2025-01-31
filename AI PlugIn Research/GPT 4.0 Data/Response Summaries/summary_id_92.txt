@@ -1,0 +1,20 @@
+Original Response: 
+To properly receive requests from the WebSocket server, you need to define methods annotated with `@OnMessage` in your `connectionWebSocket` class.
+These methods will be invoked when the server sends messages to the client.
+Here's how you can implement it:
+
+
+
+In this class:
+
+- The `@OnOpen` method is called when the WebSocket connection is established.
+You can perform any necessary initialization tasks here.
+- The `@OnClose` method is called when the WebSocket connection is closed.
+You can perform cleanup tasks here.
+- The `@OnMessage` method is called when the server sends a message to the client.
+You can handle the incoming message in this method.
+The `message` parameter contains the content of the received message.
+Make sure to define appropriate logic inside the `onMessage` method to handle different types of messages sent by the server.
+
+Summary: 
+You can handle the incoming message in this method.

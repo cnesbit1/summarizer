@@ -1,0 +1,25 @@
+Original Response: 
+To refactor the WebSocket portion of your code into separate classes, you can follow these steps:
+
+1.
+Create a `WebSocketHandler` class to handle WebSocket messages.
+2.
+Create a `ConnectionManager` class to manage WebSocket connections.
+3.
+Create a `Connection` class to represent individual WebSocket connections.
+Here's how you can refactor your code accordingly:
+
+
+
+
+
+
+With this refactor:
+
+- `WebSocketHandler` is responsible for handling incoming WebSocket messages and delegating the handling to `ConnectionManager`.
+- `ConnectionManager` manages WebSocket connections and delegates handling of commands to individual `Connection` instances.
+- `Connection` represents an individual WebSocket connection and handles user commands.
+You can further extend and customize these classes based on your application requirements and architecture.
+
+Summary: 
+Create a `WebSocketHandler` class to handle WebSocket messages.

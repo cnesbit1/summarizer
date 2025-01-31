@@ -1,0 +1,19 @@
+Original Response: 
+To properly implement the `joinPlayer` method in your `serverFacade` class, you need to provide it with the necessary parameters and create a `JoinRequestData` object to send to the server.
+Here's how you can modify your `joinPlayer` method:
+
+
+
+In this method:
+
+1.
+You create a `JoinRequestData` object with the provided `authToken`, `gameID`, and `playerColor`.
+2.
+Using Gson, you convert the `JoinRequestData` object into JSON format.
+3.
+You then send the JSON data to the server via WebSocket using the `sendMessage` method of the `webConn` object (assuming `webConn` is an instance of your `connectionWebSocket` class).
+Make sure that the `webConn` object is properly initialized and connected to the WebSocket server before calling this method.
+Additionally, handle any potential exceptions that may occur during the WebSocket communication.
+
+Summary: 
+Using Gson, you convert the `JoinRequestData` object into JSON format.

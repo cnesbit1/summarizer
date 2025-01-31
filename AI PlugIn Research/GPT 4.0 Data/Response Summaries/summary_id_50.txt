@@ -1,0 +1,25 @@
+Original Response: 
+Implementing a `readJson` method from scratch can be a bit tedious and error-prone, especially considering the intricacies of JSON parsing and object mapping.
+Therefore, it's often more convenient and reliable to use a well-established JSON processing library like Gson.
+Here's how you can use Gson to deserialize JSON strings into Java objects in your WebSocket handler:
+
+
+
+In this code snippet:
+
+- We create an instance of Gson as a member variable of the WebSocket handler class.
+- In the `onMessage` method, we use Gson's `fromJson` method to deserialize the JSON string `msg` into an instance of `UserGameCommand` class.
+Using Gson offers several advantages:
+
+1.
+**Simplicity**: Gson provides a straightforward API for JSON serialization and deserialization, making it easy to work with JSON data.
+2.
+**Flexibility**: Gson can handle complex JSON structures and supports customization through annotations and custom serializers/deserializers.
+3.
+**Robustness**: Gson is well-tested and widely used, so it's generally reliable and handles edge cases gracefully.
+Therefore, unless you have specific reasons for implementing your own JSON parsing logic, I would recommend using Gson or a similar library for handling JSON in your WebSocket handler.
+
+Summary: 
+Using Gson offers several advantages:
+
+1.

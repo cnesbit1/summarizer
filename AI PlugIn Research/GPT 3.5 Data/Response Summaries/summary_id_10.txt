@@ -1,0 +1,29 @@
+Original Response: 
+Certainly!
+Here are the definitions of the requested terms in genetics:
+
+A dominant allele is one that expresses its trait even when only one copy is present.
+In other words, if an individual has one dominant allele and one recessive allele for a particular gene, the dominant allele will mask the effect of the recessive allele, and the trait associated with the dominant allele will be observed in the organism.
+A recessive allele is one that expresses its trait only when two copies are present (i.e., in the absence of a dominant allele).
+If an individual has one recessive allele and one dominant allele for a particular gene, the trait associated with the recessive allele will not be observed because the dominant allele will mask its effect.
+The phenotype refers to the observable physical or biochemical characteristics of an organism, as determined by both its genetic makeup and environmental influences.
+Examples of phenotypes include height, eye color, and blood type.
+An organism is homozygous for a gene if it has two identical alleles for that gene.
+For example, if an individual has two dominant alleles (AA) or two recessive alleles (aa), they are considered homozygous for that gene.
+An organism is heterozygous for a gene if it has two different alleles for that gene.
+For example, if an individual has one dominant allele and one recessive allele (Aa), they are considered heterozygous for that gene.
+Homologous chromosomes are pairs of chromosomes in a diploid organism that have the same structure and carry the same genes, but may carry different alleles.
+One chromosome of each pair is inherited from each parent.
+A gene is a sequence of DNA that contains the necessary information to produce a functional product, typically a protein or RNA molecule.
+Genes are the basic units of heredity and are passed from parents to offspring.
+Alleles are different versions of a gene that arise through mutation and are found at the same place on a chromosome.
+Different alleles can result in variations in the expressed trait.
+The principle of independent assortment, proposed by Gregor Mendel, states that alleles for different genes segregate independently of one another during the formation of gametes.
+This means the inheritance of one trait is not affected by the inheritance of another, provided the genes are on different chromosomes or far apart on the same chromosome.
+The principle of segregation, also proposed by Gregor Mendel, states that during the formation of gametes, the two alleles for a gene separate, or segregate, so that each gamete carries only one allele for each gene.
+This ensures that offspring inherit one allele from each parent.
+
+Summary: 
+One chromosome of each pair is inherited from each parent.
+Different alleles can result in variations in the expressed trait.
+An organism is heterozygous for a gene if it has two different alleles for that gene.
