@@ -1,0 +1,31 @@
+Original Response: 
+To integrate WebSocket handling into your existing `Server` class, you need to follow these steps:
+
+1.
+Implement a WebSocket handler method.
+2.
+Register the WebSocket endpoint.
+3.
+Handle WebSocket connections and messages.
+Let's modify your `Server` class accordingly:
+
+
+
+Now, let's create the `WebSocketHandler` class:
+
+
+
+In this implementation:
+
+- The `WebSocketHandler` class is annotated with `@WebSocket`, indicating that it's a WebSocket endpoint.
+- The `onConnect` method is invoked when a new WebSocket connection is established.
+You can handle any initialization logic here.
+- The `onMessage` method is invoked when a WebSocket message is received.
+You can handle message processing and respond back to the client here.
+Now your `Server` class is capable of handling WebSocket connections along with the existing REST endpoints.
+Adjust the logic inside the WebSocket handler according to your application's requirements.
+If you have any questions or need further clarification, feel free to ask!
+
+Summary: 
+Handle WebSocket connections and messages.
+Implement a WebSocket handler method.

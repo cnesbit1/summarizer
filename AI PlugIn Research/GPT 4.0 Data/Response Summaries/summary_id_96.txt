@@ -1,0 +1,21 @@
+Original Response: 
+Sure, I'll demonstrate how to use the `super` keyword to call the constructor of the superclass in the subclasses:
+
+1.
+Modifying the `Dog` class to call the constructor of the `Animal` superclass using `super()`:
+
+
+
+2.
+Since the `Car` and `Bicycle` classes don't extend any class, there's no need to explicitly call `super()`.
+But just to show how `super()` would look:
+
+
+
+Now, when you create instances of these classes, the constructors of the superclass (if applicable) will be invoked first before the constructors of the subclasses:
+
+
+
+This example demonstrates how to use `super()` to call the constructor of the superclass from the subclass constructors in Java.
+
+Summary: 

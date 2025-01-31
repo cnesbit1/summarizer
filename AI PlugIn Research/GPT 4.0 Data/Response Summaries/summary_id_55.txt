@@ -1,0 +1,16 @@
+Original Response: 
+The `session.getRemote()` method returns a `RemoteEndpoint` object, which represents the remote endpoint of the WebSocket connection between the server and the client.
+This object provides methods to send messages to the client.
+On the other hand, the `conn` object obtained from the `DriverManager` in your `DataAccess` class is typically a database connection object.
+This `conn` object is used to establish a connection to the database and execute SQL queries or updates.
+In summary:
+
+1.
+`session.getRemote()` returns a `RemoteEndpoint` object for sending messages over a WebSocket connection.
+2.
+The `conn` object obtained from the `DriverManager` is used to establish a connection to a database for executing SQL queries or updates.
+These two objects serve different purposes and are used in different contexts within your application.
+The `session.getRemote()` object is specific to WebSocket communication, while the `conn` object obtained from the `DriverManager` is specific to database connectivity.
+
+Summary: 
+This object provides methods to send messages to the client.

@@ -1,0 +1,8 @@
+Original Response: 
+The time complexity of the `levelOrder` function is O(n), where n is the number of nodes in the binary tree.
+This is because each node is visited exactly once during the traversal.
+The space complexity is also O(n), where n is the number of nodes in the binary tree.
+This is because at any given time, the queue can contain at most all the nodes of a particular level in the binary tree, which can be as many as n/2 nodes in the case of a complete binary tree.
+Therefore, the space required for the queue is proportional to the number of nodes in the tree.
+
+Summary: 

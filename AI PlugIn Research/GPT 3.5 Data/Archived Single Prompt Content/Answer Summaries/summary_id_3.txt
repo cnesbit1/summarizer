@@ -1,0 +1,26 @@
+Original Response: 
+1.
+Remote usability testing: This method involves recruiting participants remotely, typically through online platforms such as UserTesting or TryMyUl.
+Participants complete tasks and provide feedback on the website from their own location.
+2.
+In-person usability testing: This method involves recruiting participants to come to a specific location, such as a lab or office, to complete tasks and provide feedback on the website.
+3.
+A/B testing: This method involves creating two versions of the website and randomly assigning participants to use one version or the other.
+Participants complete tasks and provide feedback on their respective versions of the website.
+4.
+Eye-tracking: This method involves using specialized equipment to track where participants are looking on the website as they complete tasks.
+This can provide insight into which elements of the website are drawing attention and which are being ignored.
+5.
+Surveys: This method involves sending out a survey to users of the website, asking them to rate different aspects of the website and provide feedback on their experience.
+6.
+Card sorting: This method involves asking participants to sort a set of cards representing different pages or sections of the website into groups that make sense to them.
+This can provide insight into how users expect the website to be organized.
+7.
+Interviews: This method involves conducting one-on-one interviews with users of the website, asking them to talk about their experience using the website and providing feedback on different aspects of it.
+
+Summary: 
+Participants complete tasks and provide feedback on the website from their own location.
+Participants complete tasks and provide feedback on their respective versions of the website.
+This can provide insight into how users expect the website to be organized.
+This can provide insight into which elements of the website are drawing attention and which are being ignored.
+Eye-tracking: This method involves using specialized equipment to track where participants are looking on the website as they complete tasks.

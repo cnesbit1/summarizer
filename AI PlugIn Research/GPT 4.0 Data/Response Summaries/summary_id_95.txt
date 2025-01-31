@@ -1,0 +1,25 @@
+Original Response: 
+Sure, I'll add constructors to the classes in the previous examples:
+
+1.
+Adding a constructor to the `Dog` class:
+
+
+
+2.
+Adding a constructor to the `Car` class:
+
+
+
+3.
+Adding a constructor to the `Bicycle` class:
+
+
+
+Now, when you create instances of these classes, the respective constructors will be invoked, printing the messages indicating that the objects are created:
+
+
+
+This example demonstrates how constructors can be used to initialize objects of classes in Java.
+
+Summary: 

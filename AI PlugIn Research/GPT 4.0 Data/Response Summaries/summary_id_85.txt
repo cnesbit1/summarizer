@@ -1,0 +1,10 @@
+Original Response: 
+Here's an implementation of the `updateGame` method in the `MySQLDatabase` class to update the usernames when a player leaves the game:
+
+
+
+This method checks the existing username in the specified column (`whiteusername` or `blackusername`) for the given `gameID`.
+If the current user is leaving (`username` matches the existing username), it clears the username in the database.
+Otherwise, it updates the username with the new value (`username`).
+
+Summary: 

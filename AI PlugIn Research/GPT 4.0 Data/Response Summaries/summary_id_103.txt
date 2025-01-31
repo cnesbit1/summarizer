@@ -1,0 +1,62 @@
+Original Response: 
+Let's address each part of the question:
+
+(a) Design of a Turing Machine M that accepts language L:
+- The Turing Machine M should accept strings that satisfy either condition (i) or condition (ii).
+- For strings satisfying condition (i), the Turing Machine needs to ensure that they are in the form "aib" with the length not exceeding 100.
+- For strings satisfying condition (ii), the Turing Machine should accept any string with a length greater than 100.
+- Here's a rough design of Turing Machine M:
+  1.
+Start in the initial state q0.
+2.
+Read the input string one symbol at a time.
+3.
+If the symbol is 'a', transition to state q1.
+4.
+If the symbol is 'b' and the machine is in state q1, transition to state q2.
+5.
+If the symbol is 'b' and the machine is in state q2, stay in state q2.
+6.
+If the symbol is 'b' and the machine is in state q1, transition to state q2.
+7.
+If the symbol is 'b' and the machine is in state q0, transition to state q2.
+8.
+If the symbol is 'b' and the machine is in state q2, stay in state q2.
+9.
+If the symbol is 'b' and the machine is in state q1, transition to state q2.
+10.
+If the symbol is 'b' and the machine is in state q2, stay in state q2.
+11.
+If the symbol is 'b' and the machine is in state q1, transition to state q2.
+12.
+If the symbol is 'b' and the machine is in state q2, stay in state q2.
+13.
+If the symbol is 'b' and the machine is in state q1, transition to state q2.
+14.
+If the symbol is 'b' and the machine is in state q2, stay in state q2.
+15.
+If the symbol is 'b' and the machine is in state q1, transition to state q2.
+16.
+If the symbol is 'b' and the machine is in state q2, stay in state q2.
+17.
+If the length exceeds 100 and the machine is in state q0 or q1, accept the string.
+18.
+If the length does not exceed 100 and the machine is in state q2, accept the string.
+19.
+If the length exceeds 100 and the machine is in state q2, accept the string.
+20.
+If none of the conditions are met, reject the string.
+(b) Function tcM:
+- The function tcM(n) denotes the time complexity of Turing Machine M on an input of size n.
+- Since the machine scans the input tape once and performs a constant number of operations for each input symbol, the time complexity of the machine is O(n), where n is the length of the input string.
+(c) Best polynomial rate of growth for tcM:
+- The best polynomial rate of growth that describes tcM is O(n), as determined in part (b).
+This means that the time complexity of the machine grows linearly with the size of the input string.
+
+Summary: 
+If the symbol is 'a', transition to state q1.
+Start in the initial state q0.
+If the symbol is 'b' and the machine is in state q2, stay in state q2.
+Read the input string one symbol at a time.
+If the symbol is 'b' and the machine is in state q1, transition to state q2.
+If the symbol is 'b' and the machine is in state q0, transition to state q2.

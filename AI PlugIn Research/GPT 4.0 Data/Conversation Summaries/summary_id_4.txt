@@ -1,0 +1,893 @@
+Original Response: 
+Thank you for providing the detailed instructions for implementing the gameplay functionality of the Chess project.
+It seems like you have a well-structured plan in place, including WebSocket communication between the client and server, various user commands, and notifications for different game events.
+If you have any specific questions or need assistance with any part of the implementation, feel free to ask!
+It seems like you have provided the skeleton code for your server implementation.
+Let me provide some feedback and suggestions:
+
+1.
+**Code Organization**: Your code is well-structured and organized into separate packages and classes, which is good for maintainability and readability.
+2.
+**Exception Handling**: You have included exception handling in your methods, which is crucial for robustness.
+Ensure that exceptions are handled appropriately and provide meaningful error messages to clients.
+3.
+**Dependency Injection**: You are using dependency injection by passing DAO instances to your handlers.
+This is a good practice as it makes your code more modular and easier to test.
+4.
+**WebSocket Endpoint**: You've defined a WebSocket endpoint for `/connect`.
+Make sure to implement the WebSocket logic for handling connections and messages.
+5.
+**Clearing Data**: You have a method `clearApplication` to handle clearing data.
+Make sure to implement this method properly to clear relevant data from your database.
+6.
+**REST Endpoints**: Your REST endpoints are defined for registering users, managing sessions, listing games, creating games, and joining games.
+Ensure that these endpoints are implemented correctly according to your application requirements.
+7.
+**Stopping the Server**: You have implemented a method `stop` to stop the Spark server.
+Make sure to call this method appropriately when your server needs to shut down.
+8.
+**Documentation**: Adding comments or documentation to your code will help others understand the purpose and functionality of each method or class.
+Overall, your code structure looks good, but you need to implement the actual functionality for each endpoint, including WebSocket handling.
+Test your server thoroughly to ensure that it behaves as expected and handles various edge cases and error conditions properly.
+If you have any specific questions or need further assistance with any part of your implementation, feel free to ask!
+Of course!
+WebSocket handling can be a bit more involved compared to traditional REST endpoints because it involves managing persistent connections and handling real-time communication between the server and clients.
+Here's a basic outline of how you can handle WebSocket connections in your Spark server:
+
+1.
+**Define WebSocket Endpoint**: In your `registerEndpoints()` method, define a WebSocket endpoint using Spark's `webSocket` method.
+This endpoint will handle WebSocket connections from clients.
+2.
+**Implement WebSocketHandler Class**: Create a class to handle WebSocket connections.
+This class should extend Spark's `WebSocketHandler` interface and override its methods.
+3.
+**Handle WebSocket Events**: Implement the methods in your WebSocket handler class to handle various WebSocket events:
+
+- `onConnect`: Invoked when a new WebSocket connection is established.
+- `onClose`: Invoked when a WebSocket connection is closed.
+- `onError`: Invoked when an error occurs in the WebSocket connection.
+- `onMessage`: Invoked when a message is received from the client.
+4.
+**Send and Receive Messages**: Within the WebSocket handler methods, you can send messages to clients using the `Session` object and receive messages from clients.
+5.
+**Manage WebSocket Sessions**: You can maintain a list of active WebSocket sessions to communicate with multiple clients simultaneously if needed.
+6.
+**Handle Lifecycle**: Make sure to properly handle the lifecycle of your WebSocket handler, including initialization, cleanup, and error handling.
+7.
+**Integrate with Your Application Logic**: Finally, integrate WebSocket handling with your application logic to facilitate real-time communication between clients and the server.
+This is a basic overview of WebSocket handling in a Spark server.
+Depending on your application requirements, you may need to customize and extend this implementation further.
+If you have specific questions or need help with any part of the implementation, feel free to ask!
+Your `WSServer` class looks like a basic WebSocket server implementation using Spark.
+Let's break down your code and provide some explanation:
+
+
+
+- This annotation marks the class as a WebSocket endpoint, allowing Spark to recognize it as a handler for WebSocket connections.
+- In the `main` method, you configure the Spark server to listen on port 8080.
+- You define a WebSocket endpoint at `/connect` and specify the `WSServer` class to handle WebSocket connections.
+- Additionally, you define a simple HTTP GET endpoint at `/echo/:msg` that returns an HTTP response echoing back the message from the URL parameter.
+- This method is annotated with `@OnWebSocketMessage`, indicating that it should be invoked when a WebSocket message is received.
+- It takes two parameters: the `Session` object representing the WebSocket session, and the received message.
+- Inside the method, you send a response back to the client by using the `Session` object's `getRemote().sendString()` method.
+Overall, your code sets up a WebSocket server using Spark and defines a handler to respond to WebSocket messages.
+However, keep in mind that this is a simple example and may need to be extended depending on your application's requirements.
+You may also want to add error handling, session management, and more sophisticated message processing logic as needed.
+If you have any specific questions or need further assistance, feel free to ask!
+Certainly!
+Let's adapt your code to match the structure you provided earlier.
+Here's how you can modify your `WSServer` class:
+
+
+
+In this adapted version:
+
+1.
+We import the necessary WebSocket classes from Jetty.
+2.
+The `main` method creates an instance of your `Server` class and runs it on port 8080.
+3.
+The `onConnect` method is invoked when a new WebSocket connection is established.
+You can handle any initialization logic here.
+4.
+The `onMessage` method is invoked when a WebSocket message is received.
+You can handle message processing and respond back to the client here.
+Make sure you have all necessary dependencies added to your project to support WebSocket handling with Jetty.
+If you encounter any issues or have further questions, feel free to ask!
+To integrate WebSocket handling into your existing `Server` class, you need to follow these steps:
+
+1.
+Implement a WebSocket handler method.
+2.
+Register the WebSocket endpoint.
+3.
+Handle WebSocket connections and messages.
+Let's modify your `Server` class accordingly:
+
+
+
+Now, let's create the `WebSocketHandler` class:
+
+
+
+In this implementation:
+
+- The `WebSocketHandler` class is annotated with `@WebSocket`, indicating that it's a WebSocket endpoint.
+- The `onConnect` method is invoked when a new WebSocket connection is established.
+You can handle any initialization logic here.
+- The `onMessage` method is invoked when a WebSocket message is received.
+You can handle message processing and respond back to the client here.
+Now your `Server` class is capable of handling WebSocket connections along with the existing REST endpoints.
+Adjust the logic inside the WebSocket handler according to your application's requirements.
+If you have any questions or need further clarification, feel free to ask!
+Yes, in the context of JSON processing libraries, such as Gson or Jackson, "readJson" and "fromJson" are different methods with similar purposes but used in different contexts.
+1.
+**fromJson**: This method is typically used to deserialize JSON data into Java objects.
+It takes a JSON string as input and converts it into an instance of a specified Java class.
+For example, in Gson, you would use `fromJson` method like this:
+
+    
+
+    Here, `jsonString` is the JSON data, and `MyClass.class` is the class into which you want to deserialize the JSON data.
+2.
+**readJson**: This method may be used in different contexts depending on the library being used.
+In general, "readJson" is not a standard method name in JSON processing libraries like Gson or Jackson.
+However, it might be used in some custom or utility methods to read JSON data from a file, input stream, or any other source.
+The exact behavior of "readJson" would depend on how it's implemented in the specific context.
+For example, you might have a utility method like this:
+
+    
+
+    Here, `readJsonFromFile` reads JSON data from a file and returns it as a string.
+In summary, "fromJson" is specifically used for deserialization of JSON data into Java objects, whereas "readJson" may have various meanings depending on its context, but it generally refers to reading JSON data from a source such as a file or input stream.
+Implementing a `readJson` method from scratch can be a bit tedious and error-prone, especially considering the intricacies of JSON parsing and object mapping.
+Therefore, it's often more convenient and reliable to use a well-established JSON processing library like Gson.
+Here's how you can use Gson to deserialize JSON strings into Java objects in your WebSocket handler:
+
+
+
+In this code snippet:
+
+- We create an instance of Gson as a member variable of the WebSocket handler class.
+- In the `onMessage` method, we use Gson's `fromJson` method to deserialize the JSON string `msg` into an instance of `UserGameCommand` class.
+Using Gson offers several advantages:
+
+1.
+**Simplicity**: Gson provides a straightforward API for JSON serialization and deserialization, making it easy to work with JSON data.
+2.
+**Flexibility**: Gson can handle complex JSON structures and supports customization through annotations and custom serializers/deserializers.
+3.
+**Robustness**: Gson is well-tested and widely used, so it's generally reliable and handles edge cases gracefully.
+Therefore, unless you have specific reasons for implementing your own JSON parsing logic, I would recommend using Gson or a similar library for handling JSON in your WebSocket handler.
+To properly implement the `getConnection` method, you need to define the logic for establishing a connection based on the authentication string provided in the `UserGameCommand` object.
+The authentication string typically contains some form of user identification or token that allows you to identify the user and retrieve any associated connection information.
+Here's a general outline of how you might implement the `getConnection` method:
+
+1.
+Extract the authentication string from the `UserGameCommand` object.
+2.
+Use the authentication string to retrieve any associated connection information from your data store or cache.
+3.
+If a connection is found, return it.
+Otherwise, return null to indicate that the user is not authenticated or does not have an active connection.
+Here's an example implementation assuming you have a data access object (DAO) for managing user connections:
+
+
+
+In this example:
+
+- `UserConnectionDAO` is a data access object responsible for managing user connections.
+- `getUserConnectionByAuthString` is a method of the DAO that retrieves a `UserConnection` object based on the authentication string.
+- The method returns the retrieved `UserConnection` if found, or null if not found or if an exception occurs.
+You need to adjust this implementation according to your specific requirements, such as how user connections are managed and authenticated in your application.
+Additionally, ensure that you handle any potential exceptions that may occur during the retrieval process.
+To refactor the WebSocket portion of your code into separate classes, you can follow these steps:
+
+1.
+Create a `WebSocketHandler` class to handle WebSocket messages.
+2.
+Create a `ConnectionManager` class to manage WebSocket connections.
+3.
+Create a `Connection` class to represent individual WebSocket connections.
+Here's how you can refactor your code accordingly:
+
+
+
+
+
+
+With this refactor:
+
+- `WebSocketHandler` is responsible for handling incoming WebSocket messages and delegating the handling to `ConnectionManager`.
+- `ConnectionManager` manages WebSocket connections and delegates handling of commands to individual `Connection` instances.
+- `Connection` represents an individual WebSocket connection and handles user commands.
+You can further extend and customize these classes based on your application requirements and architecture.
+In the context of your code snippet, `Connection` seems to be a class or utility method responsible for handling WebSocket connections.
+However, since it's not defined in the provided code, I'll provide a hypothetical implementation for the `Connection` class based on the usage in your snippet:
+
+
+
+In this hypothetical implementation:
+
+- `Connection` represents a WebSocket connection and encapsulates the session object.
+- The `handleCommand` method processes different types of commands received from the client and invokes corresponding methods to handle them.
+- The `sendError` method is a static utility method for sending error messages to the client's remote endpoint.
+This is just a basic example, and you may need to adjust the implementation according to your specific requirements and architecture.
+Yes, you're correct.
+The `session.getRemote()` method is part of the Jetty WebSocket API, which is being used in your code.
+The `getRemote()` method returns a `RemoteEndpoint` object that represents the remote endpoint of the WebSocket connection, through which you can send messages to the client.
+If your IDE or compiler doesn't recognize `session.getRemote()`, it's likely because it doesn't recognize the `Session` class or the `getRemote()` method.
+This can happen if the required JAR files for the Jetty WebSocket API are not included in your project's dependencies or if they are not properly configured.
+To fix this issue, you need to ensure that your project is correctly configured to include the Jetty WebSocket API.
+This typically involves adding the necessary JAR files to your project's build path or dependency management system (e.g., Maven or Gradle).
+If you're using Maven, you can add the Jetty WebSocket API dependency to your `pom.xml` file:
+
+
+
+Replace `your_version_here` with the appropriate version of the Jetty WebSocket API that you're using.
+If you're using Gradle, you can add the dependency to your `build.gradle` file:
+
+
+
+Again, replace `your_version_here` with the appropriate version of the Jetty WebSocket API.
+After adding the dependency, make sure to rebuild your project to apply the changes.
+This should resolve the issue, and your IDE should recognize `session.getRemote()` without any errors.
+The `session.getRemote()` method returns a `RemoteEndpoint` object, which represents the remote endpoint of the WebSocket connection between the server and the client.
+This object provides methods to send messages to the client.
+On the other hand, the `conn` object obtained from the `DriverManager` in your `DataAccess` class is typically a database connection object.
+This `conn` object is used to establish a connection to the database and execute SQL queries or updates.
+In summary:
+
+1.
+`session.getRemote()` returns a `RemoteEndpoint` object for sending messages over a WebSocket connection.
+2.
+The `conn` object obtained from the `DriverManager` is used to establish a connection to a database for executing SQL queries or updates.
+These two objects serve different purposes and are used in different contexts within your application.
+The `session.getRemote()` object is specific to WebSocket communication, while the `conn` object obtained from the `DriverManager` is specific to database connectivity.
+It seems that the methods `getConnection`, `join`, `observe`, `move`, `leave`, `resign`, and `sendError` are not defined within the `webSocketHandler` class.
+You need to define these methods or import them from other classes where they are implemented.
+Here's what you need to do:
+
+1.
+Define or import the `getConnection`, `join`, `observe`, `move`, `leave`, `resign`, and `sendError` methods in your `webSocketHandler` class.
+2.
+Ensure that these methods are accessible and properly implemented to handle the WebSocket communication logic.
+If these methods are supposed to be part of your application's logic, you'll need to implement them within the `webSocketHandler` class or import them from other classes where they are defined.
+If they are part of a separate class or service, make sure to import them into your `webSocketHandler` class.
+To define the missing methods (`getConnection`, `join`, `observe`, `move`, `leave`, `resign`, and `sendError`), you need to implement the logic for handling WebSocket communication in your `webSocketHandler` class.
+Here's an example of how you can define these methods:
+
+
+
+In this example:
+- Each method (`join`, `observe`, `move`, `leave`, `resign`, `sendError`) corresponds to a specific action based on the received WebSocket command.
+- These methods are private and encapsulated within the `WebSocketHandler` class.
+- `sendError` method sends an error message back to the client via the WebSocket session.
+To properly implement the `webSocketHandler` class along with the `Connection` class and its associated methods, you can follow this approach:
+
+
+
+
+
+
+
+In this setup:
+- `WebSocketHandler` handles WebSocket messages and delegates the corresponding actions to `Connection` objects managed by `ConnectionManager`.
+- `Connection` class encapsulates the logic for handling game-related actions.
+- `ConnectionManager` manages the connections based on the authentication string.
+If a connection with the same authentication string exists, it returns the existing connection; otherwise, it creates a new one.
+Here's the updated `printHelp` method based on the provided information:
+
+
+
+This updated method provides a clear description of each action available to the user, as well as a brief explanation of what each action does.
+Here's the output formatted based on the provided format:
+
+
+
+This format provides a clear list of options available to the user and separates them with a horizontal line for better readability.
+Certainly!
+Here's the output formatted according to your specifications:
+
+
+
+This format presents each option on a new line, with a clear indication of the user's current status and available actions.
+Sure, here's the information formatted according to the previous format:
+
+
+
+This format presents each action along with its description on a new line, making it easy to read and understand.
+It seems like your `switchUILoop` class might be running its operations in a way that doesn't allow the program to terminate.
+Ensure that after the `programLoop.run()` method is finished, you have some mechanism to exit the program.
+Here are a few suggestions to troubleshoot and potentially fix the issue:
+
+1.
+**Check the `switchUILoop` class**: Ensure that the `run()` method in the `switchUILoop` class doesn't contain any infinite loops or threads that are still running after the main operations are completed.
+If there are any background tasks or threads, make sure they are properly terminated.
+2.
+**Verify exit conditions**: Inside the `switchUILoop` class, check if there are any conditions that prevent the program from exiting.
+For example, if there's a loop waiting for user input, ensure that it breaks out of the loop when the program should terminate.
+3.
+**Explicitly exit the program**: After the `programLoop.run()` method, you can explicitly call `System.exit(0)` to terminate the Java Virtual Machine (JVM) and exit the program.
+However, this should be used as a last resort if you cannot identify the root cause of the issue.
+4.
+**Check for daemon threads**: If your program creates any daemon threads (threads that don't prevent the JVM from exiting when they are the only threads running), ensure that they are properly stopped or marked as daemon threads using the `setDaemon(true)` method.
+5.
+**Logging and debugging**: Add logging statements or use a debugger to trace the flow of your program and identify where it hangs or continues running unexpectedly.
+By systematically checking these areas, you should be able to identify and resolve the issue that prevents your program from terminating after the `programLoop.run()` method is completed.
+If you're using web sockets to play a game, the server-side code (like the `MySQLDatabase` class you provided) primarily deals with managing the game state and data storage/retrieval.
+It doesn't directly handle the movement of pieces on the game board or any real-time interactions between players.
+Here's how you can approach implementing game logic with web sockets:
+
+1.
+**Client-Server Communication**: Use web sockets to establish a persistent connection between the client (e.g., a web browser) and the server.
+This allows real-time bidirectional communication.
+2.
+**Game Logic**: Implement the game logic on the server side.
+This includes managing the game state, validating moves, updating the game board, and determining game outcomes (win, lose, draw).
+3.
+**WebSocket Messages**: Define a protocol for exchanging messages between the client and server over the web socket connection.
+These messages could include commands to move pieces, request game state updates, or handle other game-related actions.
+4.
+**Handling WebSocket Events**: In your server-side code, handle incoming messages from clients using WebSocket event handlers (e.g., `@OnWebSocketMessage`).
+Parse the incoming messages to extract the relevant information and update the game state accordingly.
+5.
+**Sending Updates to Clients**: After processing a move or updating the game state, send updates to all connected clients using the web socket connection.
+This allows all players to see the current game state in real-time.
+6.
+**Client-Side Rendering**: On the client side, implement logic to render the game board based on the updates received from the server.
+This includes updating the positions of pieces, displaying game messages, and handling user interactions.
+In summary, while the `MySQLDatabase` class handles data storage and retrieval, you'll need additional logic to handle real-time game interactions using web sockets.
+This includes managing game state, validating moves, and updating clients with the latest game state.
+The `MySQLDatabase` class may still be used to store and retrieve game data, but it's not directly involved in real-time game play.
+Yes, you're correct.
+In a multiplayer game where multiple players are interacting with the game board simultaneously, you typically want to maintain a centralized representation of the game state on the server, and this includes updating the board state in the database.
+Here's how the process might work:
+
+1.
+**Client Move**: When a player makes a move on their client-side interface, they send a move request to the server via the WebSocket connection.
+2.
+**Server Validation**: The server receives the move request, validates it (e.g., checks if it's a legal move), and updates the game state accordingly.
+3.
+**Database Update**: After validating the move, the server updates the game board state in the database to reflect the new move.
+This ensures that the game state is consistent and can be recovered in case of server restarts or other events.
+4.
+**Broadcast Update**: Once the database is updated, the server broadcasts the updated game state to all connected clients via the WebSocket connection.
+5.
+**Client Rendering**: Each client receives the updated game state from the server and renders it on the user interface, reflecting the latest moves made by all players.
+By updating the game board state in the database, you ensure that the game state is consistent across all clients and persists even if the server goes down or restarts.
+This allows players to resume the game from the last saved state.
+Additionally, it provides a centralized source of truth for the game state, making it easier to implement features like replay functionality or game history.
+If you need more than one line for each case in your switch statement, you should enclose the block of statements within curly braces `{}`.
+Here's how you can modify your switch statement to accommodate multiple lines for each case:
+
+
+
+By enclosing each case block within curly braces, you can include multiple statements for each case.
+Additionally, don't forget to include a `break;` statement at the end of each case to exit the switch block after executing the corresponding case block.
+To establish a WebSocket connection to the server and communicate with it using WebSocket messages, you can use the Java WebSocket API.
+Here's an example of how you can create a WebSocket client to connect to the server and send messages:
+
+
+
+In this code:
+
+- We define a `WebSocketClient` class annotated with `@ClientEndpoint`, which marks it as a WebSocket client endpoint.
+- In the constructor, we initialize a WebSocket container and connect to the server using the `connectToServer` method.
+- We define methods annotated with `@OnOpen`, `@OnClose`, and `@OnMessage` to handle the WebSocket events.
+- The `sendMessage` method sends a message to the server.
+- The `close` method closes the WebSocket connection.
+You can use this `WebSocketClient` class to establish a WebSocket connection with the server and send and receive messages according to the WebSocket protocol.
+You'll need to adapt this code to fit your specific requirements and integrate it with your existing client-server communication logic.
+To create a WebSocket client specifically for your server, you'll need to adapt the code to fit your server's WebSocket endpoint and message formats.
+Here's how you can modify the code to work with your server:
+
+1.
+Replace the WebSocket endpoint URI (`ws://your-server-url/connect`) with the actual WebSocket endpoint URI of your server.
+2.
+Modify the `onMessage` method to handle incoming WebSocket messages according to your server's message format.
+3.
+Adapt the `sendMessage` method to send messages compatible with your server's expectations.
+Here's the modified code with placeholders for your server-specific details:
+
+
+
+Replace `"ws://your-server-url/connect"` with the actual WebSocket endpoint URL provided by your server.
+Ensure that the `onMessage` method correctly handles incoming messages according to your server's message format.
+Modify the `sendMessage` method to send messages compatible with your server's expectations.
+You may need to serialize your messages to JSON or another format expected by your server.
+Your `WSClient` class seems to be a WebSocket client implementation in Java.
+It connects to a WebSocket server running at `ws://localhost:8080/connect`.
+Here's a breakdown of the code:
+
+1.
+The `WSClient` class extends `Endpoint`, indicating that it's intended to be used as an endpoint for WebSocket connections.
+2.
+It has a `Session` field to maintain the WebSocket session.
+3.
+The constructor establishes a WebSocket connection to the server specified by the URI `ws://localhost:8080/connect`.
+4.
+The `onOpen` method is overridden from the `Endpoint` class but left empty.
+This method is called when the WebSocket connection is established.
+5.
+Inside the constructor, a message handler is added to the session to handle incoming messages.
+When a message is received, it's printed to the console.
+6.
+The `send` method allows sending messages to the WebSocket server.
+It uses the `getBasicRemote()` method of the session to send text messages.
+Overall, this class provides a basic WebSocket client functionality in Java, allowing communication with a WebSocket server.
+If you have any specific questions or need further assistance with this code, feel free to ask!
+Your `connectionWebSocket` class is a WebSocket client implementation in Java.
+It establishes a WebSocket connection to a server using the specified host and port, sends and receives messages, and handles connection events such as opening and closing the connection.
+Here's a breakdown of the code:
+
+
+
+Here's a breakdown of the key parts:
+
+- The class is annotated with `@ClientEndpoint`, indicating that it's a WebSocket client.
+- It has fields to store the session, base URL, and authentication token.
+- The constructor initializes the WebSocket connection by creating a WebSocket container and connecting to the server using the specified host and port.
+- An `@OnOpen` method is invoked when the connection is established, and it sets the session.
+- An `@OnClose` method is invoked when the connection is closed, and it prints a message indicating the reason for closure.
+- An `@OnMessage` method is invoked when a message is received from the server, and it prints the received message.
+- The `sendMessage` method sends a message to the server if the session is open.
+- The `close` method closes the WebSocket connection.
+This class provides a complete WebSocket client implementation that can be used to communicate with a WebSocket server.
+If you have any specific questions or need further assistance, feel free to ask!
+To loop through all the connections stored in the `connections` hashmap in your `ConnectionManager` class, you can use the `values()` method of the `ConcurrentHashMap` class.
+This method returns a collection view of the connections, which you can then iterate over using a loop.
+Here's how you can do it:
+
+
+
+In this code snippet:
+
+- `connections.get(gameID)` retrieves the collection of connections associated with the specified `gameID`.
+- The loop iterates over each `Connection` object in the collection.
+- For each connection, it checks if the session is open and if the authentication token is not equal to the `excludeAuthToken`.
+If both conditions are true, it sends the notification to that connection.
+Make sure to handle cases where the `gameID` does not exist in the `connections` hashmap to avoid null pointer exceptions.
+To loop through all the connections stored in the `connections` hashmap within the `getConnection` method of your `ConnectionManager` class, you can iterate over the values of the hashmap.
+Here's how you can do it:
+
+
+
+In this code snippet:
+
+- We iterate over the values of the `connections` hashmap using the `values()` method.
+This returns a collection of collections of `Connection` objects.
+- We then iterate over each `Connection` object within each collection.
+- For each connection, we check if its authentication token matches the provided `authString`.
+If a match is found, we return the connection.
+- If no matching connection is found, we return `null`.
+In your `Server` class, you have annotated the class with `@WebSocket`, which indicates that this class is intended to handle WebSocket connections.
+However, you have not implemented any WebSocket-specific methods within this class.
+Instead, you seem to have defined WebSocket endpoint handling in a separate class, possibly named `webSocketHandler`.
+To fix this issue, you need to implement the WebSocket methods (`onWebSocketConnect`, `onWebSocketText`, `onWebSocketBinary`, etc.)
+within your `Server` class.
+These methods are invoked when certain WebSocket events occur, such as a new connection being established, receiving text or binary messages, or when a connection is closed.
+Here's an example of how you can implement these methods within your `Server` class:
+
+
+
+Make sure to replace the method bodies with your actual logic for handling WebSocket events such as connecting, closing, and receiving messages.
+Also, ensure that you remove the WebSocket endpoint registration from the `registerEndpoints` method and handle WebSocket connections directly within the `Server` class.
+If you've removed the `@WebSocket` annotation from your `Server` class and want to handle WebSocket connections using a separate handler class (`webSocketHandler`), you need to make sure that the `webSocketHandler` class is properly implemented to handle WebSocket events.
+Here's an example of how you can structure your `webSocketHandler` class to handle WebSocket events:
+
+
+
+In your `Server` class, you would then register this `WebSocketHandler` to handle WebSocket connections.
+You can do this by modifying the `registerEndpoints` method as follows:
+
+
+
+With this setup, when a WebSocket connection is made to `/connect`, the `WebSocketHandler` class will handle the connection events defined in its methods (`onConnect`, `onClose`, `onMessage`, etc.).
+Make sure to replace the println statements with your actual logic for handling WebSocket events.
+Your `webSocketHandler` class seems to be designed to handle WebSocket messages and manage connections between clients and the server.
+However, there are a few areas that need to be addressed or clarified:
+
+1.
+**ConnectionManager Dependency**: Your `webSocketHandler` class relies on a `ConnectionManager` instance, which is responsible for managing connections.
+Ensure that this dependency is properly initialized and accessible within your WebSocket handler.
+2.
+**Message Handling**: In the `onMessage` method, you're parsing the incoming JSON message into a `UserGameCommand` object using Gson.
+Depending on the command type, you're then attempting to handle various types of user commands.
+Make sure that each command type is properly handled and that the necessary logic is implemented for each case.
+3.
+**Joining a Game**: The `joinGame` method is responsible for handling the `JOIN_PLAYER` command.
+It retrieves the necessary information from the `JoinPlayer` object and performs actions such as sending the game state to the client and broadcasting a notification to other players.
+Ensure that these actions are correctly executed and that error handling is in place if any exceptions occur.
+4.
+**Observer Mode**: Currently, the logic for handling the `JOIN_OBSERVER` command is commented out.
+You need to implement the logic for allowing a player to join the game as an observer.
+5.
+**Make Move, Leave, Resign**: Similarly, methods for handling other user commands (`MAKE_MOVE`, `LEAVE`, `RESIGN`) are placeholders and need to be implemented with the appropriate logic.
+6.
+**Error Handling**: Ensure that appropriate error handling is in place for scenarios such as invalid user authentication, missing or malformed JSON messages, and any database access errors.
+7.
+**Broadcasting Notifications**: The `connectionManager.broadcast` method is used to broadcast notifications to all clients connected to a particular game.
+Make sure that this method is correctly implemented and that notifications are sent to the appropriate clients.
+By addressing these points and implementing the necessary logic, you should have a functional WebSocket handler that can manage client-server communication for your chess application.
+Test thoroughly to ensure that it behaves as expected in different scenarios.
+If your WebSocket handler class is not being activated, there might be several reasons for this issue.
+Here are some common troubleshooting steps you can take:
+
+1.
+**Ensure WebSocket Endpoint Annotation**: Make sure that your WebSocket handler class is annotated with `@ServerEndpoint` instead of `@WebSocket`.
+The correct annotation for WebSocket endpoint classes in Java EE is `@ServerEndpoint`.
+2.
+**Check WebSocket Endpoint Path**: Verify that the path specified in the `@ServerEndpoint` annotation matches the WebSocket endpoint path you are trying to connect to from the client-side.
+For example:
+
+    
+
+3.
+**Deployment Descriptor (web.xml)**: If you're using a web.xml deployment descriptor to configure your web application, ensure that you have properly defined the servlet mapping for the WebSocket endpoint.
+Here's an example of how it can be done:
+
+    
+
+4.
+**Check WebSocket Container Initialization**: Verify that your WebSocket container is properly initialized and configured in your application startup process.
+This typically involves configuring the WebSocket container in a ServletContextListener or initializing it as part of your application's initialization logic.
+5.
+**Server Configuration**: Ensure that your server environment supports WebSocket connections and that WebSocket functionality is enabled/configured correctly.
+Some servers may require additional configuration to support WebSocket connections.
+6.
+**Logging and Debugging**: Add logging statements to your WebSocket handler class to check if the handler methods are being invoked when WebSocket messages are received.
+This can help you trace the flow of execution and identify any issues with message processing.
+7.
+**Client-Side WebSocket Connection**: Double-check the client-side WebSocket connection code to ensure that it's correctly connecting to the WebSocket endpoint URL.
+Verify that there are no errors or exceptions occurring on the client-side that prevent the WebSocket connection from being established.
+By following these troubleshooting steps and examining your WebSocket configuration and code, you should be able to identify and resolve the issue preventing your WebSocket handler class from being activated.
+If your tests require the handler class to be annotated with `@WebSocket`, and you're facing issues with the handler not being activated, there might be some misconfiguration or other issues causing the problem.
+Here are some steps you can take to troubleshoot:
+
+1.
+**Verify Test Configuration**: Ensure that your test environment is correctly set up to initialize and activate the WebSocket handler class.
+This includes any test-specific configurations or setups that might be necessary to enable WebSocket functionality.
+2.
+**Check Test Dependencies**: Make sure that all required dependencies for WebSocket testing are included and properly configured in your test environment.
+This includes any WebSocket client libraries or testing frameworks that you might be using.
+3.
+**Inspect Test Code**: Review your test code to ensure that the WebSocket connection is being established correctly and that messages are being sent/received as expected.
+Look for any errors or exceptions that might indicate issues with the WebSocket setup or message processing.
+4.
+**Debugging**: Use debugging techniques to step through your test code and WebSocket handler class to identify where the problem might be occurring.
+Check for any conditions or code paths that might prevent the handler from being activated.
+5.
+**Mocking Dependencies**: If your WebSocket handler class depends on other components or services, consider mocking these dependencies in your tests to isolate the behavior of the handler class.
+This can help identify whether the issue lies with the handler class itself or its dependencies.
+6.
+**Logging**: Add logging statements to your WebSocket handler class and test code to trace the execution flow and debug any issues.
+Logging can provide valuable insights into the behavior of your code and help identify the root cause of the problem.
+7.
+**Consult Documentation and Examples**: Refer to the documentation and examples provided for the WebSocket library or framework you're using, as well as any testing frameworks or tools.
+These resources may contain helpful tips or troubleshooting steps specific to your setup.
+By carefully reviewing your test configuration, code, and dependencies, and using debugging techniques as needed, you should be able to identify and resolve the issue with your WebSocket handler class not being activated in your tests.
+To finish the code for the `add` method in the `ConnectionManager` class, you need to handle two scenarios:
+
+1.
+If there are no connections for the specified `gameID`, you need to create a new collection of connections and add the new connection to it.
+2.
+If there are existing connections for the specified `gameID`, you need to add the new connection to the existing collection.
+Here's how you can implement these scenarios:
+
+
+
+This code first retrieves the collection of connections associated with the specified `gameID`.
+If there are no connections (`gameConnections == null`), it creates a new `ArrayList` to store connections for that gameID and adds it to the `connections` map.
+Then, it adds the new connection to the collection.
+If there are existing connections for the `gameID`, it simply adds the new connection to the existing collection.
+MySQL is a popular open-source relational database management system (RDBMS) that uses Structured Query Language (SQL) for managing and manipulating data.
+Below are some common MySQL commands categorized by their functionality:
+
+
+1.
+**Create Database:**
+   
+
+2.
+**Use Database:**
+   
+
+3.
+**Show Databases:**
+   
+
+4.
+**Drop Database:**
+
+
+1.
+**Create Table:**
+   
+
+2.
+**Show Tables:**
+   
+
+3.
+**Describe Table Structure:**
+   
+
+4.
+**Drop Table:**
+
+
+1.
+**Insert Into Table:**
+   ```sql
+   INSERT INTO table_name (column1, column2, ...) VALUES (value.
+To start the MySQL shell, you can use the `mysql` command followed by the necessary options such as specifying the username, password, and hostname.
+Here's a basic command to start the MySQL shell:
+
+
+
+Replace `your_username` with your MySQL username.
+After running this command, you'll be prompted to enter your MySQL password.
+Once authenticated, you'll be in the MySQL shell where you can start executing SQL commands.
+If MySQL is not in your system PATH, you may need to provide the full path to the `mysql` executable.
+On Unix-like systems, the command might look like this:
+
+
+
+Make sure to replace `/usr/bin/mysql` with the actual path to the `mysql` executable on your system.
+Additionally, if you want to connect to a MySQL server running on a different host, you can specify the hostname with the `-h` option:
+
+
+
+Replace `hostname` with the hostname or IP address of the MySQL server you want to connect to.
+After running one of these commands, you should see the MySQL shell prompt, indicating that you are now connected to the MySQL server and can start executing SQL queries.
+To see the list of tables in your MySQL database, you can use the following SQL query after connecting to your database:
+
+
+
+Here's how you can execute this query in the MySQL shell:
+
+1.
+Start the MySQL shell by running the `mysql` command with your username and password.
+2.
+Enter your MySQL password when prompted.
+3.
+Once authenticated, you'll be in the MySQL shell.
+Now, execute the `SHOW TABLES;` command to see the list of tables in your database:
+
+   
+
+This command will display a list of tables in your currently selected database.
+If you haven't selected a specific database yet, you can do so using the `USE` statement before running `SHOW TABLES;`.
+For example:
+
+
+
+Replace `your_database_name` with the name of your MySQL database.
+After executing the `SHOW TABLES;` command, you'll see a list of tables present in your database.
+To see the list of databases in your MySQL server, you can use the following SQL command:
+
+
+
+Here's how you can execute this command in the MySQL shell:
+
+1.
+Start the MySQL shell by running the `mysql` command with your username and password.
+2.
+Enter your MySQL password when prompted.
+3.
+Once authenticated, you'll be in the MySQL shell.
+Now, execute the `SHOW DATABASES;` command:
+
+   
+
+This command will display a list of databases available on your MySQL server.
+After executing the `SHOW DATABASES;` command, you'll see a list of databases present in your MySQL server.
+If you want to select a specific database to work with, you can use the `USE` statement followed by the name of the database you want to select.
+Here's how you can do it:
+
+
+
+Replace `database_name` with the name of the database you want to select.
+After executing this command, all subsequent SQL queries you run will be executed in the context of the selected database.
+Here's the step-by-step process:
+
+1.
+Start the MySQL shell by running the `mysql` command with your username and password.
+2.
+Enter your MySQL password when prompted.
+3.
+Once authenticated, you'll be in the MySQL shell.
+Now, execute the `USE` statement to select the specific database:
+
+   
+
+   Replace `database_name` with the name of the database you want to select.
+4.
+After selecting the database, you can execute SQL queries specific to that database.
+For example:
+
+   
+
+   This command will display a list of tables in the selected database.
+Remember to replace `database_name` with the actual name of the database you want to work with.
+To execute the SELECT query to retrieve `authtoken` and `username` from the `auth` table where `authtoken` equals a specific value, you can use the following SQL statement:
+
+
+
+Make sure to enclose the value `'1c09e169-5264-4fc0-976e-ea4843ed8a86'` in single quotes since it appears to be a string.
+This query will select rows from the `auth` table where the `authtoken` column matches the specified value, and it will return the `authtoken` and `username` columns for those rows.
+Here's an implementation of the `updateGame` method in the `MySQLDatabase` class to update the usernames when a player leaves the game:
+
+
+
+This method checks the existing username in the specified column (`whiteusername` or `blackusername`) for the given `gameID`.
+If the current user is leaving (`username` matches the existing username), it clears the username in the database.
+Otherwise, it updates the username with the new value (`username`).
+If you want to update all five parameters of the game data when a player leaves, you can modify the `updateGame` method to accept all parameters and update them accordingly.
+Here's the updated method:
+
+
+
+This method updates all five parameters (`whiteUsername`, `blackUsername`, `gameName`, `game`) for the specified `gameID`.
+You can call this method when a player leaves the game, passing the updated values for the remaining parameters.
+To check if a move is valid, you can iterate through the collection of valid moves and compare each move with the provided move.
+If the provided move matches any move in the collection, then the move is valid.
+Otherwise, it's invalid.
+Here's how you can implement this logic:
+
+
+
+In this code snippet:
+
+- `game.validMoves(move.getStartPosition())` returns a collection of valid moves for the piece at the specified start position.
+- `moves.contains(move)` checks if the provided move is present in the collection of valid moves.
+- If the move is not in the collection, it's considered invalid, and you can handle it accordingly.
+Otherwise, you can proceed with the move.
+You can add a method named `checkEmpty` to the `ChessBoard` class to iterate through every element in the board and check if they are all null.
+Here's how you can implement it:
+
+
+
+In this method:
+
+- We iterate through every element in the `squares` array.
+- If we find a non-null piece at any position, we return `false` immediately, indicating that the board is not empty.
+- If we iterate through the entire board without finding any non-null piece, we return `true`, indicating that the board is empty.
+Sure, here's the `checkEmpty` method without comments:
+To implement the `join_player` connection with the server using WebSocket, you need to define a message structure for the join request and send it to the server.
+Below is an example of how you can modify your `connectionWebSocket` class to send a join request message to the server:
+
+
+
+In this modified class, I've added a `joinPlayer` method that constructs a join request message using the `authToken` and `gameID`.
+It then sends this message to the server using the `sendMessage` method.
+You can call this `joinPlayer` method from your `serverFacade` class to initiate the join player process.
+To properly implement the `joinPlayer` method in your `serverFacade` class, you need to provide it with the necessary parameters and create a `JoinRequestData` object to send to the server.
+Here's how you can modify your `joinPlayer` method:
+
+
+
+In this method:
+
+1.
+You create a `JoinRequestData` object with the provided `authToken`, `gameID`, and `playerColor`.
+2.
+Using Gson, you convert the `JoinRequestData` object into JSON format.
+3.
+You then send the JSON data to the server via WebSocket using the `sendMessage` method of the `webConn` object (assuming `webConn` is an instance of your `connectionWebSocket` class).
+Make sure that the `webConn` object is properly initialized and connected to the WebSocket server before calling this method.
+Additionally, handle any potential exceptions that may occur during the WebSocket communication.
+To properly receive requests from the WebSocket server, you need to define methods annotated with `@OnMessage` in your `connectionWebSocket` class.
+These methods will be invoked when the server sends messages to the client.
+Here's how you can implement it:
+
+
+
+In this class:
+
+- The `@OnOpen` method is called when the WebSocket connection is established.
+You can perform any necessary initialization tasks here.
+- The `@OnClose` method is called when the WebSocket connection is closed.
+You can perform cleanup tasks here.
+- The `@OnMessage` method is called when the server sends a message to the client.
+You can handle the incoming message in this method.
+The `message` parameter contains the content of the received message.
+Make sure to define appropriate logic inside the `onMessage` method to handle different types of messages sent by the server.
+
+Summary: 
+Handle WebSocket connections and messages.
+Implement a WebSocket handler method.
+This endpoint will handle WebSocket connections from clients.
+Create a `WebSocketHandler` class to handle WebSocket messages.
+This method is called when the WebSocket connection is established.
+You can handle the incoming message in this method.
+Create a `ConnectionManager` class to manage WebSocket connections.
+- The `close` method closes the WebSocket connection.
+Here's what you need to do:
+
+1.
+- The `sendMessage` method sends a message to the server.
+- `onClose`: Invoked when a WebSocket connection is closed.
+Make sure to implement the WebSocket logic for handling connections and messages.
+**Implement WebSocketHandler Class**: Create a class to handle WebSocket connections.
+It connects to a WebSocket server running at `ws://localhost:8080/connect`.
+If a connection is found, return it.
+This object provides methods to send messages to the client.
+The `onMessage` method is invoked when a WebSocket message is received.
+- The `onMessage` method is invoked when a WebSocket message is received.
+It then sends this message to the server using the `sendMessage` method.
+- The `@OnClose` method is called when the WebSocket connection is closed.
+You can handle any initialization logic here.
+These methods will be invoked when the server sends messages to the client.
+The `send` method allows sending messages to the WebSocket server.
+Create a `Connection` class to represent individual WebSocket connections.
+You need to define these methods or import them from other classes where they are implemented.
+Your `connectionWebSocket` class is a WebSocket client implementation in Java.
+- The `@OnMessage` method is called when the server sends a message to the client.
+**WebSocket Endpoint**: You've defined a WebSocket endpoint for `/connect`.
+However, you have not implemented any WebSocket-specific methods within this class.
+The `onConnect` method is invoked when a new WebSocket connection is established.
+- The `onConnect` method is invoked when a new WebSocket connection is established.
+This is a basic overview of WebSocket handling in a Spark server.
+- `onError`: Invoked when an error occurs in the WebSocket connection.
+- `Connection` represents an individual WebSocket connection and handles user commands.
+`session.getRemote()` returns a `RemoteEndpoint` object for sending messages over a WebSocket connection.
+- `onMessage`: Invoked when a message is received from the client.
+- `Connection` class encapsulates the logic for handling game-related actions.
+Ensure that these methods are accessible and properly implemented to handle the WebSocket communication logic.
+Here's a basic outline of how you can handle WebSocket connections in your Spark server:
+
+1.
+If a match is found, we return the connection.
+This class provides a complete WebSocket client implementation that can be used to communicate with a WebSocket server.
+We import the necessary WebSocket classes from Jetty.
+This returns a collection of collections of `Connection` objects.
+- The `sendMessage` method sends a message to the server if the session is open.
+- You define a WebSocket endpoint at `/connect` and specify the `WSServer` class to handle WebSocket connections.
+Here's how you can implement it:
+
+
+
+In this class:
+
+- The `@OnOpen` method is called when the WebSocket connection is established.
+Here's how you can modify the code to work with your server:
+
+1.
+Here's a breakdown of the code:
+
+1.
+- The loop iterates over each `Connection` object in the collection.
+Your `WSClient` class seems to be a WebSocket client implementation in Java.
+- In the constructor, we initialize a WebSocket container and connect to the server using the `connectToServer` method.
+Here's how you can modify your `joinPlayer` method:
+
+
+
+In this method:
+
+1.
+- This method is annotated with `@OnWebSocketMessage`, indicating that it should be invoked when a WebSocket message is received.
+The `session.getRemote()` method is part of the Jetty WebSocket API, which is being used in your code.
+Your `webSocketHandler` class seems to be designed to handle WebSocket messages and manage connections between clients and the server.
+You can handle message processing and respond back to the client here.
+In your `Server` class, you have annotated the class with `@WebSocket`, which indicates that this class is intended to handle WebSocket connections.
+It uses the `getBasicRemote()` method of the session to send text messages.
+Then, it adds the new connection to the collection.
+- We then iterate over each `Connection` object within each collection.
+Make sure that the `webConn` object is properly initialized and connected to the WebSocket server before calling this method.
+Modify the `sendMessage` method to send messages compatible with your server's expectations.
+This method returns a collection view of the connections, which you can then iterate over using a loop.
+Modify the `onMessage` method to handle incoming WebSocket messages according to your server's message format.
+Make sure to call this method appropriately when your server needs to shut down.
+The constructor establishes a WebSocket connection to the server specified by the URI `ws://localhost:8080/connect`.
+If both conditions are true, it sends the notification to that connection.
+Adapt the `sendMessage` method to send messages compatible with your server's expectations.
+- `ConnectionManager` manages the connections based on the authentication string.
+- If no matching connection is found, we return `null`.
+To integrate WebSocket handling into your existing `Server` class, you need to follow these steps:
+
+1.
+This includes any WebSocket client libraries or testing frameworks that you might be using.
+- `sendError` method sends an error message back to the client via the WebSocket session.

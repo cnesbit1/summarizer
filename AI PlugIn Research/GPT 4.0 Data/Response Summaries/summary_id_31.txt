@@ -1,0 +1,23 @@
+Original Response: 
+If your `responses` package is located in another folder within your IntelliJ project, you need to ensure that the folder containing the `responses` package is marked as a source folder in IntelliJ.
+Follow these steps to configure it properly:
+
+1.
+**Mark the folder as a source folder**:
+   - Right-click on the folder containing the `responses` package in the Project Explorer pane.
+- Select "Mark Directory as" > "Sources Root".
+2.
+**Adjust package imports**:
+   - If your `signedInUI.java` and `serverFacade.java` files are in a different package than `responses`, you'll need to adjust the import statements to reflect the correct package hierarchy.
+For example, if `responses` is located at `src/main/java/responses`, and `signedInUI.java` and `serverFacade.java` are in `src/main/java/ui`, you would import classes from `responses` like this:
+
+
+
+3.
+**Rebuild your project**:
+   - After making these changes, rebuild your project to ensure that IntelliJ recognizes the updated project structure.
+By marking the folder containing the `responses` package as a source root, IntelliJ will include it in the compilation process, and your classes should be able to access the classes and packages within it.
+If you encounter any issues or have further questions, feel free to ask!
+
+Summary: 
+- Select "Mark Directory as" > "Sources Root".

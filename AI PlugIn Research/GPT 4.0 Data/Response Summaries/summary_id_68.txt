@@ -1,0 +1,23 @@
+Original Response: 
+To create a WebSocket client specifically for your server, you'll need to adapt the code to fit your server's WebSocket endpoint and message formats.
+Here's how you can modify the code to work with your server:
+
+1.
+Replace the WebSocket endpoint URI (`ws://your-server-url/connect`) with the actual WebSocket endpoint URI of your server.
+2.
+Modify the `onMessage` method to handle incoming WebSocket messages according to your server's message format.
+3.
+Adapt the `sendMessage` method to send messages compatible with your server's expectations.
+Here's the modified code with placeholders for your server-specific details:
+
+
+
+Replace `"ws://your-server-url/connect"` with the actual WebSocket endpoint URL provided by your server.
+Ensure that the `onMessage` method correctly handles incoming messages according to your server's message format.
+Modify the `sendMessage` method to send messages compatible with your server's expectations.
+You may need to serialize your messages to JSON or another format expected by your server.
+
+Summary: 
+Here's how you can modify the code to work with your server:
+
+1.

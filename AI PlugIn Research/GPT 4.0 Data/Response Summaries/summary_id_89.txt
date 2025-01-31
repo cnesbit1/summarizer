@@ -1,0 +1,4 @@
+Original Response: 
+Sure, here's the `checkEmpty` method without comments:
+
+Summary: 

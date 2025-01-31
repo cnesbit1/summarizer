@@ -1,0 +1,25 @@
+Original Response: 
+Certainly!
+Let's adapt your code to match the structure you provided earlier.
+Here's how you can modify your `WSServer` class:
+
+
+
+In this adapted version:
+
+1.
+We import the necessary WebSocket classes from Jetty.
+2.
+The `main` method creates an instance of your `Server` class and runs it on port 8080.
+3.
+The `onConnect` method is invoked when a new WebSocket connection is established.
+You can handle any initialization logic here.
+4.
+The `onMessage` method is invoked when a WebSocket message is received.
+You can handle message processing and respond back to the client here.
+Make sure you have all necessary dependencies added to your project to support WebSocket handling with Jetty.
+If you encounter any issues or have further questions, feel free to ask!
+
+Summary: 
+You can handle any initialization logic here.
+We import the necessary WebSocket classes from Jetty.

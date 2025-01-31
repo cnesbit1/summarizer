@@ -1,0 +1,37 @@
+Original Response: 
+
+
+Crossing over is a fundamental process that occurs during prophase I of meiosis.
+It involves the exchange of genetic material between homologous chromosomes, which are pairs of chromosomes that have the same genes at the same loci but may carry different alleles.
+Here’s how crossing over works to "unlink" genes and what this means in terms of genetic inheritance:
+
+1.
+**Synapsis**: During prophase I of meiosis, homologous chromosomes pair up closely in a process called synapsis.
+2.
+**Formation of Chiasmata**: Chromatids of homologous chromosomes touch and exchange segments at points called chiasmata.
+These points of contact are where the physical exchange of chromosome segments occurs.
+3.
+**Exchange of Genetic Material**: Sections of DNA are exchanged between non-sister chromatids of homologous chromosomes.
+This reciprocal exchange is called homologous recombination or crossing over.
+- **Before Crossing Over**: Genes that are close to each other on the same chromosome (linked genes) tend to be inherited together because the probability of a crossover occurring between them is low.
+- **After Crossing Over**: When a crossover event occurs between two linked genes, it can separate (unlink) these genes onto different chromatids, resulting in new combinations of alleles.
+- **Recombination**: Crossing over creates recombinant chromosomes that carry combinations of alleles not found in either parent.
+This increases genetic diversity in the offspring.
+- **Unlinking of Genes**: When genes that were previously linked are separated by crossing over, they behave more like unlinked genes and assort independently, which aligns with Mendel’s Law of Independent Assortment for genes on different chromosomes.
+Alfred Sturtevant, a student of Thomas Morgan, utilized the concept of recombination to create genetic maps:
+- **Genetic Distance**: The frequency of crossing over between two genes is proportional to the physical distance between them on a chromosome.
+Genes that are far apart are more likely to be separated by crossing over than genes that are close together.
+- **Map Units**: The distance between genes is measured in map units or centimorgans (cM).
+One map unit corresponds to a 1% recombination frequency.
+- **Linked Genes**: Genes located close to each other on the same chromosome tend to be inherited together.
+- **Crossing Over**: During meiosis, homologous chromosomes exchange segments of DNA at chiasmata, which can separate linked genes and create new allele combinations.
+- **Genetic Recombination**: This process results in recombinant chromosomes, increasing genetic diversity and allowing linked genes to be inherited independently in some cases.
+- **Linked genes** can become unlinked due to homologous recombination during meiosis, as described by Frans Janssen who observed chiasmata and the physical exchange of chromosome segments.
+- **Genetic Maps**: Created by Alfred Sturtevant, these maps use recombination frequencies to determine the distances between genes on a chromosome, showing that genes far apart are more likely to undergo recombination.
+This detailed understanding of crossing over and genetic linkage provides insight into how genetic diversity is generated and how it fits within the broader framework of Mendelian genetics.
+Reference: [13.1B: Genetic Linkage and Distances - Biology LibreTexts](25)
+
+Summary: 
+This reciprocal exchange is called homologous recombination or crossing over.
+This increases genetic diversity in the offspring.
+- **Linked Genes**: Genes located close to each other on the same chromosome tend to be inherited together.

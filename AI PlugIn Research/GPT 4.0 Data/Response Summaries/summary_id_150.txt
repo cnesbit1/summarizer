@@ -1,0 +1,26 @@
+Original Response: 
+Sure, let’s detail the processes of facilitated diffusion and active transport through diagrams.
+Here are descriptions that can help visualize both processes:
+
+Facilitated diffusion is a type of passive transport that uses transport proteins to move substances across a cell membrane from an area of higher concentration to an area of lower concentration without using cellular energy (ATP).
+**Diagram Description:**
+- **Cell Membrane**: Represented as a bilayer with embedded proteins.
+- **Transport Protein**: A channel or carrier protein embedded in the membrane, specific to the molecule being transported.
+- **Molecules**: Depicted as small circles or shapes outside and inside the cell.
+- **Concentration Gradient**: Indicated by a higher number of molecules on one side of the membrane compared to the other.
+- **Direction of Movement**: Arrows showing the movement of molecules through the transport protein from higher to lower concentration.
+Active transport is a process where cells use energy, typically in the form of ATP, to move molecules across a cell membrane against their concentration gradient, i.e., from an area of lower concentration to an area of higher concentration.
+**Diagram Description:**
+- **Cell Membrane**: Similar bilayer as in facilitated diffusion, with embedded proteins.
+- **Transport Protein**: Often depicted as a pump because it actively moves substances.
+- **Molecules**: Represented as small circles or shapes, similar to those in facilitated diffusion.
+- **ATP Usage**: A depiction of ATP being converted to ADP (adenosine diphosphate) to provide energy for the transport.
+- **Concentration Gradient**: Showing a lower concentration of the molecules on one side initially and higher on the other.
+- **Direction of Movement**: Arrows showing the movement of molecules through the pump from lower to higher concentration, opposite to the gradient.
+These diagrams would generally be accompanied by labels and possibly additional details like the types of molecules being transported, specific types of transport proteins involved, and the cellular context.
+If you have specific requirements for the diagrams or need illustrations for particular molecules or cells, let me know, and I can provide a more detailed conceptual design or description!
+
+Summary: 
+**Diagram Description:**
+- **Cell Membrane**: Represented as a bilayer with embedded proteins.
+- **Transport Protein**: Often depicted as a pump because it actively moves substances.

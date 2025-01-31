@@ -1,0 +1,12 @@
+Original Response: 
+To define the missing methods (`getConnection`, `join`, `observe`, `move`, `leave`, `resign`, and `sendError`), you need to implement the logic for handling WebSocket communication in your `webSocketHandler` class.
+Here's an example of how you can define these methods:
+
+
+
+In this example:
+- Each method (`join`, `observe`, `move`, `leave`, `resign`, `sendError`) corresponds to a specific action based on the received WebSocket command.
+- These methods are private and encapsulated within the `WebSocketHandler` class.
+- `sendError` method sends an error message back to the client via the WebSocket session.
+
+Summary: 

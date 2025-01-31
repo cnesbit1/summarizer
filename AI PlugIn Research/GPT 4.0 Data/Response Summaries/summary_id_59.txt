@@ -1,0 +1,8 @@
+Original Response: 
+Here's the updated `printHelp` method based on the provided information:
+
+
+
+This updated method provides a clear description of each action available to the user, as well as a brief explanation of what each action does.
+
+Summary: 

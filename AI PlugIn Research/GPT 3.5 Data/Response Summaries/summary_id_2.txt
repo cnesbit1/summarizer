@@ -1,0 +1,18 @@
+Original Response: 
+You're correct, I apologize for the oversight.
+Let's reassess the time and space complexity considering both loops.
+1.
+Time Complexity:
+   - The outer while loop iterates through each level of the binary tree, which requires O(n) iterations in the worst case scenario, where n is the number of nodes in the tree.
+- Within each iteration of the while loop, the for loop iterates over all the nodes at the current level, which also takes O(n) time in the worst case.
+- Therefore, the total time complexity is O(n), where n is the number of nodes in the binary tree.
+2.
+Space Complexity:
+   - The space complexity primarily depends on the maximum number of nodes that can be present at any given level of the binary tree.
+- In the worst case scenario, the maximum number of nodes in any level except the last one is (n/2), where n is the total number of nodes.
+- Therefore, the space complexity is O(n), where n is the number of nodes in the binary tree.
+So, the time and space complexity both remain O(n).
+Thank you for pointing out the need for a closer examination!
+
+Summary: 
+So, the time and space complexity both remain O(n).

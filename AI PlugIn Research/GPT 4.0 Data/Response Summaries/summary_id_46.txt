@@ -1,0 +1,20 @@
+Original Response: 
+Your `WSServer` class looks like a basic WebSocket server implementation using Spark.
+Let's break down your code and provide some explanation:
+
+
+
+- This annotation marks the class as a WebSocket endpoint, allowing Spark to recognize it as a handler for WebSocket connections.
+- In the `main` method, you configure the Spark server to listen on port 8080.
+- You define a WebSocket endpoint at `/connect` and specify the `WSServer` class to handle WebSocket connections.
+- Additionally, you define a simple HTTP GET endpoint at `/echo/:msg` that returns an HTTP response echoing back the message from the URL parameter.
+- This method is annotated with `@OnWebSocketMessage`, indicating that it should be invoked when a WebSocket message is received.
+- It takes two parameters: the `Session` object representing the WebSocket session, and the received message.
+- Inside the method, you send a response back to the client by using the `Session` object's `getRemote().sendString()` method.
+Overall, your code sets up a WebSocket server using Spark and defines a handler to respond to WebSocket messages.
+However, keep in mind that this is a simple example and may need to be extended depending on your application's requirements.
+You may also want to add error handling, session management, and more sophisticated message processing logic as needed.
+If you have any specific questions or need further assistance, feel free to ask!
+
+Summary: 
+- This method is annotated with `@OnWebSocketMessage`, indicating that it should be invoked when a WebSocket message is received.

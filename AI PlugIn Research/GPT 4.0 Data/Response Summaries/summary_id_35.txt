@@ -1,0 +1,27 @@
+Original Response: 
+To clean and rebuild your project in IntelliJ IDEA, you can follow these steps:
+
+1.
+**Cleaning the Project**:
+   - Go to the "Build" menu at the top of IntelliJ IDEA.
+- Select "Clean Project" from the dropdown menu.
+- Alternatively, you can use the keyboard shortcut.
+On Windows and Linux, it's usually `Ctrl + Shift + F9`, and on macOS, it's `Cmd + Shift + F9`.
+2.
+**Rebuilding the Project**:
+   - After cleaning the project, you can trigger a rebuild by either:
+     - Making a minor change in one of your source files (e.g., adding/removing whitespace) and saving the file.
+IntelliJ IDEA will automatically rebuild the project.
+- Manually initiating a build by going to the "Build" menu and selecting "Build Project".
+The keyboard shortcut for this action is `Ctrl + F9` on Windows/Linux and `Cmd + F9` on macOS.
+3.
+**Viewing Build Output**:
+   - During the build process, IntelliJ IDEA will display the progress in the "Build" tool window at the bottom of the screen.
+You can click on this tool window to view detailed information about the build process, including any errors or warnings.
+By performing these steps, you effectively clean the project to remove any compiled output and then rebuild it from scratch.
+This can help resolve various compilation or dependency-related issues.
+If you encounter any errors or unexpected behavior during the build process, IntelliJ IDEA will provide feedback in the build output window to help you troubleshoot and address the issues.
+
+Summary: 
+IntelliJ IDEA will automatically rebuild the project.
+- Select "Clean Project" from the dropdown menu.

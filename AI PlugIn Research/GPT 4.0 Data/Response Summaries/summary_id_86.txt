@@ -1,0 +1,10 @@
+Original Response: 
+If you want to update all five parameters of the game data when a player leaves, you can modify the `updateGame` method to accept all parameters and update them accordingly.
+Here's the updated method:
+
+
+
+This method updates all five parameters (`whiteUsername`, `blackUsername`, `gameName`, `game`) for the specified `gameID`.
+You can call this method when a player leaves the game, passing the updated values for the remaining parameters.
+
+Summary: 

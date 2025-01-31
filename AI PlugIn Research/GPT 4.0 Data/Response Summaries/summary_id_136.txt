@@ -1,0 +1,92 @@
+Original Response: 
+[python]
+
+Certainly!
+Here are the instructions to change the permission of a shared folder in Google Drive to allow anyone with the link to access it, using the Google Drive web interface:
+
+
+1.
+**Open Google Drive**:
+   - Go to [Google Drive](https://drive.google.com).
+2.
+**Locate the Folder**:
+   - Find the folder you want to share in your Google Drive.
+3.
+**Open Sharing Settings**:
+   - Right-click on the folder and select "Share" from the context menu.
+Alternatively, you can select the folder and click the "Share" icon (a person with a plus sign) at the top of the page.
+4.
+**Get Link Sharing Options**:
+   - In the "Share with people and groups" window, click on the "Get link" section.
+5.
+**Change Link Sharing Settings**:
+   - Click on the "Restricted" dropdown or the current sharing settings next to "Anyone with the link".
+- Select "Anyone with the link".
+6.
+**Set Permissions**:
+   - Ensure the permissions are set to "Viewer".
+You can change this by clicking the dropdown next to "Anyone with the link" and selecting "Viewer", "Commenter", or "Editor" based on your needs.
+7.
+**Copy the Link**:
+   - Click the "Copy link" button to copy the shareable link to your clipboard.
+8.
+**Save Changes**:
+   - Click "Done" to save the changes.
+1.
+**Open Google Drive**:
+   - Navigate to [Google Drive](https://drive.google.com) in your web browser.
+2.
+**Locate the Folder**:
+   - Browse to find the folder you wish to share.
+3.
+**Open Sharing Settings**:
+   - Right-click the folder and select **Share**.
+!
+[Share Option](https://support.content.office.net/en-us/media/eba3563d-cc1f-409e-a080-e7d503f70e52.png)
+
+4.
+**Get Link Sharing Options**:
+   - In the sharing settings window, click on the **Get link** section.
+!
+[Get Link](https://support.content.office.net/en-us/media/028a3dd4-488b-4cc4-9375-8aedd8e7d5db.png)
+
+5.
+**Change Link Sharing Settings**:
+   - Click on the dropdown that says **Restricted** (or the current sharing settings).
+- Select **Anyone with the link**.
+!
+[Anyone with the link](https://support.content.office.net/en-us/media/1c7f1ea6-13a6-4873-8051-6b761d9c10d8.png)
+
+6.
+**Set Permissions**:
+   - Ensure the permissions are set to **Viewer**.
+You can adjust this by clicking the dropdown next to "Anyone with the link" and selecting **Viewer**, **Commenter**, or **Editor** depending on the level of access you want to grant.
+!
+[Set Permissions](https://support.content.office.net/en-us/media/7a5f5080-5c17-4728-927e-83ed09d1c1b5.png)
+
+7.
+**Copy the Link**:
+   - Click the **Copy link** button to copy the shareable link.
+!
+[Copy Link](https://support.content.office.net/en-us/media/ff44c4cf-f40c-46f7-825e-566f7eaa59c8.png)
+
+8.
+**Save Changes**:
+   - Click **Done** to save the changes.
+!
+[Done Button](https://support.content.office.net/en-us/media/c7db5f4f-66b2-4f45-96b6-2b38ffefec29.png)
+
+By following these steps, you can change the sharing settings of a folder in Google Drive to allow anyone with the link to access it.
+
+Summary: 
+- Select "Anyone with the link".
+- Select **Anyone with the link**.
+**Open Sharing Settings**:
+   - Right-click the folder and select **Share**.
+[Anyone with the link](https://support.content.office.net/en-us/media/1c7f1ea6-13a6-4873-8051-6b761d9c10d8.png)
+
+6.
+**Save Changes**:
+   - Click "Done" to save the changes.
+**Save Changes**:
+   - Click **Done** to save the changes.

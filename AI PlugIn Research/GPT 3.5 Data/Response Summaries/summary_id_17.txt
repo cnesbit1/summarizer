@@ -1,0 +1,34 @@
+Original Response: 
+In the case of an X-linked recessive disorder, an unaffected father cannot have affected children, whether male or female.
+This is due to the way X-linked recessive inheritance works:
+
+1.
+**Males** have one X chromosome (from their mother) and one Y chromosome (from their father).
+2.
+**Females** have two X chromosomes, one from each parent.
+- **Father's Genotype**: XY (with a normal X chromosome)
+- **Mother's Genotype**: 
+  - XX (if unaffected and not a carrier)
+  - X^aX (if a carrier of the recessive allele)
+
+- **Sons**: 
+  - Sons inherit the Y chromosome from the father and one X chromosome from the mother.
+- Sons cannot inherit the X chromosome from the father; they inherit their X chromosome from the mother.
+- If the mother is a carrier (X^aX), there is a 50% chance that the son will inherit the affected X chromosome (X^aY) and be affected.
+- **Daughters**: 
+  - Daughters inherit one X chromosome from the father and one X chromosome from the mother.
+- Daughters will inherit the normal X chromosome from the father (X).
+- If the mother is a carrier (X^aX), there is a 50% chance that the daughter will inherit the affected X chromosome from the mother, making her a carrier (X^aX).
+- For a daughter to be affected (X^aX^a), she would need to inherit the affected X chromosome from both parents, which is not possible if the father is unaffected.
+- **Sons and Daughters**:
+  - All children will inherit the normal X chromosome from the father.
+- Sons will inherit a normal X chromosome from the mother and a Y chromosome from the father, making them unaffected.
+- Daughters will inherit a normal X chromosome from both parents, making them unaffected.
+- An unaffected father (with a normal X chromosome) **cannot** pass an X-linked recessive disorder to any of his children.
+- Affected males must inherit the X-linked recessive allele from their mother.
+- Females can only be affected if they inherit two copies of the recessive allele (one from each parent), but an unaffected father cannot provide the affected allele.
+Therefore, an unaffected father cannot have affected children of either sex if the disorder is X-linked recessive.
+
+Summary: 
+- Daughters will inherit the normal X chromosome from the father (X).
+**Females** have two X chromosomes, one from each parent.

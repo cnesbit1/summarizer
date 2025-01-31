@@ -1,0 +1,23 @@
+Original Response: 
+Yes, you're correct.
+The `session.getRemote()` method is part of the Jetty WebSocket API, which is being used in your code.
+The `getRemote()` method returns a `RemoteEndpoint` object that represents the remote endpoint of the WebSocket connection, through which you can send messages to the client.
+If your IDE or compiler doesn't recognize `session.getRemote()`, it's likely because it doesn't recognize the `Session` class or the `getRemote()` method.
+This can happen if the required JAR files for the Jetty WebSocket API are not included in your project's dependencies or if they are not properly configured.
+To fix this issue, you need to ensure that your project is correctly configured to include the Jetty WebSocket API.
+This typically involves adding the necessary JAR files to your project's build path or dependency management system (e.g., Maven or Gradle).
+If you're using Maven, you can add the Jetty WebSocket API dependency to your `pom.xml` file:
+
+
+
+Replace `your_version_here` with the appropriate version of the Jetty WebSocket API that you're using.
+If you're using Gradle, you can add the dependency to your `build.gradle` file:
+
+
+
+Again, replace `your_version_here` with the appropriate version of the Jetty WebSocket API.
+After adding the dependency, make sure to rebuild your project to apply the changes.
+This should resolve the issue, and your IDE should recognize `session.getRemote()` without any errors.
+
+Summary: 
+The `session.getRemote()` method is part of the Jetty WebSocket API, which is being used in your code.

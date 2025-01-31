@@ -1,0 +1,402 @@
+>> USER: Define the following terms:
+
+Dominant
+Recessive
+
+>> ASSISTANT: In genetics, the terms "dominant" and "recessive" describe how certain traits or characteristics are expressed in an organism's phenotype, which is the observable physical or biochemical characteristics of an organism, as determined by both genetic makeup and environmental influences.
+
+### Dominant
+A dominant allele is one that expresses its trait even when only one copy is present. In other words, if an individual has one dominant allele and one recessive allele for a particular gene, the dominant allele will mask the effect of the recessive allele, and the trait associated with the dominant allele will be observed in the organism. 
+
+- **
+
+>> USER: Define the following terms:
+
+Dominant
+Recessive
+Phenotype
+Homozygous
+Heterozygous
+Homologous
+Gene
+Alleles
+Principle of Independent Assortment
+Principle of Segregation
+
+>> ASSISTANT: Certainly! Here are the definitions of the requested terms in genetics:
+
+### Dominant
+A dominant allele is one that expresses its trait even when only one copy is present. In other words, if an individual has one dominant allele and one recessive allele for a particular gene, the dominant allele will mask the effect of the recessive allele, and the trait associated with the dominant allele will be observed in the organism. 
+
+### Recessive
+A recessive allele is one that expresses its trait only when two copies are present (i.e., in the absence of a dominant allele). If an individual has one recessive allele and one dominant allele for a particular gene, the trait associated with the recessive allele will not be observed because the dominant allele will mask its effect.
+
+### Phenotype
+The phenotype refers to the observable physical or biochemical characteristics of an organism, as determined by both its genetic makeup and environmental influences. Examples of phenotypes include height, eye color, and blood type.
+
+### Homozygous
+An organism is homozygous for a gene if it has two identical alleles for that gene. For example, if an individual has two dominant alleles (AA) or two recessive alleles (aa), they are considered homozygous for that gene.
+
+### Heterozygous
+An organism is heterozygous for a gene if it has two different alleles for that gene. For example, if an individual has one dominant allele and one recessive allele (Aa), they are considered heterozygous for that gene.
+
+### Homologous
+Homologous chromosomes are pairs of chromosomes in a diploid organism that have the same structure and carry the same genes, but may carry different alleles. One chromosome of each pair is inherited from each parent.
+
+### Gene
+A gene is a sequence of DNA that contains the necessary information to produce a functional product, typically a protein or RNA molecule. Genes are the basic units of heredity and are passed from parents to offspring.
+
+### Alleles
+Alleles are different versions of a gene that arise through mutation and are found at the same place on a chromosome. Different alleles can result in variations in the expressed trait.
+
+### Principle of Independent Assortment
+The principle of independent assortment, proposed by Gregor Mendel, states that alleles for different genes segregate independently of one another during the formation of gametes. This means the inheritance of one trait is not affected by the inheritance of another, provided the genes are on different chromosomes or far apart on the same chromosome.
+
+### Principle of Segregation
+The principle of segregation, also proposed by Gregor Mendel, states that during the formation of gametes, the two alleles for a gene separate, or segregate, so that each gamete carries only one allele for each gene. This ensures that offspring inherit one allele from each parent.
+
+>> USER: Genotype
+
+>> ASSISTANT: ### Genotype
+The genotype is the genetic makeup of an organism, referring specifically to the set of alleles it possesses for a particular gene or set of genes. The genotype determines the potential traits an organism can pass on to its offspring and can influence the organism's phenotype.
+
+For example, in the case of a gene with two alleles, A (dominant) and a (recessive):
+
+- An organism with the genotype AA is homozygous dominant.
+- An organism with the genotype aa is homozygous recessive.
+- An organism with the genotype Aa is heterozygous.
+
+The genotype, in combination with environmental factors, contributes to the overall phenotype of the organism.
+
+>> USER: Homozygous
+An organism is homozygous for a gene if it has two identical alleles for that gene. For example, if an individual has two dominant alleles (AA) or two recessive alleles (aa), they are considered homozygous for that gene.
+
+Are  you sure?
+
+>> ASSISTANT: Yes, that definition is correct. An organism is considered homozygous for a gene if it has two identical alleles for that gene. This means that both alleles at a specific locus on homologous chromosomes are the same. 
+
+To elaborate:
+
+- **Homozygous dominant**: An individual has two copies of the dominant allele (e.g., AA).
+- **Homozygous recessive**: An individual has two copies of the recessive allele (e.g., aa).
+
+Being homozygous means there is no variation in the alleles for that particular gene, which often leads to the expression of the trait associated with those alleles. 
+
+If you have further questions or need more clarification, feel free to ask!
+
+>> USER: Homologous
+Homologous chromosomes are pairs of chromosomes in a diploid organism that have the same structure and carry the same genes, but may carry different alleles. One chromosome of each pair is inherited from each parent.
+
+Are you sure?
+
+>> ASSISTANT: Yes, the definition provided is correct, but let's ensure it's clear and comprehensive.
+
+### Homologous Chromosomes
+Homologous chromosomes are pairs of chromosomes in a diploid organism that have the same structure, length, and gene sequence. Each pair consists of one chromosome inherited from the organism's mother and one from the father. These chromosomes carry the same genes at corresponding loci (positions), but they may carry different alleles for those genes.
+
+For example, if a gene for eye color is located at a specific locus on a chromosome, the corresponding homologous chromosome will also have a gene for eye color at the same locus, though one may carry the allele for brown eyes and the other for blue eyes.
+
+### Key Points:
+- **Same Structure**: Homologous chromosomes are similar in size and shape.
+- **Same Genes**: They carry the same genes in the same order.
+- **Different Alleles**: While they carry the same genes, the specific versions (alleles) of those genes may differ.
+- **Inheritance**: One homologous chromosome is inherited from each parent.
+
+If you need further clarification or have more questions, please let me know!
+
+>> USER: Genes on the same chromosome may be inherited together. Hoe do linked genes interfere witih Mendel's law of independent assortment? Why doesn't the inheritance pattern of linked genes disprove this law? How does crossing over "unlink" genes?
+
+>> ASSISTANT: Linked genes are genes located close to each other on the same chromosome and tend to be inherited together because they are less likely to be separated during meiosis. This linkage can interfere with Mendel's Law of Independent Assortment, which states that alleles of different genes assort independently of one another during gamete formation.
+
+### Interference with Mendel's Law of Independent Assortment
+
+Mendel's Law of Independent Assortment assumes that genes are located on different chromosomes or are far apart on the same chromosome. This law holds true when genes are unlinked, meaning their inheritance is not influenced by their proximity to each other. However, linked genes do not assort independently because they are physically close on the same chromosome and tend to be inherited together. As a result, the expected ratios of offspring phenotypes can deviate from those predicted by independent assortment.
+
+### Why Linked Genes Don't Disprove Mendel's Law
+
+The inheritance pattern of linked genes does not disprove Mendel's Law of Independent Assortment because this law applies to genes located on different chromosomes or genes that are far apart on the same chromosome. Mendel's experiments were primarily based on traits controlled by genes located on different chromosomes, where independent assortment holds true. The discovery of linked genes added complexity to genetic inheritance but did not negate the principles Mendel observed.
+
+### Crossing Over and Unlinking Genes
+
+Crossing over is a process that occurs during prophase I of meiosis, where homologous chromosomes exchange segments of genetic material. This process can "unlink" genes that are located on the same chromosome by physically exchanging segments between homologous chromosomes. When crossing over occurs, it can break the linkage between genes and result in new combinations of alleles that are different from those present in the parent organisms.
+
+### How Crossing Over Works:
+
+1. **Homologous Pairing**: Homologous chromosomes pair up during prophase I of meiosis.
+2. **Synapsis and Chiasma Formation**: Chromatids from homologous chromosomes form a synaptonemal complex and exchange segments at points called chiasmata.
+3. **Recombination**: The exchange of genetic material between chromatids results in recombinant chromosomes, which have a mix of alleles from both parents.
+4. **Separation**: The homologous chromosomes separate into different gametes, carrying new combinations of linked genes.
+
+### Effect on Inheritance Patterns
+
+- **Before Crossing Over**: Linked genes tend to be inherited together, resulting in a lower frequency of recombinant phenotypes.
+- **After Crossing Over**: Recombination increases the genetic variation by producing new allele combinations, which can appear as if the genes assort independently, despite being linked.
+
+### Summary
+
+- **Linked genes** tend to be inherited together because of their physical proximity on the same chromosome.
+- **Mendel's Law of Independent Assortment** applies to genes on different chromosomes or far apart on the same chromosome.
+- **Crossing over** during meiosis can unlink genes by exchanging segments of homologous chromosomes, leading to new combinations of alleles.
+- **Recombination** resulting from crossing over can create genetic diversity and affect inheritance patterns, making them appear more in line with independent assortment despite initial linkage.
+
+>> USER: What is X-linked recessive, autosomal dominant, or autosomal recessive?
+
+>> ASSISTANT: These terms describe different modes of inheritance for genetic traits or disorders, based on whether the gene involved is located on an autosome (a non-sex chromosome) or a sex chromosome, and whether the trait is dominant or recessive.
+
+### X-Linked Recessive
+An X-linked recessive trait or disorder is caused by a recessive allele located on the X chromosome. Since males have only one X chromosome (XY), a single recessive allele on that X chromosome will cause the trait or disorder to be expressed. Females, having two X chromosomes (XX), must have two copies of the recessive allele (one on each X chromosome) for the trait or disorder to be expressed.
+
+- **Males (XY)**: Only one copy of the recessive allele is needed for the trait to be expressed (e.g., X^aY).
+- **Females (XX)**: Two copies of the recessive allele are needed for the trait to be expressed (e.g., X^aX^a).
+
+**Examples**: Hemophilia, Duchenne muscular dystrophy, red-green color blindness.
+
+### Autosomal Dominant
+An autosomal dominant trait or disorder is caused by a dominant allele located on one of the autosomes (chromosomes 1-22). Only one copy of the dominant allele is necessary for the trait or disorder to be expressed, regardless of whether the individual is homozygous (AA) or heterozygous (Aa) for the dominant allele.
+
+- **Homozygous Dominant (AA)**: The trait is expressed.
+- **Heterozygous (Aa)**: The trait is expressed.
+
+**Examples**: Huntington's disease, Marfan syndrome, Achondroplasia.
+
+### Autosomal Recessive
+An autosomal recessive trait or disorder is caused by a recessive allele located on one of the autosomes (chromosomes 1-22). Two copies of the recessive allele (one from each parent) are necessary for the trait or disorder to be expressed. Individuals who have only one copy of the recessive allele (heterozygous, Aa) are carriers but do not express the trait.
+
+- **Homozygous Recessive (aa)**: The trait is expressed.
+- **Heterozygous (Aa)**: The trait is not expressed, but the individual is a carrier.
+
+**Examples**: Cystic fibrosis, sickle cell anemia, Tay-Sachs disease.
+
+### Summary
+- **X-Linked Recessive**: Trait expressed in males with one recessive allele and in females with two recessive alleles.
+- **Autosomal Dominant**: Trait expressed with one or two copies of the dominant allele.
+- **Autosomal Recessive**: Trait expressed only with two copies of the recessive allele; carriers have one copy without expressing the trait.
+
+>> USER: How do you determine if a disorder is autosomal recessive or x-linked recessive based just off a pedigree?
+
+>> ASSISTANT: Determining if a disorder is autosomal recessive or X-linked recessive based on a pedigree involves analyzing the inheritance patterns across generations. Here are the key characteristics to look for in each type of inheritance:
+
+### Autosomal Recessive
+
+1. **Affected individuals** often have unaffected parents.
+   - Both parents of an affected individual are typically carriers (heterozygous) for the recessive allele.
+2. **Equal frequency** in both sexes.
+   - Both males and females are equally likely to be affected.
+3. **Skipping generations**.
+   - The disorder can appear to skip generations if carriers do not express the trait.
+4. **Consanguinity** (mating between relatives) might increase the likelihood of the disorder.
+   - Increased likelihood of two carriers mating and producing affected offspring.
+
+### X-Linked Recessive
+
+1. **More males affected** than females.
+   - Males have only one X chromosome, so a single recessive allele on the X chromosome will result in the disorder.
+2. **Affected males** are usually born to carrier mothers.
+   - The mother passes the affected X chromosome to her son.
+3. **No male-to-male transmission**.
+   - Fathers do not pass the X chromosome to their sons; they pass the Y chromosome.
+4. **Affected females** are rare and usually have affected fathers and carrier or affected mothers.
+   - For a female to be affected, she must inherit two copies of the recessive allele (one from each parent).
+
+### Steps to Analyze a Pedigree
+
+1. **Identify the affected individuals**.
+   - Note the pattern of affected individuals across generations.
+
+2. **Check the sex distribution**.
+   - If more males are affected than females, and if there are no male-to-male transmissions, suspect X-linked recessive inheritance.
+   - If the disorder affects both sexes equally, consider autosomal recessive inheritance.
+
+3. **Analyze parental genotypes**.
+   - For affected individuals with unaffected parents, consider autosomal recessive inheritance where both parents are carriers.
+   - For affected males with unaffected parents, consider X-linked recessive inheritance where the mother is a carrier.
+
+4. **Look for skipping generations**.
+   - Autosomal recessive disorders often skip generations if carriers do not express the trait.
+   - X-linked recessive disorders can also skip generations but will show a characteristic pattern of carrier mothers and affected sons.
+
+5. **Assess family relationships**.
+   - If consanguinity is present, autosomal recessive disorders are more likely.
+
+### Example Pedigree Analysis
+
+#### Autosomal Recessive Example
+- Both males and females affected.
+- Affected individuals have unaffected parents (carriers).
+- Disorder appears to skip generations.
+
+#### X-Linked Recessive Example
+- More males than females affected.
+- Affected males often have carrier mothers.
+- No father-to-son transmission.
+- Affected females rare and have affected fathers and carrier or affected mothers.
+
+By carefully examining these patterns, you can determine the most likely mode of inheritance for a given disorder in a pedigree.
+
+>> USER: Would an unaffected father be able to have affected chlidren, both female and male, if it was x-linked recessive?
+
+>> ASSISTANT: In the case of an X-linked recessive disorder, an unaffected father cannot have affected children, whether male or female. This is due to the way X-linked recessive inheritance works:
+
+### X-Linked Recessive Inheritance Key Points:
+1. **Males** have one X chromosome (from their mother) and one Y chromosome (from their father).
+2. **Females** have two X chromosomes, one from each parent.
+
+### Scenarios for X-Linked Recessive Disorder:
+
+#### Unaffected Father (XY)
+- **Father's Genotype**: XY (with a normal X chromosome)
+- **Mother's Genotype**: 
+  - XX (if unaffected and not a carrier)
+  - X^aX (if a carrier of the recessive allele)
+
+#### Children of an Unaffected Father and Carrier Mother:
+- **Sons**: 
+  - Sons inherit the Y chromosome from the father and one X chromosome from the mother.
+  - Sons cannot inherit the X chromosome from the father; they inherit their X chromosome from the mother.
+  - If the mother is a carrier (X^aX), there is a 50% chance that the son will inherit the affected X chromosome (X^aY) and be affected.
+
+- **Daughters**: 
+  - Daughters inherit one X chromosome from the father and one X chromosome from the mother.
+  - Daughters will inherit the normal X chromosome from the father (X).
+  - If the mother is a carrier (X^aX), there is a 50% chance that the daughter will inherit the affected X chromosome from the mother, making her a carrier (X^aX).
+  - For a daughter to be affected (X^aX^a), she would need to inherit the affected X chromosome from both parents, which is not possible if the father is unaffected.
+
+#### Children of an Unaffected Father and Unaffected Mother (not a carrier):
+- **Sons and Daughters**:
+  - All children will inherit the normal X chromosome from the father.
+  - Sons will inherit a normal X chromosome from the mother and a Y chromosome from the father, making them unaffected.
+  - Daughters will inherit a normal X chromosome from both parents, making them unaffected.
+
+### Summary
+- An unaffected father (with a normal X chromosome) **cannot** pass an X-linked recessive disorder to any of his children.
+- Affected males must inherit the X-linked recessive allele from their mother.
+- Females can only be affected if they inherit two copies of the recessive allele (one from each parent), but an unaffected father cannot provide the affected allele.
+
+Therefore, an unaffected father cannot have affected children of either sex if the disorder is X-linked recessive.
+
+>> USER: Genes on the same chromosome may be inherited together. Hoe do linked genes interfere witih Mendel's law of independent assortment? Why doesn't the inheritance pattern of linked genes disprove this law? How does crossing over "unlink" genes?
+
+>> ASSISTANT: ### Linked Genes and Mendel's Law of Independent Assortment
+
+Genes that are located close to each other on the same chromosome are referred to as linked genes. These genes tend to be inherited together because the likelihood of a recombination event (crossing over) occurring between them is relatively low. This linkage can interfere with Mendel's Law of Independent Assortment, which states that alleles of different genes assort independently of one another during the formation of gametes.
+
+### Interference with Mendel's Law of Independent Assortment
+
+Mendel's Law of Independent Assortment applies to genes that are located on different chromosomes or are far apart on the same chromosome, where the segregation of one gene's alleles is not influenced by the segregation of another gene's alleles. However, linked genes do not assort independently because their proximity on the same chromosome means they are often inherited together, leading to a deviation from the expected Mendelian ratios.
+
+### Why Linked Genes Don't Disprove Mendel's Law
+
+The inheritance pattern of linked genes does not disprove Mendel's Law of Independent Assortment because this law primarily applies to genes on different chromosomes or genes that are far apart on the same chromosome. Mendel's experiments were conducted using traits that are controlled by genes located on different chromosomes or sufficiently far apart on the same chromosome, where independent assortment holds true. The discovery of gene linkage added complexity to genetic inheritance but did not negate the principles Mendel observed.
+
+### Crossing Over and "Unlinking" Genes
+
+Crossing over is a process that occurs during prophase I of meiosis, where homologous chromosomes exchange segments of genetic material. This process can "unlink" genes that are located on the same chromosome by physically exchanging segments between homologous chromosomes. When crossing over occurs between linked genes, it can create new combinations of alleles, leading to genetic recombination.
+
+### How Crossing Over Works:
+
+1. **Homologous Pairing**: Homologous chromosomes pair up during prophase I of meiosis.
+2. **Synapsis and Chiasma Formation**: Chromatids from homologous chromosomes form a synaptonemal complex and exchange segments at points called chiasmata.
+3. **Recombination**: The exchange of genetic material between chromatids results in recombinant chromosomes, which have a mix of alleles from both parents.
+4. **Separation**: The homologous chromosomes separate into different gametes, carrying new combinations of linked genes.
+
+### Effect on Inheritance Patterns
+
+- **Before Crossing Over**: Linked genes tend to be inherited together, resulting in a lower frequency of recombinant phenotypes.
+- **After Crossing Over**: Recombination increases the genetic variation by producing new allele combinations, which can appear as if the genes assort independently, despite being linked.
+
+### Summary
+
+- **Linked genes**: Tend to be inherited together due to their proximity on the same chromosome.
+- **Mendel's Law of Independent Assortment**: Applies to genes on different chromosomes or far apart on the same chromosome.
+- **Crossing over**: During meiosis can unlink genes by exchanging segments of homologous chromosomes, leading to genetic recombination.
+- **Recombination**: Results in new allele combinations, making inheritance patterns appear more independent even for linked genes.
+
+By understanding these processes, we see that while linked genes may interfere with the independent assortment, crossing over provides a mechanism that introduces variability and adheres to the broader principles of genetic inheritance described by Mendel.
+
+>> USER: Why does crossing over "unlink genes"?
+
+>> ASSISTANT: ### Why Does Crossing Over "Unlink" Genes?
+
+Crossing over is a fundamental process that occurs during prophase I of meiosis. It involves the exchange of genetic material between homologous chromosomes, which are pairs of chromosomes that have the same genes at the same loci but may carry different alleles. Here’s how crossing over works to "unlink" genes and what this means in terms of genetic inheritance:
+
+#### Mechanism of Crossing Over
+1. **Synapsis**: During prophase I of meiosis, homologous chromosomes pair up closely in a process called synapsis.
+2. **Formation of Chiasmata**: Chromatids of homologous chromosomes touch and exchange segments at points called chiasmata. These points of contact are where the physical exchange of chromosome segments occurs.
+3. **Exchange of Genetic Material**: Sections of DNA are exchanged between non-sister chromatids of homologous chromosomes. This reciprocal exchange is called homologous recombination or crossing over.
+
+#### Effects on Linked Genes
+- **Before Crossing Over**: Genes that are close to each other on the same chromosome (linked genes) tend to be inherited together because the probability of a crossover occurring between them is low.
+- **After Crossing Over**: When a crossover event occurs between two linked genes, it can separate (unlink) these genes onto different chromatids, resulting in new combinations of alleles.
+
+### How Crossing Over Affects Inheritance Patterns
+- **Recombination**: Crossing over creates recombinant chromosomes that carry combinations of alleles not found in either parent. This increases genetic diversity in the offspring.
+- **Unlinking of Genes**: When genes that were previously linked are separated by crossing over, they behave more like unlinked genes and assort independently, which aligns with Mendel’s Law of Independent Assortment for genes on different chromosomes.
+
+### Genetic Mapping and Recombination Frequency
+Alfred Sturtevant, a student of Thomas Morgan, utilized the concept of recombination to create genetic maps:
+- **Genetic Distance**: The frequency of crossing over between two genes is proportional to the physical distance between them on a chromosome. Genes that are far apart are more likely to be separated by crossing over than genes that are close together.
+- **Map Units**: The distance between genes is measured in map units or centimorgans (cM). One map unit corresponds to a 1% recombination frequency.
+
+### Summary of Linked Genes and Crossing Over
+- **Linked Genes**: Genes located close to each other on the same chromosome tend to be inherited together.
+- **Crossing Over**: During meiosis, homologous chromosomes exchange segments of DNA at chiasmata, which can separate linked genes and create new allele combinations.
+- **Genetic Recombination**: This process results in recombinant chromosomes, increasing genetic diversity and allowing linked genes to be inherited independently in some cases.
+
+### Key Points from the Document
+- **Linked genes** can become unlinked due to homologous recombination during meiosis, as described by Frans Janssen who observed chiasmata and the physical exchange of chromosome segments.
+- **Genetic Maps**: Created by Alfred Sturtevant, these maps use recombination frequencies to determine the distances between genes on a chromosome, showing that genes far apart are more likely to undergo recombination.
+
+This detailed understanding of crossing over and genetic linkage provides insight into how genetic diversity is generated and how it fits within the broader framework of Mendelian genetics.
+
+Reference: [13.1B: Genetic Linkage and Distances - Biology LibreTexts](25)
+
+>> USER: How can I distinguish between the crossing over that doesn't change linked genes and the crossing over which does after?
+
+>> ASSISTANT: To distinguish between crossing over events that do not change linked genes and those that do, you need to analyze the resulting genetic combinations in the offspring. Here’s how you can determine the difference:
+
+### Key Concepts
+
+1. **Parental (Non-Recombinant) Chromosomes**: Chromosomes that retain the original combination of alleles from the parents.
+2. **Recombinant Chromosomes**: Chromosomes that have undergone crossing over and have new combinations of alleles.
+
+### Steps to Distinguish Between the Two Types of Crossing Over
+
+1. **Examine the Phenotypes of Offspring**:
+   - **Non-Recombinant Offspring**: These offspring show phenotypes that match the parental types. This indicates that no crossing over or crossing over that did not affect the linked genes occurred.
+   - **Recombinant Offspring**: These offspring show new phenotypes that are different from the parental types. This indicates that crossing over occurred and affected the linked genes.
+
+2. **Calculate Recombination Frequency**:
+   - **Recombination Frequency**: This is the percentage of recombinant offspring out of the total offspring. It gives an indication of how often crossing over occurs between linked genes.
+   - **Formula**: \[ \text{Recombination Frequency} = \left( \frac{\text{Number of Recombinant Offspring}}{\text{Total Number of Offspring}} \right) \times 100 \]
+   - A low recombination frequency suggests that the genes are closely linked and crossing over between them is rare.
+   - A high recombination frequency suggests that crossing over between the genes is more common, which means they are farther apart on the chromosome.
+
+3. **Use Genetic Markers**:
+   - **Genetic Markers**: These are specific sequences of DNA that can be used to track the presence of particular alleles. By analyzing the presence or absence of these markers, you can determine whether crossing over has occurred.
+   - **Parental Markers**: Identify the genetic markers associated with the parental alleles.
+   - **Recombinant Markers**: Identify the genetic markers that indicate new combinations of alleles resulting from crossing over.
+
+### Example Analysis
+
+#### Parental Genotypes:
+- Parent 1: AB/ab (linked genes on the same chromosome)
+- Parent 2: ab/ab (homozygous recessive)
+
+#### Potential Offspring (Phenotypes and Genotypes):
+- **Parental Types**: AB/ab (non-recombinant), ab/ab (non-recombinant)
+- **Recombinant Types**: Ab/ab (recombinant), aB/ab (recombinant)
+
+1. **Count the Offspring**:
+   - If you observe a higher number of offspring with AB/ab and ab/ab phenotypes, this suggests that crossing over did not change the linked genes.
+   - If you observe a significant number of offspring with Ab/ab and aB/ab phenotypes, this indicates that crossing over has occurred and affected the linked genes.
+
+2. **Determine the Frequency**:
+   - Suppose you have 100 offspring: 80 are parental types (40 AB/ab, 40 ab/ab) and 20 are recombinant types (10 Ab/ab, 10 aB/ab).
+   - Recombination frequency = (20/100) × 100 = 20%
+
+### Conclusion
+
+- **No Change in Linked Genes**: If most offspring are of the parental type and recombination frequency is low, crossing over did not significantly affect the linked genes.
+- **Change in Linked Genes**: If a substantial proportion of offspring are recombinant and recombination frequency is moderate to high, crossing over did affect the linked genes.
+
+By analyzing the phenotypes and genotypes of the offspring and calculating the recombination frequency, you can determine whether crossing over has changed the linked genes.

@@ -1,0 +1,9 @@
+Original Response: 
+Here's the full version of your `ChessGame` class with all the unchanged code included:
+
+
+
+This version includes all the original code along with the revisions made to address the stack overflow issue.
+Let me know if you need further assistance!
+
+Summary: 

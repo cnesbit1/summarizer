@@ -1,0 +1,9 @@
+Original Response: 
+Certainly!
+Here's the output formatted according to your specifications:
+
+
+
+This format presents each option on a new line, with a clear indication of the user's current status and available actions.
+
+Summary: 

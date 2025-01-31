@@ -1,0 +1,14 @@
+Original Response: 
+Got it, let's revise the `ChessGame` class without modifying the `ChessBoard` class.
+We'll implement the move logic within the `ChessGame` class itself.
+Here's the updated `ChessGame` class:
+
+
+
+In this version:
+
+- We've added logic for moving pieces within the `ChessGame` class itself, without modifying the `ChessBoard` class.
+- The `makeMove` method now checks whether the move is valid, simulates the move on a temporary board to check for leaving the king in check, updates the actual board with the move, switches the turn, and checks for the end of the game.
+- Other methods and fields remain unchanged, ensuring the integrity of the existing functionality.
+
+Summary: 

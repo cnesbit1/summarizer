@@ -1,0 +1,33 @@
+Original Response: 
+Yes, IntelliJ IDEA provides a feature called "Optimize Imports" which helps clean up and organize import statements in your Java code.
+Here's how you can use it:
+
+1.
+**Keyboard Shortcut**:
+   - The quickest way to optimize imports is to use the keyboard shortcut.
+On Windows and Linux, it's usually `Ctrl + Alt + O`, and on macOS, it's `Cmd + Option + O`.
+Pressing this shortcut will trigger IntelliJ to remove unused imports and organize the remaining imports alphabetically.
+2.
+**Menu Option**:
+   - You can also access the "Optimize Imports" feature from the menu:
+     - Navigate to "Code" menu.
+- Choose "Optimize Imports" from the dropdown.
+3.
+**Automatic Cleanup**:
+   - IntelliJ IDEA can automatically perform import optimization when you save a file or commit changes to version control.
+You can enable this option in the settings:
+     - Go to "Settings/Preferences" (Ctrl/Cmd + Alt + S).
+- Navigate to "Editor" > "General" > "Auto Import".
+- Check the option "Optimize imports on the fly" under "Java".
+4.
+**Manual Cleanup**:
+   - Additionally, you can configure IntelliJ to automatically remove unused imports without organizing them alphabetically:
+     - In the settings ("Settings/Preferences" > "Editor" > "Code Style" > "Java").
+- Under the "Imports" tab, check the option "Optimize imports on the fly".
+- Uncheck the option "Sort imports".
+By using these methods, you can keep your Java codebase clean and organized, ensuring that import statements are concise and relevant.
+This helps improve code readability and maintainability.
+
+Summary: 
+- Choose "Optimize Imports" from the dropdown.
+- Uncheck the option "Sort imports".

@@ -1,0 +1,8 @@
+Original Response: 
+Quantum computing is a new type of computing that uses the principles of quantum mechanics to perform calculations and solve problems that are impractical or impossible for classical computers.
+It is based on the ability of subatomic particles, such as electrons and photons, to exist in multiple states at the same time, a phenomenon known as superposition.
+In classical computing, information is stored and processed in binary digits, or bits, which have a value of either 0 or 1.
+In quantum computing, information is stored and processed using quantum bits, or qubits.
+
+Summary: 
+In quantum computing, information is stored and processed using quantum bits, or qubits.

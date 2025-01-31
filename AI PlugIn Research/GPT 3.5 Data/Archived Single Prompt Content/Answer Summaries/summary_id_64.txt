@@ -1,0 +1,18 @@
+Original Response: 
+Vaccines work by stimulating the immune system to recognize and defend against specific diseases.
+Here’s how they generally work: Introduction of Antigen: Vaccines contain a weakened or killed form of a pathogen (such as a virus or bacterium), or a part of it (like proteins or sugars from the pathogen) known as an antigen.
+These antigens cannot cause the disease but are enough to trigger an immune response.
+Immune Response Activation: When a vaccine is administered, the immune system recognizes the antigen as foreign and responds by producing antibodies.
+Antibodies are proteins that specifically target and neutralize the antigen.
+Memory Cells Formation: Vaccines also stimulate the production of memory cells (B and T lymphocytes).
+These memory cells "remember" the antigen and remain in the body after the initial immune response.
+If the person is exposed to the actual pathogen in the future, these memory cells can quickly recognize and mount a rapid immune response to prevent or minimize infection.
+Protection Against Disease: By mimicking an infection without causing illness, vaccines prepare the immune system to fight the disease-causing organism if it enters the body later.
+This helps prevent or reduce the severity of the disease.
+Different types of vaccines achieve these goals in various ways, such as using weakened live viruses (like measles vaccine), inactivated viruses (like polio vaccine), or only specific parts of the virus (like protein subunits in hepatitis B vaccine).
+Vaccines have been instrumental in reducing the incidence of many infectious diseases worldwide and are a critical tool in public health.
+
+Summary: 
+Antibodies are proteins that specifically target and neutralize the antigen.
+Vaccines work by stimulating the immune system to recognize and defend against specific diseases.
+This helps prevent or reduce the severity of the disease.

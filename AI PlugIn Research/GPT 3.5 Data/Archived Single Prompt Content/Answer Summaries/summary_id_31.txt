@@ -1,0 +1,6 @@
+Original Response: 
+Vaccines work by stimulating the immune system to recognize and remember specific pathogens, like viruses or bacteria, without causing illness.
+This recognition helps the immune system respond quickly and effectively if the person is exposed to the actual pathogen in the future.
+Challenges in developing vaccines against emerging pathogens include understanding the new pathogen's biology, rapidly developing safe and effective vaccines, ensuring global distribution and access, addressing vaccine hesitancy, and adapting to viral mutations.
+
+Summary: 

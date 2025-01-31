@@ -1,0 +1,64 @@
+Original Response: 
+Determining if a disorder is autosomal recessive or X-linked recessive based on a pedigree involves analyzing the inheritance patterns across generations.
+Here are the key characteristics to look for in each type of inheritance:
+
+
+1.
+**Affected individuals** often have unaffected parents.
+- Both parents of an affected individual are typically carriers (heterozygous) for the recessive allele.
+2.
+**Equal frequency** in both sexes.
+- Both males and females are equally likely to be affected.
+3.
+**Skipping generations**.
+- The disorder can appear to skip generations if carriers do not express the trait.
+4.
+**Consanguinity** (mating between relatives) might increase the likelihood of the disorder.
+- Increased likelihood of two carriers mating and producing affected offspring.
+1.
+**More males affected** than females.
+- Males have only one X chromosome, so a single recessive allele on the X chromosome will result in the disorder.
+2.
+**Affected males** are usually born to carrier mothers.
+- The mother passes the affected X chromosome to her son.
+3.
+**No male-to-male transmission**.
+- Fathers do not pass the X chromosome to their sons; they pass the Y chromosome.
+4.
+**Affected females** are rare and usually have affected fathers and carrier or affected mothers.
+- For a female to be affected, she must inherit two copies of the recessive allele (one from each parent).
+1.
+**Identify the affected individuals**.
+- Note the pattern of affected individuals across generations.
+2.
+**Check the sex distribution**.
+- If more males are affected than females, and if there are no male-to-male transmissions, suspect X-linked recessive inheritance.
+- If the disorder affects both sexes equally, consider autosomal recessive inheritance.
+3.
+**Analyze parental genotypes**.
+- For affected individuals with unaffected parents, consider autosomal recessive inheritance where both parents are carriers.
+- For affected males with unaffected parents, consider X-linked recessive inheritance where the mother is a carrier.
+4.
+**Look for skipping generations**.
+- Autosomal recessive disorders often skip generations if carriers do not express the trait.
+- X-linked recessive disorders can also skip generations but will show a characteristic pattern of carrier mothers and affected sons.
+5.
+**Assess family relationships**.
+- If consanguinity is present, autosomal recessive disorders are more likely.
+- Both males and females affected.
+- Affected individuals have unaffected parents (carriers).
+- Disorder appears to skip generations.
+- More males than females affected.
+- Affected males often have carrier mothers.
+- No father-to-son transmission.
+- Affected females rare and have affected fathers and carrier or affected mothers.
+By carefully examining these patterns, you can determine the most likely mode of inheritance for a given disorder in a pedigree.
+
+Summary: 
+- Both males and females affected.
+**More males affected** than females.
+- More males than females affected.
+- Affected males often have carrier mothers.
+- Affected individuals have unaffected parents (carriers).
+- Disorder appears to skip generations.
+**Affected individuals** often have unaffected parents.

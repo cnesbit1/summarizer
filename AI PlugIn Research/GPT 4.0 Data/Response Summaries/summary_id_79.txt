@@ -1,0 +1,47 @@
+Original Response: 
+MySQL is a popular open-source relational database management system (RDBMS) that uses Structured Query Language (SQL) for managing and manipulating data.
+Below are some common MySQL commands categorized by their functionality:
+
+
+1.
+**Create Database:**
+   
+
+2.
+**Use Database:**
+   
+
+3.
+**Show Databases:**
+   
+
+4.
+**Drop Database:**
+
+
+1.
+**Create Table:**
+   
+
+2.
+**Show Tables:**
+   
+
+3.
+**Describe Table Structure:**
+   
+
+4.
+**Drop Table:**
+
+
+1.
+**Insert Into Table:**
+   ```sql
+   INSERT INTO table_name (column1, column2, ...) VALUES (value.
+
+Summary: 
+Below are some common MySQL commands categorized by their functionality:
+
+
+1.

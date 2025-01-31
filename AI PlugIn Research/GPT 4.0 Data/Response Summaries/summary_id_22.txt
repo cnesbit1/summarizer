@@ -1,0 +1,21 @@
+Original Response: 
+The stack overflow error you're encountering is likely due to an infinite loop or recursion occurring within your code.
+Let's examine the structure of your ChessGame class and see how we can fix it.
+Looking at the stack trace, the methods `isInMate`, `isInStalemate`, and `makeMove` are repeatedly calling each other, resulting in the stack overflow error.
+The problem lies in the fact that `isInMate` and `isInStalemate` are mutually recursive, and both of them call `makeMove`, which in turn calls `isInMate` and `isInStalemate`.
+This creates an infinite loop, eventually leading to a stack overflow.
+To fix this issue, we need to refactor the code to break this cycle of recursion.
+One approach could be to separate the logic for determining checkmate and stalemate from the logic for making moves.
+Here's a revised version of your `ChessGame` class:
+
+
+
+In this revised version:
+
+- `makeMove` method now calls `checkForEndGame` after each move to check for checkmate and stalemate.
+- `checkForEndGame` method checks for checkmate and stalemate independently, breaking the recursion cycle.
+- `isInCheckmate` and `isInStalemate` methods are now standalone methods that don't call each other or `makeMove`, avoiding the recursion issue.
+This separation of concerns should resolve the stack overflow error and provide a cleaner structure for your ChessGame class.
+
+Summary: 
+- `checkForEndGame` method checks for checkmate and stalemate independently, breaking the recursion cycle.

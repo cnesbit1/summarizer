@@ -1,0 +1,34 @@
+Original Response: 
+[python]
+
+Certainly!
+Let's organize the imports and other commands in a more structured and readable manner.
+We will follow these steps:
+
+1.
+**Standard Library Imports**: Group standard library imports together.
+2.
+**Third-Party Library Imports**: Group third-party library imports together.
+3.
+**Local Imports and Setup**: Include any commands for setting up the environment, downloading data, or configuring settings.
+4.
+**Functions and Classes**: Define any functions, classes, or initializations.
+Here's the organized version:
+
+
+1.
+**Standard Library Imports**: These are placed at the top, ensuring basic dependencies are available.
+2.
+**Third-Party Library Imports**: Grouped below standard libraries and alphabetically sorted.
+3.
+**Environment Setup**: Commands that are intended to run in the interactive environment (like `pip install` and model downloads) are commented out but placed in the order they should be executed.
+4.
+**Initialization**: Any initializations or configurations are placed at the end.
+This organized structure ensures clarity and maintainability, making it easy to see at a glance what libraries and configurations are necessary for your script.
+
+Summary: 
+Here's the organized version:
+
+
+1.
+**Standard Library Imports**: Group standard library imports together.
