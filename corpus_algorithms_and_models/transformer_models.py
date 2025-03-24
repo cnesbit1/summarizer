@@ -21,6 +21,12 @@ for item in os.listdir(CORPUS_DIR):
     else:
         continue
 
+
+
+print("Starting Excel file creation process...")
+create_excel_files(corpus_collection, all_corpus_names)
+print("Excel file creation process completed.")
+
 # Print summary of loaded corpora
 for name, corpus in corpora.items():
     print(f"\nCorpus: {name}")
