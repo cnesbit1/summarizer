@@ -1,2 +1,2 @@
-master_corpus.csv filter=lfs diff=lfs merge=lfs -text
 cleaned_master_corpus.csv filter=lfs diff=lfs merge=lfs -text
+master_corpus.csv filter=lfs diff=lfs merge=lfs -text
