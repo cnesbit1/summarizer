@@ -24,14 +24,15 @@ def load_list_from_file(filename):
         return []
 
 def main():
-    profanity1 = load_list_from_file("C:\\Users\\Connor\\Downloads\\summarizer\\corpus_algorithms_and_models\\corpus_data_downloads\\subreddit_names\\luis_von_ahn_profanity.txt")
-    profanity2 = load_list_from_file("C:\\Users\\Connor\\Downloads\\summarizer\\corpus_algorithms_and_models\\corpus_data_downloads\\subreddit_names\\profanity_wordlist.txt")
-    profanity3 = load_list_from_file("C:\\Users\\Connor\\Downloads\\summarizer\\corpus_algorithms_and_models\\corpus_data_downloads\\subreddit_names\\custom_profanity.txt")
+    profanity1 = load_list_from_file("./corpus_algorithms_and_models/corpus_data_downloads/profanity_lists/luis_von_ahn_profanity.txt")
+    profanity2 = load_list_from_file("./corpus_algorithms_and_models/corpus_data_downloads/profanity_lists/profanity_wordlist.txt")
+    profanity3 = load_list_from_file("./corpus_algorithms_and_models/corpus_data_downloads/profanity_lists/custom_profanity.txt")
+    
     profanity_set = set(profanity1 + profanity2 + profanity3)
 
     print("Filtering subreddits...")
     for i in ["1", "2", "3"]:
-        with fileinput.FileInput(f"C:\\Users\\Connor\\Downloads\\summarizer\\corpus_algorithms_and_models\\corpus_data_downloads\\subreddit_names\\subreddits_{i}.txt", inplace=True) as file:
+        with fileinput.FileInput(f"./corpus_algorithms_and_models/corpus_data_downloads/subreddit_names/subreddits_{i}.txt", inplace=True) as file:
             for line in file:
                 subreddit = line.strip().lower()
                 if not any(bad_word in subreddit for bad_word in profanity_set):
