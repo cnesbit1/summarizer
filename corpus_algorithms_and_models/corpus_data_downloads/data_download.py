@@ -1,4 +1,5 @@
 from concurrent.futures import ProcessPoolExecutor, ThreadPoolExecutor, as_completed, wait, TimeoutError
+import shutil
 from convokit import Corpus, download
 from multiprocessing import Lock
 import os
@@ -6,9 +7,11 @@ import re
 import pickle
 import multiprocessing
 import logging
+import pandas as pd
+import fileinput
 
 logging.basicConfig(
-        filename="./corpus_algorithms_and_models/corpus_data_downloads/corpus_download_logs/corpus_downloader_3.log",
+        filename="./corpus_algorithms_and_models/corpus_data_downloads/corpus_download_logs/corpus_downloader_1.log",
         level=logging.INFO,
         format="%(asctime)s - %(levelname)s - %(message)s",
         datefmt="%Y-%m-%d %H:%M:%S"
@@ -42,6 +45,70 @@ def chunked(iterable, size):
     for i in range(0, len(iterable), size):
         yield iterable[i:i + size]
 
+def clear_directory(name, unzipped_path):
+    """Delete all contents of a directory, but keep the directory itself."""
+    zipped_path = f"{unzipped_path}.zip"
+    try:
+        for path in [unzipped_path, zipped_path]:
+            if os.path.isfile(path) or os.path.islink(path):
+                os.unlink(path)
+            elif os.path.isdir(path):
+                shutil.rmtree(path)
+    except Exception as e:
+        logging.warning(f"Failed to delete {path}: {e}")
+    finally:
+        # Open the file in in-place mode and remove the line containing the target_line
+        with fileinput.FileInput("C:\\Users\\Connor\\.convokit\\saved-corpora\\downloads\\downloaded.txt", inplace=True) as file:
+            for line in file:
+                # Compare only the first part of the line before $#$
+                if line.split('$#$')[0] != name:
+                    print(line, end='')  # Print the line (writing it back to the file)
+
+def sanitize_text(text):
+    if text is None:
+        return ""
+    return ''.join(char for char in text if char.isprintable() and ord(char) not in range(0x00, 0x20))
+
+def append_to_csv(data, output_csv="./corpus_algorithms_and_models/corpus_data_downloads/data/master_corpus.csv"):
+    """
+    Appends data to a CSV file instead of keeping everything in memory.
+    """
+    df = pd.DataFrame(data)
+    df.to_csv(output_csv, mode='a', header=not os.path.exists(output_csv), index=False, encoding="utf-8")
+
+def process_corpus(corpus_name, corpus, output_csv="./corpus_algorithms_and_models/corpus_data_downloads/data/master_corpus.csv"):
+    """
+    Process a single corpus and append results to CSV to prevent memory overload.
+    """
+    print(f"Processing corpus: {corpus_name}")
+    
+    master_data = []
+    for conversation in corpus.iter_conversations():
+        conv_id = conversation.id
+        res_id_counter = 1
+
+        for utterance in conversation.iter_utterances():
+            sanitized_answer = sanitize_text(utterance.text)
+            master_data.append({
+                "corpus_name": corpus_name,
+                "conv_id": conv_id,
+                "res_id": res_id_counter,
+                "question_text": "DUMMY DATA",
+                "answer_text": sanitized_answer
+            })
+            res_id_counter += 1
+        
+        # Append to CSV after processing each conversation
+        if len(master_data) >= 10000:  # Flush after every 10,000 rows to reduce memory use
+            append_to_csv(master_data, output_csv)
+            master_data.clear()
+
+    # Append any remaining data
+    if master_data:
+        append_to_csv(master_data, output_csv)
+
+    print(f"Finished processing corpus: {corpus_name}")
+
 def corpus_has_text(corpus, min_conversations=10, min_text_length=1000):
     """Check if a corpus has enough meaningful text."""
     num_conversations = len(corpus.get_conversation_ids())
@@ -51,16 +118,30 @@ def corpus_has_text(corpus, min_conversations=10, min_text_length=1000):
 def download_corpus(name, min_conversations=10, min_text_length=1000):
     """Download a single corpus and validate its content."""
     try:
-        corpus = Corpus(filename=download(name))
+        valid = False
+        download_path = download(name)
+        corpus = Corpus(filename=download_path)
         logging.info(f"Corpus loaded: {name}")
         if corpus_has_text(corpus, min_conversations, min_text_length):
+            valid = True
             logging.info(f"Corpus valid: {name}, conversations: {len(corpus.get_conversation_ids())}")
-            return corpus
         else:
             logging.warning(f"Corpus invalid: {name}")
+            return None
+        
+        process_corpus(name, corpus, "./corpus_algorithms_and_models/corpus_data_downloads/data/master_corpus.csv")
+
     except Exception as e:
         logging.error(f"Download failed: {name}, error: {e}")
-    return None
+
+    finally:
+        # Delete downloaded file if it exists
+        if download_path and os.path.isdir(download_path):
+            clear_directory(name, download_path)
+            logging.info(f"Cleared contents of: {download_path}")
+
+    return corpus if valid else None
+
 
 def download_corpora(main_corpus_name, subreddit_names, max_threads=24, min_conversations=10, min_text_length=1000, timeout=600):
     """Download multiple corpora concurrently with a timeout for each download."""
@@ -88,6 +169,13 @@ def download_corpora(main_corpus_name, subreddit_names, max_threads=24, min_conv
 
 def process_batch(batch, main_corpus_name, max_threads, min_conversations, min_text_length, timeout):
     """Process a single batch of subreddits."""
+    logging.basicConfig(
+        filename="./corpus_algorithms_and_models/corpus_data_downloads/corpus_download_logs/corpus_downloader_1.log",
+        level=logging.INFO,
+        format="%(asctime)s - %(levelname)s - %(message)s",
+        datefmt="%Y-%m-%d %H:%M:%S"
+    )
+    
     logging.info(f"Processing batch: {len(batch)} subreddits")
     corpus_collection, corpus_names = download_corpora(
         main_corpus_name=main_corpus_name,
@@ -107,6 +195,7 @@ def main():
     if not subreddit_list:
         logging.error("No subreddits loaded. Exiting.")
         return 1
+    
     batch_size = 10000
     max_concurrent_batches = 1 # min(4, multiprocessing.cpu_count() // 2)
 
