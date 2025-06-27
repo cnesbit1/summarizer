@@ -1,0 +1,84 @@
+import os
+import time
+import openai
+from openai import OpenAI
+import pandas as pd
+from rouge_score import rouge_scorer
+
+# Setup
+openai.api_key = os.getenv("OPENAI_API_KEY")  # or hardcode if needed
+original_csv = "corpus_algorithms_and_models/corpus_data_downloads/data/reddit_corpus_small.csv"
+gpt_scores_csv = "../corpus_summaries/rouge_scores_gpt_vs_original.csv"
+summary_output_dir = "../corpus_summaries/gpt_conversation_summaries"
+os.makedirs(summary_output_dir, exist_ok=True)
+
+# Load data
+df = pd.read_csv(original_csv)
+df = df[df["text"].notnull()]
+conversation_ids = df["conversation_id"].dropna().unique().tolist()
+
+# ROUGE scorer
+scorer = rouge_scorer.RougeScorer(['rouge1', 'rouge2', 'rougeL'], use_stemmer=True)
+gpt_scores = []
+
+client = OpenAI()
+
+# ChatGPT summarization function
+def summarize_with_chatgpt(text, convo_id):
+    messages = [
+        {"role": "system", "content": "Summarize the following Reddit conversation in 1-3 sentences, or about 10 percent of the orignal text, and a maximum of 250 words. Have it be an extractive summary (so don't add anything not in the original text) and it should be a good representation of the full text."},
+        {"role": "user", "content": text}
+    ]
+    try:
+        response = client.chat.completions.create(
+            model="gpt-4o",
+            messages=messages,
+            temperature=0.7,
+            max_tokens=512
+        )
+        return response['choices'][0]['message']['content'].strip()
+    except Exception as e:
+        print(f"Error on convo {convo_id}: {e}")
+        return None
+
+# Loop through conversations
+for convo_id in conversation_ids:
+    convo_df = df[df["conversation_id"] == convo_id]
+    if convo_df.empty:
+        continue
+    original_text = "\n".join(str(t).strip() for t in convo_df["text"] if isinstance(t, str))
+
+    # Generate or load GPT summary
+    summary_path = os.path.join(summary_output_dir, f"gpt_{convo_id}.txt")
+    if os.path.exists(summary_path):
+        with open(summary_path, "r", encoding="utf-8") as f:
+            gpt_summary = f.read().strip()
+    else:
+        gpt_summary = summarize_with_chatgpt(original_text, convo_id)
+        if gpt_summary:
+            with open(summary_path, "w", encoding="utf-8") as f:
+                f.write(gpt_summary)
+        else:
+            continue  # Skip if error or no summary
+
+    # Score
+    scores = scorer.score(original_text, gpt_summary)
+    gpt_scores.append({
+        "conversation_id": convo_id,
+        "rouge1_precision": scores["rouge1"].precision,
+        "rouge1_recall": scores["rouge1"].recall,
+        "rouge1_f1": scores["rouge1"].fmeasure,
+        "rouge2_precision": scores["rouge2"].precision,
+        "rouge2_recall": scores["rouge2"].recall,
+        "rouge2_f1": scores["rouge2"].fmeasure,
+        "rougeL_precision": scores["rougeL"].precision,
+        "rougeL_recall": scores["rougeL"].recall,
+        "rougeL_f1": scores["rougeL"].fmeasure
+    })
+
+    print(f"✓ {convo_id} — ROUGE-1 F1: {scores['rouge1'].fmeasure:.3f}")
+    time.sleep(1.5)  # Respect rate limits
+
+# Save results
+pd.DataFrame(gpt_scores).to_csv(gpt_scores_csv, index=False)
+print(f"\nDone! GPT ROUGE scores saved to: {gpt_scores_csv}")
