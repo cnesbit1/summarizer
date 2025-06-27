@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Multi-Document Summarizer
 
 This project leverages Cornell's ConvoKit library to download and preprocess subreddit conversation corpora. Once retrieved, these corpora undergo profanity filtering and structural formatting to prepare them for natural language processing tasks.
@@ -137,3 +138,36 @@ Conversations with profanity are removed entirely based on `answer_text`.
 ## Summarization Algorithms
 
 ## Summaries and ROUGE Scores
+=======
+# Summarizer
+
+## Overview
+
+Summarizer is a Python-based project designed to [provide a brief description of the project's purpose and functionality].
+
+## Features
+
+- [Feature 1]
+- [Feature 2]
+- [Feature 3]
+
+## Installation
+
+To get started with Summarizer, follow these steps:
+
+1. **Clone the repository:**
+
+   ```bash
+   git clone https://github.com/cnesbit1/summarizer.git
+   cd summarizer
+   ```
+2. **Set up a virtual environment (optional but recommended):**
+    ```bash
+    python3 -m venv venv
+    source venv/bin/activate
+    ```
+3. **Install the required dependencies listed in `requirements.txt`**
+    ```bash
+    pip install -r requirements.txt
+    ```
+>>>>>>> origin/tanner
