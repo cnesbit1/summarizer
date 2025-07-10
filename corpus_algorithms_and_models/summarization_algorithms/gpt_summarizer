@@ -8,8 +8,8 @@ from rouge_score import rouge_scorer
 # Setup
 openai.api_key = os.getenv("OPENAI_API_KEY")  # or hardcode if needed
 original_csv = "corpus_algorithms_and_models/corpus_data_downloads/data/reddit_corpus_small.csv"
-gpt_scores_csv = "../corpus_summaries/rouge_scores_gpt_vs_original.csv"
-summary_output_dir = "../corpus_summaries/gpt_conversation_summaries"
+gpt_scores_csv = "corpus_algorithms_and_models/corpus_summaries/rouge_scores_gpt_vs_original.csv"
+summary_output_dir = "corpus_algorithms_and_models\corpus_summaries\gpt_conversation_summaries"
 os.makedirs(summary_output_dir, exist_ok=True)
 
 # Load data
@@ -26,17 +26,32 @@ client = OpenAI()
 # ChatGPT summarization function
 def summarize_with_chatgpt(text, convo_id):
     messages = [
-        {"role": "system", "content": "Summarize the following Reddit conversation in 1-3 sentences, or about 10 percent of the orignal text, and a maximum of 250 words. Have it be an extractive summary (so don't add anything not in the original text) and it should be a good representation of the full text."},
-        {"role": "user", "content": text}
+        {
+            "role": "system",
+            "content": (
+                "You are an extractive summarizer. "
+                "You must only select and return sentences copied verbatim from the original text. "
+                "Do not rephrase or add any words. "
+                "Return the selected sentences as they appear in the input, in order, separated by newlines."
+            )
+        },
+        {
+            "role": "user",
+            "content": (
+                "Extract a summary of about 10% of the text or up to 250 words "
+                "by selecting only sentences from the original text exactly as written."
+            )
+        }
     ]
+
     try:
         response = client.chat.completions.create(
             model="gpt-4o",
-            messages=messages,
-            temperature=0.7,
+            messages=messages + [{"role": "user", "content": original_text}],
+            temperature=0,
             max_tokens=512
         )
-        return response['choices'][0]['message']['content'].strip()
+        return response.choices[0].message.content.strip()
     except Exception as e:
         print(f"Error on convo {convo_id}: {e}")
         return None
