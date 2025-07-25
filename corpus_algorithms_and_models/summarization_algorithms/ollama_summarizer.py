@@ -69,8 +69,9 @@ for convo_id in conversation_ids:
             continue
 
     # Score
+    # Score
     scores = scorer.score(original_text, ollama_summary)
-    ollama_scores.append({
+    score_dict = {
         "conversation_id": convo_id,
         "rouge1_precision": scores["rouge1"].precision,
         "rouge1_recall": scores["rouge1"].recall,
@@ -81,11 +82,15 @@ for convo_id in conversation_ids:
         "rougeL_precision": scores["rougeL"].precision,
         "rougeL_recall": scores["rougeL"].recall,
         "rougeL_f1": scores["rougeL"].fmeasure
-    })
+    }
+
+    # Append to CSV incrementally
+    pd.DataFrame([score_dict]).to_csv(
+        gpt_scores_csv,
+        mode='a',
+        index=False,
+        header=not os.path.exists(gpt_scores_csv)
+    )
 
     print(f"✓ {convo_id} — ROUGE-1 F1: {scores['rouge1'].fmeasure:.3f}")
     time.sleep(1.0)
-
-# Save results
-pd.DataFrame(ollama_scores).to_csv(gpt_scores_csv, index=False)
-print(f"\nDone! Ollama ROUGE scores saved to: {gpt_scores_csv}")

@@ -19,6 +19,8 @@ conversation_ids = df["conversation_id"].dropna().unique().tolist()
 scorer = rouge_scorer.RougeScorer(['rouge1', 'rouge2', 'rougeL'], use_stemmer=True)
 ollama_scores = []
 
+
+
 # Summarization function using Ollama
 def summarize_with_ollama(text, convo_id, model="gemini3"):
     system_prompt = (
