@@ -1,86 +1,78 @@
 import os
-import re
-import logging
 import pandas as pd
-from convokit import Corpus, download
+import json
 
-# Setup
-logging.basicConfig(filename="corpus_download.log", level=logging.INFO, format="%(asctime)s - %(message)s")
+# Paths
+input_jsonl = os.path.expanduser("~/.convokit/saved-corpora/subreddit-askscience/utterances.jsonl")
+output_csv_short = "./corpus_algorithms_and_models/corpus_data_downloads/data/askscience_short_convos.csv"
+output_csv_long = "./corpus_algorithms_and_models/corpus_data_downloads/data/askscience_long_convos.csv"
+output_xlsx_short = "./corpus_algorithms_and_models/corpus_data_downloads/data/askscience_short_convos.xlsx"
+output_xlsx_long = "./corpus_algorithms_and_models/corpus_data_downloads/data/askscience_long_convos.xlsx"
 
-SHORT_PATH = "short_conversations.csv"
-LONG_PATH = "long_conversations.csv"
-SHORT_LIMIT = 100
-LONG_LIMIT = 100
+# Ensure output directory exists
+os.makedirs(os.path.dirname(output_csv_short), exist_ok=True)
 
-short_convs = {}
-long_convs = {}
+# Load utterances.jsonl
+print("Loading utterances...")
+utterance_dict = {}
+with open(input_jsonl, 'r', encoding='utf-8') as f:
+    for line in f:
+        u = json.loads(line)
+        root_id = u.get("root")
+        if root_id not in utterance_dict:
+            utterance_dict[root_id] = []
+        utterance_dict[root_id].append(u)
 
-def sanitize_text(text):
-    return ''.join(c for c in (text or "") if c.isprintable())
+print(f"Loaded {len(utterance_dict)} conversations.")
 
-def get_word_count(conversation):
-    return sum(len((utt.text or "").split()) for utt in conversation.iter_utterances())
+# Filter conversations
+short_convos, long_convos = [], []
+short_ids, long_ids = set(), set()
 
-def save_conversations(conv_dict, path):
-    all_rows = []
-    for conv_id, conv_data in conv_dict.items():
-        for res_id, utt in enumerate(conv_data["utterances"], start=1):
-            all_rows.append({
-                "corpus_name": conv_data["corpus_name"],
-                "conv_id": conv_id,
-                "res_id": res_id,
-                "text": sanitize_text(utt.text)
-            })
-    pd.DataFrame(all_rows).to_csv(path, index=False)
+for convo_id, utterances in utterance_dict.items():
+    total_words = sum(len(u.get("text", "").split()) for u in utterances)
 
-def process_corpus(corpus_name):
-    global short_convs, long_convs
-    logging.info(f"Processing corpus: {corpus_name}")
-    try:
-        corpus_path = download(corpus_name)
-        corpus = Corpus(filename=corpus_path)
+    if 100 <= total_words <= 200 and len(short_ids) < 100:
+        short_convos.extend(utterances)
+        short_ids.add(convo_id)
+    elif 1000 <= total_words <= 2000 and len(long_ids) < 100:
+        long_convos.extend(utterances)
+        long_ids.add(convo_id)
 
-        for conversation in corpus.iter_conversations():
-            conv_id = conversation.id
-            total_words = get_word_count(conversation)
-            utts = list(conversation.iter_utterances())
+    if len(short_ids) >= 100 and len(long_ids) >= 100:
+        break
 
-            if SHORT_LIMIT > len(short_convs) and 100 <= total_words <= 200:
-                short_convs[conv_id] = {
-                    "corpus_name": corpus_name,
-                    "utterances": utts
-                }
+print(f"Selected {len(short_ids)} short and {len(long_ids)} long conversations.")
 
-            elif LONG_LIMIT > len(long_convs) and 1000 <= total_words <= 1500:
-                long_convs[conv_id] = {
-                    "corpus_name": corpus_name,
-                    "utterances": utts
-                }
+# Convert to DataFrames
+def to_dataframe(utterances):
+    return pd.DataFrame([
+        {
+            "id": u.get("id"),
+            "conversation_id": u.get("root"),
+            "speaker": u.get("user"),
+            "reply_to": u.get("reply_to"),
+            "text": u.get("text"),
+            "timestamp": u.get("timestamp"),
+            "subreddit": u.get("meta", {}).get("subreddit"),
+            "score": u.get("meta", {}).get("score"),
+            "permalink": u.get("meta", {}).get("permalink"),
+            "meta": json.dumps(u.get("meta", {}))
+        }
+        for u in sorted(utterances, key=lambda x: (x.get("root"), x.get("timestamp")))
+    ])
 
-            if len(short_convs) >= SHORT_LIMIT and len(long_convs) >= LONG_LIMIT:
-                logging.info("Collected 100 short and 100 long conversations. Stopping.")
-                return True
+df_short = to_dataframe(short_convos)
+df_long = to_dataframe(long_convos)
 
-    except Exception as e:
-        logging.error(f"Error processing corpus {corpus_name}: {e}")
+# Write to CSV
+df_short.to_csv(output_csv_short, index=False, encoding="utf-8")
+df_long.to_csv(output_csv_long, index=False, encoding="utf-8")
+print(f"Saved short conversations CSV to: {output_csv_short}")
+print(f"Saved long conversations CSV to: {output_csv_long}")
 
-    return False  # Continue
-
-def main():
-    corpus_names = [
-        "subreddit-askscience", "subreddit-changemyview", "subreddit-askreddit", 
-        "subreddit-explainlikeimfive", "subreddit-worldnews", "subreddit-news"
-    ]
-
-    for name in corpus_names:
-        completed = process_corpus(name)
-        if completed:
-            break
-
-    # Save to CSV
-    save_conversations(short_convs, SHORT_PATH)
-    save_conversations(long_convs, LONG_PATH)
-    logging.info("Saved both CSV files.")
-
-if __name__ == "__main__":
-    main()
+# Write to XLSX
+df_short.to_excel(output_xlsx_short, index=False)
+df_long.to_excel(output_xlsx_long, index=False)
+print(f"Saved short conversations XLSX to: {output_xlsx_short}")
+print(f"Saved long conversations XLSX to: {output_xlsx_long}")
